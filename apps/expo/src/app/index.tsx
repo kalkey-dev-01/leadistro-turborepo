@@ -102,9 +102,9 @@ const Index = () => {
       setUser(userState)
       setLoading(false)
     })
-  }, [setLoading, setUser])
+  })
   if (loading) return <Text>Loading...</Text>
-  console.log('This is Coming From Index user is', user?.email)
+  console.log('This is Coming From Index user is', user)
   if (!user) return <Redirect href={'/auth/login'} />
   return <Redirect href={'/home'} />
 };
