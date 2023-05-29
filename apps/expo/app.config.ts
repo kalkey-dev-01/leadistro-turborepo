@@ -18,13 +18,15 @@ const defineConfig = (): ExpoConfig => ({
   },
   assetBundlePatterns: ["**/*"],
   ios: {
+    googleServicesFile: "./GoogleService-Info.plist",
     supportsTablet: true,
     bundleIdentifier: "com.leadistro",
   },
   android: {
+    googleServicesFile: "./google-services.json",
     adaptiveIcon: {
       foregroundImage: "./assets/icon.png",
-      backgroundColor: "#1F104A",
+      backgroundColor: "#101010",
     },
     package: "com.leadistronative",
   },
@@ -33,7 +35,10 @@ const defineConfig = (): ExpoConfig => ({
       projectId: "5e66edb7-fc5b-4305-aaf9-396d4ecf65db",
     },
   },
-  plugins: ["./expo-plugins/with-modify-gradle.js"],
+  plugins: [
+    "./expo-plugins/with-modify-gradle.js",
+    "@react-native-google-signin/google-signin",
+  ],
 });
 
 export default defineConfig;

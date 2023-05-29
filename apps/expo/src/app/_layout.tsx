@@ -8,6 +8,7 @@ import { TRPCProvider } from "~/utils/api";
 // This is the main layout of the app
 // It wraps your pages with the providers they need
 const RootLayout = () => {
+
   return (
     <TRPCProvider>
       <SafeAreaProvider>
@@ -17,8 +18,11 @@ const RootLayout = () => {
         */}
         <Stack
           screenOptions={{
+            headerTitleStyle: {
+              color: "#FF9580"
+            },
             headerStyle: {
-              backgroundColor: "#f472b6",
+              backgroundColor: "#101010",
             },
           }}
         />

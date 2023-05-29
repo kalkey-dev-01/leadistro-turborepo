@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "976545594978",
+    "firebase_url": "https://leadistro-12rh78-default-rtdb.firebaseio.com",
+    "project_id": "leadistro-12rh78",
+    "storage_bucket": "leadistro-12rh78.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:976545594978:android:563292c05b4e0cceb0db3b",
+        "android_client_info": {
+          "package_name": "com.leadistronative"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "976545594978-u2i013k8bhd2dpbpf3006ni143nurjmi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.leadistronative",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "976545594978-27fjsomis9k50aos3knmhda342fal8qn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfYXSq1KV1FDBzYpfc8Q-U_8ulDwooud4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "976545594978-27fjsomis9k50aos3knmhda342fal8qn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

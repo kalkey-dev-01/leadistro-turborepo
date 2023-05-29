@@ -37,6 +37,18 @@ importers:
       '@expo/metro-config':
         specifier: ^0.7.1
         version: 0.7.1
+      '@expo/vector-icons':
+        specifier: ^13.0.0
+        version: 13.0.0
+      '@react-native-firebase/app':
+        specifier: ^17.5.0
+        version: 17.5.0(expo@48.0.17)(react-native@0.71.8)(react@18.2.0)
+      '@react-native-firebase/auth':
+        specifier: ^17.5.0
+        version: 17.5.0(@react-native-firebase/app@17.5.0)(expo@48.0.17)
+      '@react-native-google-signin/google-signin':
+        specifier: ^10.0.1
+        version: 10.0.1(expo@48.0.17)(react-native@0.71.8)(react@18.2.0)
       '@shopify/flash-list':
         specifier: 1.4.3
         version: 1.4.3(@babel/runtime@7.21.5)(react-native@0.71.8)(react@18.2.0)
@@ -58,6 +70,9 @@ importers:
       expo-constants:
         specifier: ~14.2.1
         version: 14.2.1(expo@48.0.17)
+      expo-dev-client:
+        specifier: ~2.2.1
+        version: 2.2.1(expo@48.0.17)
       expo-linking:
         specifier: ~4.0.1
         version: 4.0.1(expo@48.0.17)
@@ -70,6 +85,9 @@ importers:
       expo-status-bar:
         specifier: ~1.4.4
         version: 1.4.4
+      jotai:
+        specifier: ^2.1.0
+        version: 2.1.0(react@18.2.0)
       nativewind:
         specifier: ^2.0.11
         version: 2.0.11(react@18.2.0)(tailwindcss@3.3.2)
@@ -2621,6 +2639,52 @@ packages:
       - utf-8-validate
     dev: false
 
+  /@react-native-firebase/app@17.5.0(expo@48.0.17)(react-native@0.71.8)(react@18.2.0):
+    resolution: {integrity: sha512-8DWjguVmVYmuPWI7mhXlmLB6GxKnPjUjZ4Wnnyj3Wh5uqHzgUREHEA1aH92PT84LJLZL8F6dJZk+fIyo9UyXnA==}
+    peerDependencies:
+      expo: '>=47.0.0'
+      react: '*'
+      react-native: '*'
+    peerDependenciesMeta:
+      expo:
+        optional: true
+    dependencies:
+      expo: 48.0.17(@babel/core@7.21.8)
+      opencollective-postinstall: 2.0.3
+      react: 18.2.0
+      react-native: 0.71.8(@babel/core@7.21.8)(@babel/preset-env@7.21.5)(react@18.2.0)
+      superstruct: 0.6.2
+    dev: false
+
+  /@react-native-firebase/auth@17.5.0(@react-native-firebase/app@17.5.0)(expo@48.0.17):
+    resolution: {integrity: sha512-iF5Wv7dcDPmxu2om5SkPVGPELAwahAp3izFXjrv6wQAFmOTQ+2rEIDRBFMmS7EZ/qwNodvKK3vgDLEnOxDtTAQ==}
+    peerDependencies:
+      '@react-native-firebase/app': 17.5.0
+      expo: '>=47.0.0'
+    peerDependenciesMeta:
+      expo:
+        optional: true
+    dependencies:
+      '@react-native-firebase/app': 17.5.0(expo@48.0.17)(react-native@0.71.8)(react@18.2.0)
+      expo: 48.0.17(@babel/core@7.21.8)
+      plist: 3.0.6
+    dev: false
+
+  /@react-native-google-signin/google-signin@10.0.1(expo@48.0.17)(react-native@0.71.8)(react@18.2.0):
+    resolution: {integrity: sha512-oZoU2lfKyn0s0GqqdFsi4v2FSENrxQYQU9DD/RSkxDdkIQ49Wwo6p5LKlgXY04GwZEVdYMuvZN3G89gQW0ig2g==}
+    peerDependencies:
+      expo: '>=47.0.0'
+      react: '*'
+      react-native: '*'
+    peerDependenciesMeta:
+      expo:
+        optional: true
+    dependencies:
+      expo: 48.0.17(@babel/core@7.21.8)
+      react: 18.2.0
+      react-native: 0.71.8(@babel/core@7.21.8)(@babel/preset-env@7.21.5)(react@18.2.0)
+    dev: false
+
   /@react-native/assets@1.0.0:
     resolution: {integrity: sha512-KrwSpS1tKI70wuKl68DwJZYEvXktDHdZMG0k2AXD/rJVSlB23/X2CB2cutVR0HwNMJIal9HOUOBB2rVfa6UGtQ==}
     dev: false
@@ -3460,6 +3524,7 @@ packages:
   /autoprefixer@10.4.14(postcss@8.4.23):
     resolution: {integrity: sha512-FQzyfOsTlwVzjHxKEqRIAdJx9niO6VCBCoEwax/VLSoQF29ggECcPuBqUMZ+u8jCZOPSy8b8/8KnuFbp0SaFZQ==}
     engines: {node: ^10 || ^12 || >=14}
+    hasBin: true
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
@@ -4020,6 +4085,16 @@ packages:
       string-width: 4.2.3
       strip-ansi: 6.0.1
       wrap-ansi: 7.0.0
+    dev: false
+
+  /clone-deep@2.0.2:
+    resolution: {integrity: sha512-SZegPTKjCgpQH63E+eN6mVEEPdQBOUzjyJm5Pora4lrwWRFS8I0QAxV/KD6vV/i0WuijHZWQC1fMsPEdxfdVCQ==}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      for-own: 1.0.0
+      is-plain-object: 2.0.4
+      kind-of: 6.0.3
+      shallow-clone: 1.0.0
     dev: false
 
   /clone-deep@4.0.1:
@@ -4763,6 +4838,7 @@ packages:
 
   /eslint-config-prettier@8.8.0(eslint@8.40.0):
     resolution: {integrity: sha512-wLbQiFre3tdGgpDv67NQKnJuTlcUVYHas3k+DZCc2U2BadthoEY4B7hLPvAxaqdyOGCzuLfii2fqGph10va7oA==}
+    hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
     dependencies:
@@ -5152,6 +5228,48 @@ packages:
       - supports-color
     dev: false
 
+  /expo-dev-client@2.2.1(expo@48.0.17):
+    resolution: {integrity: sha512-BDhKyni82LiT6PypgBns1/FLqo3cGDBluaj4/Pojx9P7x9iwOFcesepO8r6BCWb4LuBjdB+z2yQ1fMXxzNC3qQ==}
+    peerDependencies:
+      expo: '*'
+    dependencies:
+      expo: 48.0.17(@babel/core@7.21.8)
+      expo-dev-launcher: 2.2.1(expo@48.0.17)
+      expo-dev-menu: 2.2.0(expo@48.0.17)
+      expo-dev-menu-interface: 1.1.1(expo@48.0.17)
+      expo-manifests: 0.5.2
+      expo-updates-interface: 0.9.1(expo@48.0.17)
+    dev: false
+
+  /expo-dev-launcher@2.2.1(expo@48.0.17):
+    resolution: {integrity: sha512-TP9SOrNIKF5Whju7uhtBsJeOvf9idUSg7snhHNVRpm2mA5kReckeD3PFv4HsvBHdnrfoslpeq4spOdS6UUx3XA==}
+    peerDependencies:
+      expo: '*'
+    dependencies:
+      expo: 48.0.17(@babel/core@7.21.8)
+      expo-dev-menu: 2.2.0(expo@48.0.17)
+      resolve-from: 5.0.0
+      semver: 7.5.0
+    dev: false
+
+  /expo-dev-menu-interface@1.1.1(expo@48.0.17):
+    resolution: {integrity: sha512-doT+7WrSBnxCcTGZw9QIEZoL+43U4RywbG8XZwbhkcsFWGsh9scp0y/bv3ieFHxRtIdImxbxOoYh7fy1O6g28w==}
+    peerDependencies:
+      expo: '*'
+    dependencies:
+      expo: 48.0.17(@babel/core@7.21.8)
+    dev: false
+
+  /expo-dev-menu@2.2.0(expo@48.0.17):
+    resolution: {integrity: sha512-ImRUD7IVyLme7t3S+pNsOOgCBorkriVNo+ryEmkAjzRTKlpiklhoc1GEdQUU3qvO6e66gUguMbs4wnaP6o4NEw==}
+    peerDependencies:
+      expo: '*'
+    dependencies:
+      expo: 48.0.17(@babel/core@7.21.8)
+      expo-dev-menu-interface: 1.1.1(expo@48.0.17)
+      semver: 7.5.0
+    dev: false
+
   /expo-file-system@15.2.2(expo@48.0.17):
     resolution: {integrity: sha512-LFkOLcWwlmnjkURxZ3/0ukS35OswX8iuQknLHRHeyk8mUA8fpRPPelD/a1lS+yclqfqavMJmTXVKM1Nsq5XVMA==}
     peerDependencies:
@@ -5168,6 +5286,10 @@ packages:
     dependencies:
       expo: 48.0.17(@babel/core@7.21.8)
       fontfaceobserver: 2.3.0
+    dev: false
+
+  /expo-json-utils@0.5.1:
+    resolution: {integrity: sha512-Y5boshyf40vPjwxNnOIfacZPNkOymecZRQ1k+TSXlq6gnw5XRsnM5hnP0VLVYhdv8x+9CX6E1fDsDUNvsK38Dg==}
     dev: false
 
   /expo-keep-awake@12.0.1(expo@48.0.17):
@@ -5189,6 +5311,12 @@ packages:
     transitivePeerDependencies:
       - expo
       - supports-color
+    dev: false
+
+  /expo-manifests@0.5.2:
+    resolution: {integrity: sha512-WnsTlE2le3pV/B/AJPKTOSjb2K9AT1mPDCfQxTQ/KMCwF95saoXYt2OPF3hxZNaMAV6VIAhXgd5Y6wpcH9ruPQ==}
+    dependencies:
+      expo-json-utils: 0.5.1
     dev: false
 
   /expo-modules-autolinking@1.2.0:
@@ -5270,6 +5398,14 @@ packages:
 
   /expo-status-bar@1.4.4:
     resolution: {integrity: sha512-5DV0hIEWgatSC3UgQuAZBoQeaS9CqeWRZ3vzBR9R/+IUD87Adbi4FGhU10nymRqFXOizGsureButGZIXPs7zEA==}
+    dev: false
+
+  /expo-updates-interface@0.9.1(expo@48.0.17):
+    resolution: {integrity: sha512-wk88LLhseQ7LJvxdN7BTKiryyqALxnrvr+lyHK3/prg76Yy0EGi2Q/oE/rtFyyZ1JmQDRbO/5pdX0EE6QqVQXQ==}
+    peerDependencies:
+      expo: '*'
+    dependencies:
+      expo: 48.0.17(@babel/core@7.21.8)
     dev: false
 
   /expo@48.0.17(@babel/core@7.21.8):
@@ -5526,9 +5662,21 @@ packages:
       is-callable: 1.2.7
     dev: false
 
+  /for-in@0.1.8:
+    resolution: {integrity: sha512-F0to7vbBSHP8E3l6dCjxNOLuSFAACIxFy3UehTUlG7svlXi37HHsDkyVcHo0Pq8QwrE+pXvWSVX3ZT1T9wAZ9g==}
+    engines: {node: '>=0.10.0'}
+    dev: false
+
   /for-in@1.0.2:
     resolution: {integrity: sha512-7EwmXrOjyL+ChxMhmG5lnW9MPt1aIeZEwKhQzoBUdTV0N3zuwWDZYVJatDvZ2OyzPUvdIAZDsCetk3coyMfcnQ==}
     engines: {node: '>=0.10.0'}
+    dev: false
+
+  /for-own@1.0.0:
+    resolution: {integrity: sha512-0OABksIGrxKK8K4kynWkQ7y1zounQxP+CWnyclVwj81KW3vlLlGUx57DKGcP/LH216GzqnstnPocF16Nxs0Ycg==}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      for-in: 1.0.2
     dev: false
 
   /form-data@3.0.1:
@@ -6573,6 +6721,18 @@ packages:
     resolution: {integrity: sha512-j8GhLiKmUAh+dsFXlX1aJCbt5KMibuKb+d7j1JaOJG6s2UjX1PQlW+OKB/sD4a/5ZYF4RcmYmLSndOoU3Lt/3g==}
     dev: false
 
+  /jotai@2.1.0(react@18.2.0):
+    resolution: {integrity: sha512-fR82PtHAmEQrc/daMEYGc4EteW96/b6wodtDSCzLvoJA/6y4YG70er4hh2f8CYwYjqwQ0eZUModGfG4DmwkTyQ==}
+    engines: {node: '>=12.20.0'}
+    peerDependencies:
+      react: '>=17.0.0'
+    peerDependenciesMeta:
+      react:
+        optional: true
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /js-sdsl@4.4.0:
     resolution: {integrity: sha512-FfVSdx6pJ41Oa+CF7RDaFmTnCaFhua+SNYQX74riGOpl96x+2jQCqEfQ2bnXu/5DPCqlRuiqyvTJM0Qjz26IVg==}
 
@@ -6597,6 +6757,7 @@ packages:
 
   /jscodeshift@0.13.1(@babel/preset-env@7.21.5):
     resolution: {integrity: sha512-lGyiEbGOvmMRKgWk4vf+lUrCWO/8YR8sUR3FKF1Cq5fovjZDlIcw3Hu5ppLHAnEXshVffvaM0eyuY/AbOeYpnQ==}
+    hasBin: true
     peerDependencies:
       '@babel/preset-env': ^7.1.6
     dependencies:
@@ -7653,6 +7814,14 @@ packages:
       is-extendable: 1.0.1
     dev: false
 
+  /mixin-object@2.0.1:
+    resolution: {integrity: sha512-ALGF1Jt9ouehcaXaHhn6t1yGWRqGaHkPFndtFVHfZXOvkIZ/yoGaSi0AHVTafb3ZBGg4dr/bDwnaEKqCXzchMA==}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      for-in: 0.1.8
+      is-extendable: 0.1.1
+    dev: false
+
   /mkdirp@0.5.6:
     resolution: {integrity: sha512-FP+p8RB8OWpF3YZBCrP5gtADmtXApB5AMLn+vdyA+PyxCjrCs00mjyUozssO33cwDeT3wNGdLxJ5M//YqtHAJw==}
     dependencies:
@@ -7793,6 +7962,7 @@ packages:
   /next@13.4.2(@babel/core@7.21.8)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-aNFqLs3a3nTGvLWlO9SUhCuMUHVPSFQC0+tDNGAsDXqx+WJDFSbvc233gOJ5H19SBc7nw36A9LwQepOJ2u/8Kg==}
     engines: {node: '>=16.8.0'}
+    hasBin: true
     peerDependencies:
       '@opentelemetry/api': ^1.1.0
       fibers: '>= 3.1.0'
@@ -8127,6 +8297,11 @@ packages:
       define-lazy-prop: 3.0.0
       is-inside-container: 1.0.0
       is-wsl: 2.2.0
+    dev: false
+
+  /opencollective-postinstall@2.0.3:
+    resolution: {integrity: sha512-8AV/sCtuzUeTo8gQK5qDZzARrulB3egtLzFgteqB2tcT4Mw7B8Kt7JcDHmltjz6FOAHsvTevk70gZEbhM4ZS9Q==}
+    hasBin: true
     dev: false
 
   /openid-client@5.4.2:
@@ -8864,6 +9039,7 @@ packages:
   /react-native@0.71.8(@babel/core@7.21.8)(@babel/preset-env@7.21.5)(react@18.2.0):
     resolution: {integrity: sha512-ftMAuhpgTkbHU9brrqsEyxcNrpYvXKeATY+if22Nfhhg1zW+6wn95w9otwTnA3xHkljPCbng8mUhmmERjGEl7g==}
     engines: {node: '>=14'}
+    hasBin: true
     peerDependencies:
       react: 18.2.0
     dependencies:
@@ -9277,6 +9453,7 @@ packages:
 
   /semver@5.7.1:
     resolution: {integrity: sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==}
+    hasBin: true
     dev: false
 
   /semver@6.3.0:
@@ -9285,11 +9462,13 @@ packages:
   /semver@7.3.2:
     resolution: {integrity: sha512-OrOb32TeeambH6UrhtShmF7CRDqhL6/5XpPNp2DuRH6+9QLw/orhp72j87v8Qa1ScDkvrrBNpZcDejAirJmfXQ==}
     engines: {node: '>=10'}
+    hasBin: true
     dev: false
 
   /semver@7.5.0:
     resolution: {integrity: sha512-+XC0AD/R7Q2mPSRuy2Id0+CGTZ98+8f+KvwirxOKIEyid+XSx6HbC63p+O4IndTHuX5Z+JxQ0TghCkO5Cg/2HA==}
     engines: {node: '>=10'}
+    hasBin: true
     dependencies:
       lru-cache: 6.0.0
 
@@ -9358,6 +9537,15 @@ packages:
 
   /setprototypeof@1.2.0:
     resolution: {integrity: sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==}
+    dev: false
+
+  /shallow-clone@1.0.0:
+    resolution: {integrity: sha512-oeXreoKR/SyNJtRJMAKPDSvd28OqEwG4eR/xc856cRGBII7gX9lvAqDxusPm0846z/w/hWYjI1NpKwJ00NHzRA==}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      is-extendable: 0.1.1
+      kind-of: 5.1.0
+      mixin-object: 2.0.1
     dev: false
 
   /shallow-clone@3.0.1:
@@ -9769,6 +9957,13 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       copy-anything: 3.0.4
+    dev: false
+
+  /superstruct@0.6.2:
+    resolution: {integrity: sha512-lvA97MFAJng3rfjcafT/zGTSWm6Tbpk++DP6It4Qg7oNaeM+2tdJMuVgGje21/bIpBEs6iQql1PJH6dKTjl4Ig==}
+    dependencies:
+      clone-deep: 2.0.2
+      kind-of: 6.0.3
     dev: false
 
   /supports-color@5.5.0:
@@ -10287,6 +10482,7 @@ packages:
 
   /update-browserslist-db@1.0.11(browserslist@4.21.5):
     resolution: {integrity: sha512-dCwEFf0/oT85M1fHBg4F0jtLwJrutGoHSQXCh7u4o2t1drG+c0a9Flnqww6XUKSfQMPpJBRjU8d4RXB09qtvaA==}
+    hasBin: true
     peerDependencies:
       browserslist: '>= 4.21.0'
     dependencies:
