@@ -4,7 +4,15 @@ import React from 'react'
 import { Stack } from 'expo-router'
 import { GoogleAuthSignIn } from '~/utils/google-signin'
 import { AntDesign } from '@expo/vector-icons';
+// import { useAtomValue } from 'jotai';
+// import { FirebaseUserAtom } from '~/utils/atoms';
+import { useAuth } from '~/utils/context/authContext';
 const Login = () => {
+    // const user = useAtomValue(FirebaseUserAtom);
+    const users = useAuth();
+
+    console.log('Whats the User In Login Screen', users?.displayName);
+
     return (
         <View className='w-full bg-[#101010] h-full justify-evenly flex flex-col items-center'>
             <Stack.Screen options={{ headerTitle: 'Sign In' }} />
