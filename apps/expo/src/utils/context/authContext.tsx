@@ -26,8 +26,7 @@ function useProtectedRoute(user: FirebaseAuthTypes.User | null) {
             // Redirect away from the sign-in page.
             router.replace("/");
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [user, segments]);
+    }, [user, router, segments]);
 }
 
 export function AuthProvider(props: { children: React.ReactNode }) {
@@ -36,7 +35,7 @@ export function AuthProvider(props: { children: React.ReactNode }) {
         auth().onAuthStateChanged(userState => {
             setUser(userState)
         })
-    })
+    }, [setUser])
     useProtectedRoute(user)
     return (
         <AuthContext.Provider value={user}>

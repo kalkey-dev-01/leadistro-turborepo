@@ -5,8 +5,8 @@ import { Redirect } from "expo-router";
 import { useAuth } from "~/utils/context/authContext";
 
 const Index = () => {
-  const user = useAuth()
-  console.log('LOG USER FROM INDEX', user)
+  // const user = useAuth()
+  // console.log('LOG USER FROM INDEX', user)
   return <Redirect href={'/'} />
 };
 
