@@ -7,7 +7,7 @@ import { useAuth } from "~/utils/context/authContext";
 const Index = () => {
   const user = useAuth()
   console.log('LOG USER FROM INDEX', user)
-  return <Redirect href={'/home'} />
+  return <Redirect href={'/'} />
 };
 
 export default Index;

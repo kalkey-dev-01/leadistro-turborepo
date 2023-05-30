@@ -24,7 +24,7 @@ function useProtectedRoute(user: FirebaseAuthTypes.User | null) {
             router.replace("/login");
         } else if (user && inAuthGroup) {
             // Redirect away from the sign-in page.
-            router.replace("/home");
+            router.replace("/");
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [user, segments]);
