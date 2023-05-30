@@ -5,12 +5,13 @@ import auth from '@react-native-firebase/auth'
 
 
 const Home = () => {
-    // const user = useAuth()
-    // console.log(user?.email, 'Home Email')
+    const user = useAuth()
+
     return (
-        <View>
-            <Text>This is HomeScreen</Text>
-            <Button onPress={() => void auth().signOut()} title='SignOut' />
+        <View className='flex bg-leadistroBlack flex-col w-full h-full justify-between py-5 items-center'>
+            <Text className='text-leadistroWhite text-2xl'>{user?.displayName}</Text>
+            <Text className='text-leadistroWhite'>This is HomeScreen</Text>
+            <Button color={'#ff9580'} onPress={() => void auth().signOut()} title='SignOut' />
         </View>
     )
 }
