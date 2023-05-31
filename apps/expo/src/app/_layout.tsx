@@ -7,7 +7,8 @@ import { TRPCProvider } from "~/utils/api";
 import { AuthProvider } from "~/utils/context/authContext";
 import { View } from "react-native";
 import * as Menu from 'zeego/dropdown-menu'
-
+import auth from '@react-native-firebase/auth'
+// import { useAuth } from "~/utils/context/authContext";
 // This is the main layout of the app
 // It wraps your pages with the providers they need
 const RootLayout = () => {
@@ -39,13 +40,13 @@ const RootLayout = () => {
                   <Menu.Content style={{ backgroundColor: '#101010' }}>
                     <Menu.Item style={{ backgroundColor: '#101010' }} key={'first'} onSelect={() => console.log('Logout')}>
                       <Menu.ItemTitle>
-                        Profile
+                        User Profile
                       </Menu.ItemTitle>
                       <Menu.ItemIcon androidIconName="logout">
                         <Feather name="archive" size={20} />
                       </Menu.ItemIcon>
                     </Menu.Item>
-                    <Menu.Item key={'second'} onSelect={() => console.log('Logout')}>
+                    <Menu.Item key={'second'} onSelect={() => void auth().signOut()}>
                       Logout from this device
                     </Menu.Item>
                   </Menu.Content>
