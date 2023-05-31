@@ -6,8 +6,7 @@ import { Feather } from '@expo/vector-icons';
 import { TRPCProvider } from "~/utils/api";
 import { AuthProvider } from "~/utils/context/authContext";
 import { View } from "react-native";
-import UserIconDropdown from "~/components/UserIconDropdown";
-
+import * as Menu from 'zeego/dropdown-menu'
 
 // This is the main layout of the app
 // It wraps your pages with the providers they need
@@ -30,7 +29,28 @@ const RootLayout = () => {
                 backgroundColor: "#101010",
               },
               headerTitle: 'Home',
-              headerRight: () => <UserIconDropdown />
+              headerRight: () => (
+                <Menu.Root style={{ backgroundColor: '#101010' }}>
+                  <Menu.Trigger style={{ backgroundColor: '#101010' }}>
+                    <View className={`flex items-center justify-center border-2 border-leadistroRed p-1.5 rounded-full`}>
+                      <Feather name="user" size={20} color={'#ff9580'} />
+                    </View>
+                  </Menu.Trigger>
+                  <Menu.Content style={{ backgroundColor: '#101010' }}>
+                    <Menu.Item style={{ backgroundColor: '#101010' }} key={'first'} onSelect={() => console.log('Logout')}>
+                      <Menu.ItemTitle>
+                        Profile
+                      </Menu.ItemTitle>
+                      <Menu.ItemIcon androidIconName="logout">
+                        <Feather name="archive" size={20} />
+                      </Menu.ItemIcon>
+                    </Menu.Item>
+                    <Menu.Item key={'second'} onSelect={() => console.log('Logout')}>
+                      Logout from this device
+                    </Menu.Item>
+                  </Menu.Content>
+                </Menu.Root>
+              )
             }}
           />
           <StatusBar />
