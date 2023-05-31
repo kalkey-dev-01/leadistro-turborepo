@@ -38,6 +38,19 @@ const defineConfig = (): ExpoConfig => ({
   plugins: [
     "./expo-plugins/with-modify-gradle.js",
     "@react-native-google-signin/google-signin",
+    [
+      "expo-build-properties",
+      {
+        android: {
+          // these values were tested with Expo SDK 48
+          compileSdkVersion: 33,
+          targetSdkVersion: 33,
+          minSdkVersion: 23,
+          buildToolsVersion: "33.0.0",
+          kotlinVersion: "1.6.20",
+        },
+      },
+    ],
   ],
 });
 
