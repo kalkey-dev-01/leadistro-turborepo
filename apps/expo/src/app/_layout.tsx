@@ -6,6 +6,7 @@ import { Feather } from '@expo/vector-icons';
 import { TRPCProvider } from "~/utils/api";
 import { AuthProvider } from "~/utils/context/authContext";
 import { View } from "react-native";
+import UserIconDropdown from "~/components/UserIconDropdown";
 
 
 // This is the main layout of the app
@@ -29,13 +30,7 @@ const RootLayout = () => {
                 backgroundColor: "#101010",
               },
               headerTitle: 'Home',
-              headerRight: () => (
-                <View className={`flex items-center justify-center border-2 border-leadistroRed p-1.5 rounded-full`}>
-                  <Feather name="user" size={20} color={'#ff9580'} onPress={() => {
-                    console.log("pressed user icon");
-                  }} />
-                </View>
-              )
+              headerRight: () => <UserIconDropdown />
             }}
           />
           <StatusBar />
