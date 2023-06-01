@@ -6,6 +6,16 @@ import { Comfortaa, Poppins } from 'next/font/google'
 // import { api } from "~/utils/api";
 import { Button } from "~/components/ui/button";
 
+const comfortaa = Comfortaa({
+  subsets: ['latin'],
+  variable: '--font-comfortaa',
+});
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-poppins',
+});
+
 // const PostCard: React.FC<{
 //   post: RouterOutputs["post"]["all"][number];
 //   onPostDelete?: () => void;
@@ -96,10 +106,10 @@ const Home: NextPage = () => {
         <meta name="description" content="Web App for Marketing by leadistro" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex h-screen flex-col items-center bg-gradient-to-b from-leadistroBlack via-leadistroRed to-leadistroBlack text-white">
+      <main className={`${poppins.className} flex h-screen flex-col items-center bg-gradient-to-b from-leadistroBlack/70 to-leadistroBlack text-white`}>
         <div className="container mt-12 flex flex-col items-center justify-center gap-4 px-4 py-8">
-          <h1 className="text-5xl font-extrabold tracking-tight sm:text-[5rem]">
-            leadistro app
+          <h1 className={`${comfortaa.className} text-5xl font-extrabold tracking-tight sm:text-[5rem]`}>
+            leadistro Coming Soon To Your Platform&#39;s Stores
           </h1>
           <Button variant={'ghost'}>Welcome</Button>
           {/* <AuthShowcase /> */}
