@@ -8,6 +8,7 @@ import { AuthProvider } from "~/utils/context/authContext";
 import { View } from "react-native";
 import * as Menu from 'zeego/dropdown-menu'
 import auth from '@react-native-firebase/auth'
+import { useRouter } from 'expo-router'
 // import { useAuth } from "~/utils/context/authContext";
 // This is the main layout of the app
 // It wraps your pages with the providers they need
