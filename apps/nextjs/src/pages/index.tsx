@@ -104,6 +104,7 @@ const Home: NextPage = () => {
     </Main>
   );
 };
+export default Home;
 // <>
 //   <Head>
 //     <title>leadistro</title>
@@ -121,7 +122,6 @@ const Home: NextPage = () => {
 //   </main>
 // </>
 
-export default Home;
 
 // const AuthShowcase: React.FC = () => {
 //   const { data: session } = api.auth.getSession.useQuery();
