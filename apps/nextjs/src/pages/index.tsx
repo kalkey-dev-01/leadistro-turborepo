@@ -98,7 +98,8 @@ const Home: NextPage = () => {
       <Meta title="leadistro" description="Web App for Marketing by leadistro" />
     }>
       <div className="min-h-screen min-w-full text-leadistroWhite">
-        <Heading1 textChildren="Welcome To Leadistro" />
+        <Heading1 textChildren="Welcome To Leadistro" className="font-comfortaa" />
+        <Button variant={'ghost'}>Login</Button>
       </div>
     </Main>
   );
