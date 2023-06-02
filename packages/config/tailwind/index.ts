@@ -58,6 +58,8 @@ export default {
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
+        poppins: ["var(--font-poppins)"],
+        comfortaa: ["var(--font-comfortaa)"],
       },
       keyframes: {
         "accordion-down": {
