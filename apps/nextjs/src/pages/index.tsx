@@ -98,7 +98,6 @@ const poppins = Poppins({
 // });
 
 const Home: NextPage = () => {
-
   return (
     <>
       <Head>
