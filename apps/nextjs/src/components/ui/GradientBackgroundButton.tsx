@@ -12,7 +12,7 @@ const Button = () => {
                     <span className='pr-6 text-leadistroWhite'>Leadistro Release 2023.06</span>
                 </span>
                 <span className="flex items-center justify-center space-x-3">
-                    <span className=' pl-6 text-leadistroRed   group-hover:text-leadistroWhite font-bold'>See Whats New</span>
+                    <span className=' pl-6 text-leadistroRed group-hover:text-leadistroWhite font-bold'>See Whats New</span>
                     <ArrowRight className='text-leadistroRed group-hover:text-leadistroWhite h-6 w-6' />
                 </span>
             </button>
