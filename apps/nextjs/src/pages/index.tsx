@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+
 // import { useState } from "react";
 import type { NextPage } from "next";
 // import Head from "next/head";
@@ -11,6 +11,7 @@ import { Meta } from "~/meta/meta";
 import { Heading1, Heading3 } from "~/components/typography/Typography";
 import { AspectRatio } from "~/components/ui/aspect-ratio";
 import Image from "next/image";
+import HomeScreen from "~/components/HomeScreen";
 
 
 
@@ -100,18 +101,7 @@ const Home: NextPage = () => {
     <Main meta={
       <Meta title="leadistro" description="Web App for Marketing by leadistro" />
     }>
-      <div className="min-h-screen min-w-full flex flex-col md:flex-row  items-center justify-between">
-        <div className="container">
-          <Heading1 textChildren="Minimal Marketing App for Power Users" className="font-poppins text-leadistroWhite max-w-xl mb-12" />
-          <Heading3 textChildren="Brand And Market Your Product To Your Customers With The Help Of Artificial Intelligence." className="font-poppins text-leadistroWhite max-w-2xl mb-12" />
-          <Button variant={'outline'} className="border-2 border-leadistroRed text-leadistroWhite hover:bg-leadistroBlack/75 hover:text-leadistroRed font-comfortaa">Download The Apk</Button>
-        </div>
-        <div className="container">
-          <AspectRatio ratio={1 / 1} className="md:pl-[100px]">
-            <Image width={360} height={480} src={require('../../public/NewMockup.png')} className="mx-auto object-contain" alt="New Mockup" />
-          </AspectRatio>
-        </div>
-      </div>
+      <HomeScreen />
     </Main>
   );
 };
