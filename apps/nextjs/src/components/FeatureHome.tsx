@@ -50,7 +50,7 @@ export const Features: React.FC<FeatureProps> = () => {
                     renderContent={({ progress }) => (
                         <FeaturesContainer>
                             <FeaturesLeft progress={progress}>
-                                <h1 className=" mb-3 px-3  text-center text-3xl font-bold tracking-wider text-white md:text-start md:text-6xl md:tracking-normal">
+                                <h1 className=" mb-3 px-3 anima text-center text-3xl font-bold tracking-wider text-white md:text-start md:text-6xl md:tracking-normal">
                                     Lead Researcher
                                 </h1>
                                 <h3 className="px-3 text-center text-lg  font-light leading-snug tracking-widest  text-white md:text-start md:text-3xl md:font-medium md:tracking-wide">
