@@ -101,8 +101,8 @@ export const FeaturesContainer: React.FC<{ children: React.ReactNode }> = ({
 
 export const FeaturesBackground: React.FC = () => (
     <div className="sticky top-0 grid min-h-screen w-full grid-cols-1 bg-transparent lg:grid-cols-2">
-        <div className="h-[40vh] bg-leadistroDark lg:h-auto"></div>
-        <div className="h-[60vh] bg-leadistroDarkComp lg:min-h-screen">
+        <div className="h-[40vh] bg-leadistroBlack lg:h-auto"></div>
+        <div className="h-[60vh] bg-leadistroWhite lg:min-h-screen">
         </div>
     </div>
 );

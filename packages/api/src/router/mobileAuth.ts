@@ -15,8 +15,8 @@ export const MobileAuthRouter = createTRPCRouter({
         photoUrl: z.string().url(),
       }),
     )
-    .mutation(({ ctx, input }) => {
-      return ctx.prisma.mobileUser.create({
+    .mutation(async ({ ctx, input }) => {
+      return await ctx.prisma.mobileUser.create({
         data: {
           id: input.id,
           userName: input.userName,
