@@ -9,11 +9,11 @@ type Props = {
     children: ReactNode;
 };
 
-const comfortaa = Comfortaa({
+export const comfortaa = Comfortaa({
     subsets: ['latin'],
     variable: '--font-comfortaa',
 });
-const poppins = Poppins({
+export const poppins = Poppins({
     subsets: ['latin'],
     weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
     variable: '--font-poppins',
