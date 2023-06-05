@@ -9,9 +9,9 @@ export default function HomeScreen() {
     return (
         <>
             <div className="relative min-h-screen min-w-full flex flex-col bg-gradient-to-r from-leadistroBlack via-leadistroBlack to-leadistroRed  md:flex-row  items-center justify-center md:justify-between">
-                <div className='absolute flex flex-row items-center justify-center left-0 top-8 right-0'><Button /></div>
+                <div className='hidden absolute md:flex flex-row items-center justify-center left-0 top-8 right-0 z-20'><Button /></div>
                 <div className="container flex flex-col ">
-                    <Heading1 textChildren="Minimal Marketing App for Power Users" className=" text-center md:text-left font-poppins text-leadistroWhite max-w-xl mb-12" />
+                    <Heading1 textChildren="Minimal Marketing App for Power Users" className="text-center md:text-left font-poppins text-leadistroWhite max-w-xl mb-12" />
                     <Heading3 textChildren="Brand And Market Your Product To Your Customers With The Help Of Artificial Intelligence." className="font-poppins text-center md:text-left text-leadistroWhite max-w-2xl mb-12" />
                     <Btn variant={'outline'} className="border-2 border-leadistroRed text-leadistroWhite hover:bg-leadistroBlack/75 hover:text-leadistroRed font-comfortaa md:place-self-start place-self-center">Download The Apk</Btn>
                 </div>
@@ -22,6 +22,7 @@ export default function HomeScreen() {
                 </div>
             </div>
             <div className="min-h-screen min-w-full">
+
             </div>
         </>
     )
