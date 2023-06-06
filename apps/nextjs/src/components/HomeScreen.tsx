@@ -22,10 +22,11 @@ export default function HomeScreen() {
                     </AspectRatio>
                 </div>
             </div>
-            <div className="overflow-x-hidden min-h-screen min-w-full flex-col flex items-center justify-center">
+            <div className="overflow-x-hidden overflow-y-hidden min-h-screen min-w-full flex-col flex items-center justify-center">
                 <div className='relative max-w-screen-md'>
                     <BackgroundAnimation />
                 </div>
+
             </div>
         </>
     )
