@@ -5,6 +5,7 @@ import { Button as Btn } from './ui/button'
 import Image from 'next/image'
 import Button from './ui/GradientBackgroundButton'
 import IMG from '../../public/OutlineMockup.png';
+import WebMockup from '../../public/DistroGPTWebMockup.png'
 import BackgroundAnimation from './BackgroundAnimations'
 export default function HomeScreen() {
     return (
@@ -18,15 +19,19 @@ export default function HomeScreen() {
                 </div>
                 <div className="container">
                     <AspectRatio ratio={1 / 1} className='md:pl-[280px] py-10 md:py-0 z-10'>
-                        <Image src={IMG} alt="Mockup" width={360} height={480} className='' />
+                        <Image src={IMG} alt="MobileMockup" width={360} height={480} className='' />
                     </AspectRatio>
                 </div>
             </div>
-            <div className="overflow-x-hidden overflow-y-hidden min-h-screen min-w-full flex-col flex items-center justify-center">
+            <div className="overflow-x-hidden overflow-y-hidden min-h-screen min-w-full flex flex-col items-center justify-center">
                 <div className='relative max-w-screen-md'>
                     <BackgroundAnimation />
                 </div>
-
+                <Heading1 textChildren='The Only Generative AI for Marketing' className='font-poppins drop-shadow-[0_5px_3px_rgba(0,0,0,0.4)] text-center md:text-left text-leadistroBlack z-20 mt-32 md:mt-20 mix-blend-color-burn' />
+                <Heading3 textChildren='Sign In To Access All Beta Features' className='font-poppins text-leadistroWhite' />
+                <AspectRatio ratio={16 / 9} className='p-5'>
+                    <Image src={WebMockup} alt="WebMockup" />
+                </AspectRatio>
             </div>
         </>
     )
