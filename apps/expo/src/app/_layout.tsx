@@ -13,7 +13,7 @@ import { useRouter } from 'expo-router'
 // This is the main layout of the app
 // It wraps your pages with the providers they need
 const RootLayout = () => {
-
+  const router = useRouter()
   return (
     <TRPCProvider>
       <AuthProvider>
@@ -39,7 +39,7 @@ const RootLayout = () => {
                     </View>
                   </Menu.Trigger>
                   <Menu.Content style={{ backgroundColor: '#101010' }}>
-                    <Menu.Item style={{ backgroundColor: '#101010' }} key={'first'} onSelect={() => console.log('Logout')}>
+                    <Menu.Item style={{ backgroundColor: '#101010' }} key={'first'} onSelect={() => router.push('/profile')}>
                       <Menu.ItemTitle>
                         User Profile
                       </Menu.ItemTitle>
