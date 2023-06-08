@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, Image, type ImageSourcePropType } from 'react-native'
 import React from 'react'
-import { Stack, usePathname } from 'expo-router'
+import { Stack, usePathname, useRouter } from 'expo-router'
 import { Feather } from '@expo/vector-icons'
 import { RouterOutputs, api } from '~/utils/api'
 import { useAuth } from '~/utils/context/authContext'
@@ -11,6 +11,7 @@ const image = require('../../../assets/icon.png');
 const Profile: React.FC = ({ }) => {
     const pathName = usePathname()
     console.log(pathName)
+    const router = useRouter()
     const user = useAuth()
     const uid: string = user?.uid as string
     const { data, isLoading } = api.mobileAuth.byId.useQuery({ id: uid });
@@ -47,7 +48,7 @@ const Profile: React.FC = ({ }) => {
                 <Text className="text-xl my-2 text-leadistroWhite text-center">You will get access to all of our features in our platform.</Text>
                 <Image source={image as ImageSourcePropType} className='mx-auto my-12 max-w-[150px] max-h-[150px] rounded-2xl object-contain' alt='Logo' />
                 <Text className="text-xs text-leadistroWhite tracking-wider text-center font-extralight">Starting at $19.99/month</Text>
-                <TouchableOpacity onPress={() => console.log('Pressed')}>
+                <TouchableOpacity onPress={() => router.push('/profile/modal')}>
                     <View className='flex rounded-full py-3 px-6 my-5 bg-leadistroRed items-center justify-center'>
                         <Text className='text-2xl font-bold text-leadistroBlack'>Choose Your Plan</Text>
                     </View>
