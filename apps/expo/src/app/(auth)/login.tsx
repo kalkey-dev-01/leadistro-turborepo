@@ -3,17 +3,49 @@
 import { View, Text, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import { Stack } from 'expo-router'
-import { GoogleAuthSignIn } from '~/utils/google-signin'
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
+
 import { AntDesign } from '@expo/vector-icons';
 // import { useAtomValue } from 'jotai';
 // import { FirebaseUserAtom } from '~/utils/atoms';
 // import { useAuth } from '~/utils/context/authContext';
 
-const Login = () => {
+
+import auth from '@react-native-firebase/auth'
+import { api } from '~/utils/api';
+GoogleSignin.configure({
+    webClientId: '976545594978-a1ul5imti6ruqb1qlb7ipta7kk6q5elh.apps.googleusercontent.com',
+    iosClientId: '976545594978-oasuhjp8th16td7op8jc9immp14l22vq.apps.googleusercontent.com'
+});
+
+
+const Login: React.FC = () => {
+    const { mutateAsync } = api.mobileAuth.create.useMutation()
     // const user = useAtomValue(FirebaseUserAtom);
     // const users = useAuth()
     // console.log('Whats the User In Login Screen', users);
-
+    async function GoogleAuthSignIn() {
+        await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true })
+        const { idToken } = await GoogleSignin.signIn();
+        const credential = auth.GoogleAuthProvider.credential(idToken);
+        return auth().signInWithCredential(credential).then(async (user) => {
+            console.log('Mutate Starts')
+            await mutateAsync({
+                email: user.user.email as string,
+                id: user.user.uid,
+                emailVerified: user.user.emailVerified,
+                userName: user.user.displayName as string,
+                providerId: user.user.providerId,
+                photoUrl: user.user.photoURL as string
+            }).catch(e => console.log(e.message)).then(value => { console.log(value) })
+            console.log(user, 'from Promise and the mutate ends')
+        }).catch((error) => {
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+            console.log(error.message, error)
+        }).finally(() => {
+            console.log('GoogleAuthSignIn Completed')
+        })
+    }
     return (
         <View className='w-full bg-leadistroBlack h-full justify-center flex flex-col items-center'>
             <Stack.Screen options={{ headerShown: false }} />

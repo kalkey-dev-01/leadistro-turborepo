@@ -40,7 +40,7 @@ export default function HomeScreen() {
                     <Image src={WebMockup} alt="WebMockup" className="pointer-events-none md:object-top object-center md:object-contain object-cover w-full h-full" />
                 </AspectRatio>
             </div>
-            <div className='min-h'>
+            <div className='min-h-screen '>
 
             </div>
         </>

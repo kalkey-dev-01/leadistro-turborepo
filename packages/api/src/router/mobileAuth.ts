@@ -4,6 +4,11 @@ import { z } from "zod";
 import { createTRPCRouter, protectedProcedure, publicProcedure } from "../trpc";
 
 export const MobileAuthRouter = createTRPCRouter({
+  byId: publicProcedure
+    .input(z.object({ id: z.string() }))
+    .query(({ ctx, input }) => {
+      return ctx.prisma.mobileUser.findFirst({ where: { id: input.id } });
+    }),
   create: publicProcedure
     .input(
       z.object({
@@ -27,7 +32,7 @@ export const MobileAuthRouter = createTRPCRouter({
         },
       });
     }),
-  delete: protectedProcedure.input(z.string()).mutation(({ ctx, input }) => {
+  delete: publicProcedure.input(z.string()).mutation(({ ctx, input }) => {
     return ctx.prisma.post.delete({ where: { id: input } });
   }),
 });

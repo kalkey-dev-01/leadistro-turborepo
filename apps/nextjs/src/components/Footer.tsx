@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer: React.FC = () => {
     return (
-        <footer className='border-2 border-leadistroRed'>
+        <footer className='w-full border-2 border-leadistroRed'>
             <ul>
                 <li>01</li>
                 <li>02</li>
