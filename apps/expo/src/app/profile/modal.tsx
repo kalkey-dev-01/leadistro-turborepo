@@ -10,9 +10,10 @@ const SubModal = () => {
     // a full screen page. You may need to change the UI to account for this.
     const isPresented = navigation.canGoBack();
     return (
-        <View className='flex flex-col items-center justify-center w-full h-full'>
-            <Text>SubModal</Text>
-            {!isPresented && <Link href={'../'}>Dismiss</Link>}
+        <View className='flex flex-col items-center bg-leadistroBlack justify-start p-5 w-full h-full'>
+            <Text className='text-2xl text-leadistroWhite'>
+                Choose The Package That Suits You.
+            </Text>
         </View>
     )
 }

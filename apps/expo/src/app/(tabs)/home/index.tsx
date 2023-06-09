@@ -1,4 +1,4 @@
-import { View, Text, Button } from 'react-native'
+import { View, Text } from 'react-native'
 import React from 'react'
 // import { useAuth } from '~/utils/context/authContext'
 // import auth from '@react-native-firebase/auth'
