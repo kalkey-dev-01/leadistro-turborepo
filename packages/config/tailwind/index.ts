@@ -17,6 +17,7 @@ export default {
         leadistroBlack: "#101010",
         leadistroWhite: "#FAFAFA",
         leadistroRed: "#ff9580",
+        leadistroBrown: "#282624",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
