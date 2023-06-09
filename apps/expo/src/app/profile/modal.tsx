@@ -13,9 +13,9 @@ const SubscriptionRadioTag: React.FC<{
 }) => {
         return (
             <View className={`${isSelected
-                ? 'border-leadistroRed border-4'
+                ? 'border-leadistroRed border-2'
                 : 'border-leadistroWhite/50 border-2'
-                } w-[97.5%]  rounded-xl mt-10 self-center flex flex-col items-center justify-center px-4 py-3`}>
+                } w-full  rounded-xl mt-5 self-center flex flex-col items-center justify-center px-4 py-3`}>
                 <View className="flex flex-row justify-between w-full item-center">
                     <Text className='text-xl font-bold text-leadistroRed'>{name}</Text>
                     <Ionicons name={isSelected ? 'ios-radio-button-on-outline' : 'ios-radio-button-off-outline'} size={24} color="#ff9580" />
@@ -33,16 +33,22 @@ const SubModal = () => {
     // If the page was reloaded or navigated to directly, then the modal should be presented as
     // a full screen page. You may need to change the UI to account for this.
     const isPresented = navigation.canGoBack();
-    const [selected, setSelected] = React.useState<boolean>(false)
+    const [selectedMonthly, setSelectedMonthly] = React.useState<boolean>(false)
+    const [selectedYearly, setSelectedYearly] = React.useState<boolean>(false)
     return (
         <View className='flex flex-col p-5 items-center bg-leadistroBlack justify-start w-full h-full'>
             <Feather onPress={() => navigation.goBack()} name='arrow-left' size={27} style={{ position: 'absolute', top: inset.top + 20, left: inset.left + 20 }} color={'#ff9580'} />
             <View style={{ position: 'absolute', top: inset.top + 60, left: inset.left + 20 }} className='py-4 px-3 w-full h-[90vh] gap-2 items-start justify-start flex flex-col'>
                 <Text className='text-leadistroWhite tracking-wider text-3xl'>Choose a plan</Text>
-                <Text className='text-leadistroWhite/60 tracking-wider text-xl'>Monthly or Yearly? it&apos;s your call.</Text>
+                <Text className='text-leadistroWhite/60 tracking-wider text-xl mb-10'>Monthly or Yearly? it&apos;s your call.</Text>
                 {/* Creating Radio Tabs map(free, monthy, anually) */}
-                <SubscriptionRadioTag isSelected={selected} name='Monthly' />
-                <SubscriptionRadioTag isSelected={!selected} name='Anually' />
+                <TouchableOpacity className='w-full' onPress={() => setSelectedMonthly(!selectedMonthly)}>
+                    <SubscriptionRadioTag isSelected={selectedMonthly} name='Monthly' />
+                </TouchableOpacity>
+                <TouchableOpacity className='w-full' onPress={() => setSelectedYearly(!selectedYearly)} >
+                    <SubscriptionRadioTag isSelected={selectedYearly} name='Anually' />
+                </TouchableOpacity>
+
             </View>
         </View>
     )
