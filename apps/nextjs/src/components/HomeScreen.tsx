@@ -7,12 +7,12 @@ import Button from './ui/GradientBackgroundButton'
 import IMG from '../../public/OutlineMockup.png';
 import WebMockup from '../../public/DistroGPTWebMockup.png'
 import BackgroundAnimation from './BackgroundAnimations'
-import { SizeContext } from '~/utils/size-observer'
+// import { SizeContext } from '~/utils/size-observer'
 // import HowItWorks from '~/components/HowItWorks'
 export default function HomeScreen() {
-    const { innerWidth } = React.useContext(SizeContext);
-    const webMockupLGRatio = 16 / 9
-    const webMockupSMRatio = 3 / 4
+    // const { innerWidth } = React.useContext(SizeContext);
+    // const webMockupLGRatio = 16 / 9
+    // const webMockupSMRatio = 3 / 4
     return (
         <>
             <div className="relative min-h-screen min-w-full flex flex-col bg-gradient-to-t md:bg-gradient-to-r from-leadistroBlack via-leadistroBlack to-leadistroRed  md:flex-row  items-center justify-center md:justify-between">
@@ -28,20 +28,19 @@ export default function HomeScreen() {
                     </AspectRatio>
                 </div>
             </div>
-            <div className="overflow-x-hidden overflow-y-hidden min-h-screen min-w-full flex flex-col items-center justify-startr">
+            <div className="overflow-x-hidden overflow-y-hidden min-h-screen min-w-full flex flex-col items-center justify-start">
                 <div className='relative max-w-screen-md'>
                     <BackgroundAnimation />
                 </div>
-                <div className='my-10 md:my-20 flex flex-col items-center justify-center gap-4'>
+                <div className='pt-20 flex flex-col items-center justify-start gap-8'>
                     <Heading1 textChildren='Minimal Marketing Tool with Generative AI' className='font-poppins text-center md:text-left text-leadistroRed mix-blend-difference' />
                     <Heading4 textChildren='Sign In To Access All Beta Features' className='font-poppins text-leadistroBlack text-center md:text-left mix-blend-color-burn' />
                 </div>
-                <AspectRatio ratio={innerWidth > 560 ? webMockupLGRatio : webMockupSMRatio} className=''>
-                    <Image src={WebMockup} alt="WebMockup" className="pointer-events-none md:object-top object-center md:object-contain object-cover w-full h-full" />
+                <AspectRatio ratio={4 / 3} className='pb-20'>
+                    <Image src={WebMockup} alt="WebMockup" className="pointer-events-none object-center md:object-contain object-cover w-full h-full" />
                 </AspectRatio>
             </div>
-            <div className='min-h-screen '>
-
+            <div className='min-h-screen grid place-items-center bg-leadistroWhite min-w-full'>
             </div>
         </>
     )
