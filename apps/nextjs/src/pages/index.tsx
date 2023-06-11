@@ -12,6 +12,7 @@ import { Heading1, Heading3 } from "~/components/typography/Typography";
 import { AspectRatio } from "~/components/ui/aspect-ratio";
 import Image from "next/image";
 import HomeScreen from "~/components/HomeScreen";
+import { Features } from "~/components/FeatureHome";
 
 
 
@@ -75,6 +76,7 @@ import HomeScreen from "~/components/HomeScreen";
 //         <span className="mb-2 text-red-500">
 //           {error.data.zodError.fieldErrors.content}
 //         </span>
+
 //       )}
 //       <button
 //         className="rounded bg-pink-400 p-2 font-bold"

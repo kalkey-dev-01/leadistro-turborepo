@@ -32,7 +32,7 @@ export const Heading4: FC<{ textChildren: string, className?: string }> = ({ tex
 
 export const Paragraph: FC<{ textChildren: string, className?: string }> = ({ textChildren, className }) => {
     return (
-        <p className={`leading-7 [&:not(:first-child)]:mt-6 ${className}`}>
+        <p className={`text-base md:text-lg leading-normal [&:not(:first-child)]:mt-6 ${className}`}>
             {textChildren}
         </p>
     )

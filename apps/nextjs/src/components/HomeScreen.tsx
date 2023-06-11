@@ -8,18 +8,17 @@ import IMG from '../../public/OutlineMockup.png';
 import WebMockup from '../../public/DistroGPTWebMockup.png'
 import BackgroundAnimation from './BackgroundAnimations'
 import { useHorizontalScroll } from '~/utils/hooks/useHorizontalScroll'
-import { Features } from './FeatureHome'
 // import { SizeContext } from '~/utils/size-observer'
 // import HowItWorks from '~/components/HowItWorks'
 export default function HomeScreen() {
     // const { innerWidth } = React.useContext(SizeContext);
     // const webMockupLGRatio = 16 / 9
     // const webMockupSMRatio = 3 / 4
-    // const ref = useHorizontalScroll()
+    const ref = useHorizontalScroll()
     return (
         <>
             <div className="relative min-h-screen min-w-full flex flex-col bg-gradient-to-t md:bg-gradient-to-r from-leadistroBlack via-leadistroBlack to-leadistroRed  md:flex-row  items-center justify-center md:justify-between">
-                <div className='hidden absolute md:flex flex-row items-center justify-center left-0 top-8 right-0 z-20'><Button /></div>
+                <div className='hidden absolute md:flex flex-row items-center justify-center left-0 top-8 right-0'><Button /></div>
                 <div className="container flex flex-col items-start justify-center max-w-2xl md:py-36">
                     <Heading1 textChildren="Minimal Marketing App for Power Users" className="text-center md:text-left font-poppins drop-shadow-[0_5px_3px_rgba(0,0,0,0.4)] text-leadistroWhite max-w-xl mb-12" />
                     <Heading3 textChildren="Brand And Market Your Product To Your Customers With The Help Of Artificial Intelligence." className="font-poppins drop-shadow-[0_5px_3px_rgba(0,0,0,0.4)] text-center md:text-left text-leadistroWhite max-w-2xl mb-12" />
@@ -42,12 +41,6 @@ export default function HomeScreen() {
                 <AspectRatio ratio={4 / 3} className='pb-20'>
                     <Image src={WebMockup} alt="WebMockup" className="pointer-events-none object-center md:object-contain object-cover w-full h-full" />
                 </AspectRatio>
-            </div>
-            <div className="min-h-screen relative min-w-full">
-                <Features />
-            </div>
-            <div className='bg-leadistroWhite min-w-full min-h-screen'>
-
             </div>
         </>
     )

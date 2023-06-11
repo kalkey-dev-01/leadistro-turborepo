@@ -22,7 +22,7 @@ export const poppins = Poppins({
 
 const Main: FC<Props> = ({ meta, children }) => {
     return (
-        <div className={`bg-leadistroBlack flex min-w-full flex-col items-center justify-between ${poppins.variable} ${comfortaa.variable}`}>
+        <div className={`bg-leadistroBlack flex min-w-full flex-col items-center justify-center ${poppins.variable} ${comfortaa.variable}`}>
             {meta}
             <Navbar />
             {children}
