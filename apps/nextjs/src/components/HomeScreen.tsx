@@ -8,13 +8,14 @@ import IMG from '../../public/OutlineMockup.png';
 import WebMockup from '../../public/DistroGPTWebMockup.png'
 import BackgroundAnimation from './BackgroundAnimations'
 import { useHorizontalScroll } from '~/utils/hooks/useHorizontalScroll'
+import { Features } from './FeatureHome'
 // import { SizeContext } from '~/utils/size-observer'
 // import HowItWorks from '~/components/HowItWorks'
 export default function HomeScreen() {
     // const { innerWidth } = React.useContext(SizeContext);
     // const webMockupLGRatio = 16 / 9
     // const webMockupSMRatio = 3 / 4
-    const ref = useHorizontalScroll()
+    // const ref = useHorizontalScroll()
     return (
         <>
             <div className="relative min-h-screen min-w-full flex flex-col bg-gradient-to-t md:bg-gradient-to-r from-leadistroBlack via-leadistroBlack to-leadistroRed  md:flex-row  items-center justify-center md:justify-between">
@@ -42,6 +43,14 @@ export default function HomeScreen() {
                     <Image src={WebMockup} alt="WebMockup" className="pointer-events-none object-center md:object-contain object-cover w-full h-full" />
                 </AspectRatio>
             </div>
+            <div className="min-h-screen relative min-w-full">
+                <Features />
+            </div>
+            <div className='bg-leadistroWhite min-w-full min-h-screen'>
+
+            </div>
         </>
     )
 }
+
+

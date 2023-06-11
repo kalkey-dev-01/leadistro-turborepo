@@ -1,5 +1,5 @@
 // import Image from 'next/image';
-import React, { useContext, useRef } from 'react';
+import React, { type ReactNode, useContext, useRef } from 'react';
 
 // import BackdropImage from '@/public/assets/images/VerticalDiamondBg.svg';
 
@@ -44,7 +44,7 @@ export const TitleWrapper: React.FC<WrapperProps> = ({
         <FContext.Provider value={{ currentPage, numOfPages }}>
             <div
                 ref={refContainer}
-                className="relative bg-white text-black"
+                className="relative text-white "
                 style={{
                     height: `${numOfPages * 100}vh`,
                 }}
@@ -100,9 +100,9 @@ export const FeaturesContainer: React.FC<{ children: React.ReactNode }> = ({
 );
 
 export const FeaturesBackground: React.FC = () => (
-    <div className="sticky top-0 grid min-h-screen w-full grid-cols-1 bg-transparent lg:grid-cols-2">
-        <div className="h-[40vh] bg-leadistroBlack lg:h-auto"></div>
-        <div className="h-[60vh] bg-leadistroWhite lg:min-h-screen">
+    <div className="sticky top-0 grid min-h-screen w-full grid-cols-1  lg:grid-cols-2">
+        <div className="h-[50vh] bg-leadistroBlack text-leadistroRed lg:h-auto"></div>
+        <div className="h-[50vh] bg-leadistroBrown text-leadistroWhite lg:min-h-screen">
         </div>
     </div>
 );
@@ -117,9 +117,9 @@ export const FeaturesLeft: React.FC<{
             style={{
                 transform: `translateY(${translateY}px)`,
             }}
-            className="flex h-[40vh] flex-col items-center justify-center text-3xl md:items-start lg:h-auto lg:text-3xl"
+            className="flex h-[50vh] flex-col items-center justify-center text-3xl md:items-start lg:h-auto lg:text-3xl"
         >
-            <div className="leading-tight">{children}</div>
+            <div className="">{children}</div>
         </div>
     );
 };

@@ -21,3 +21,4 @@ const useAnimationFrame = (enabled: boolean, callback: () => void) => {
   }, [enabled, animate]);
 };
 export default useAnimationFrame;
+

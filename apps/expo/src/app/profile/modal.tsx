@@ -25,8 +25,17 @@ const radioData = [{
     price: "$ 284",
     per: "/yearly",
 }];
+const paymentData = [
+    {
+        optionName: 'Google Pay'
+    },
+    {
+        optionName: 'Apple Pay'
+    },
+];
 const SubscriptionRadio = () => {
-    const [checked, setChecked] = React.useState(0);
+    const [checked, setChecked] = React.useState<number>(0);
+    const [paymentOption, setPaymentOption] = React.useState(0);
     console.log(checked)
     return (
         <>
@@ -74,18 +83,18 @@ const SubscriptionRadio = () => {
                     <View className='w-full mt-4'>
                         <Text className='text-2xl text-leadistroWhite my-3 px-0.5'>Payment Method</Text>
                         <View className='flex flex-col divide-y-4  divide-leadistroBlack items-center justify-center bg-leadistroBrown   rounded-2xl'>
-                            <View className='flex flex-row py-3 px-4 items-center justify-between w-full'>
+                            <TouchableOpacity className='flex flex-row py-3 px-4 items-center justify-between w-full'>
                                 <MaterialIcons name="payment" size={24} color="#fafafa" />
                                 <Text className='text-white text-lg'>Credit Card/Debit Card.</Text>
                                 <Ionicons name='ios-radio-button-on-outline' size={24} color="#ff9580" />
-                            </View>
-                            <View className='flex flex-row py-3 px-4 items-center justify-between w-full'>
+                            </TouchableOpacity>
+                            <TouchableOpacity className='flex flex-row py-3 px-4 items-center justify-between w-full'>
                                 <FontAwesome5 name="plus" size={22} color="#ff9580" />
                                 <View className="flex space-x-14 flex-row">
                                     <Text className='text-white text-lg'>Add A Card</Text>
                                     <FontAwesome5 name="cc-visa" size={24} color="#fafafa" />
                                 </View>
-                            </View>
+                            </TouchableOpacity>
                         </View>
                         <View className='flex my-2.5 bg-leadistroBrown rounded-xl flex-row py-3 px-4 items-center justify-between w-full'>
                             <FontAwesome5 name="google-pay" size={24} color="#fafafa" />
