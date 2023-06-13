@@ -6,8 +6,8 @@ export const WorkContainer: React.FC<{ children: React.ReactNode }> = ({ childre
 
 export const WorkBackground: React.FC = () => (
     <div className="grid grid-cols-1 bg-transparent lg:grid-cols-2 w-full min-h-screen top-0 sticky">
-        <div className="bg-leadistroBrown h-[30vh] lg:h-auto"></div>
-        <div className="bg-leadistroRed h-[70vh] lg:min-h-screen"></div>
+        <div className="bg-leadistroBlack h-[30vh] lg:h-auto"></div>
+        <div className="bg-leadistroBrown h-[70vh] lg:min-h-screen"></div>
     </div>
 )
 
@@ -17,7 +17,7 @@ export const WorkLeft: React.FC<{ progress: number, children: React.ReactNode }>
     return (
         <div style={{
             transform: `translateY(${translateY}px)`
-        }} className="flex flex-col items-center justify-center h-[30vh] lg:h-auto" >
+        }} className="flex flex-col items-center px-5 md:px-8 justify-center h-[30vh] lg:h-auto" >
             <div className="text-leadistroWhite">{children}</div>
         </div>
     )

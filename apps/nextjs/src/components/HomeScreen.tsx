@@ -14,6 +14,7 @@ export default function HomeScreen() {
     const handleImageLoaded = React.useCallback(() => {
         setImageLoaded(true);
     }, [])
+    const ratio = innerWidth < 640 ? (2 / 4) : (3 / 4)
     return (
         <>
             <div
@@ -25,7 +26,7 @@ export default function HomeScreen() {
                 </div>
                 <div className='hidden absolute md:flex flex-row items-center justify-center top-24 left-0 right-0'><Button /></div>
                 <div className="container flex flex-col items-center justify-center md:py-36">
-                    <AspectRatio ratio={3 / 4} className={`transition-all duration-1000 ${imageLoaded ? 'opacity-100' : 'opacity-0 '}`}>
+                    <AspectRatio ratio={ratio} className={`p-5 md:p-0 transition-all duration-1000 ${imageLoaded ? 'opacity-100' : 'opacity-0 '}`}>
                         <Image src={IMG} alt="MobileMockup" onLoad={handleImageLoaded} className='pointer-events-none object-center md:object-contain object-cover w-full h-full ' />
                     </AspectRatio>
                 </div>

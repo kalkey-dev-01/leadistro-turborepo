@@ -6,10 +6,10 @@ import { Meta } from "~/meta/meta";
 import HomeScreen from "~/components/HomeScreen";
 import FeatureScreen from "~/components/FeatureHome";
 import { ScrollContext } from "~/utils/scroll-observer";
-import React from "react";
+import { useContext } from "react";
 
 const Home: NextPage = () => {
-  const { scrollY } = React.useContext(ScrollContext)
+  const { scrollY } = useContext(ScrollContext)
   console.log(scrollY, 'ScrollY')
   return (
     <Main meta={
