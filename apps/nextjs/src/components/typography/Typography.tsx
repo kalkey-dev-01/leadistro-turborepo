@@ -2,7 +2,7 @@ import type { FC } from "react"
 
 export const Heading1: FC<{ textChildren: string, className?: string }> = ({ textChildren, className }) => {
     return (
-        <h1 className={`scroll-m-20 text-3xl md:text-4xl font-extrabold  tracking-tight lg:text-5xl ${className}`}>
+        <h1 className={`scroll-m-20 text-[1.6rem] md:text-4xl font-extrabold  tracking-tight lg:text-5xl ${className}`}>
             {textChildren}
         </h1>
     )
@@ -32,7 +32,7 @@ export const Heading4: FC<{ textChildren: string, className?: string }> = ({ tex
 
 export const Paragraph: FC<{ textChildren: string, className?: string }> = ({ textChildren, className }) => {
     return (
-        <p className={`text-xs md:text-lg leading-normal [&:not(:first-child)]:mt-6 ${className}`}>
+        <p className={`text-xs md:text-lg lg:text-xl xl:text-2xl leading-relaxed [&:not(:first-child)]:mt-6 ${className}`}>
             {textChildren}
         </p>
     )

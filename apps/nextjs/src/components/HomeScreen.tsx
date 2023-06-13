@@ -1,5 +1,5 @@
 import React from 'react'
-import { Heading1, Heading3, Heading4 } from './typography/Typography'
+import { Heading1, Heading3, Heading4, Paragraph } from './typography/Typography'
 import { AspectRatio } from '@radix-ui/react-aspect-ratio'
 import { Button as Btn } from './ui/button'
 import Image from 'next/image'
@@ -7,6 +7,7 @@ import Button from './ui/GradientBackgroundButton'
 import IMG from '../../public/OutlineMockup.png';
 import WebMockup from '../../public/DistroGPTWebMockup.png'
 import BackgroundAnimation from './BackgroundAnimations'
+import { SizeContext } from '~/utils/size-observer'
 
 
 export default function HomeScreen() {
@@ -14,19 +15,21 @@ export default function HomeScreen() {
     const handleImageLoaded = React.useCallback(() => {
         setImageLoaded(true);
     }, [])
-    const ratio = innerWidth < 640 ? (2 / 4) : (3 / 4)
+    const { innerWidth } = React.useContext(SizeContext)
+    const ratio = innerWidth < 640 ? (1 / 2) : (3 / 4)
     return (
         <>
             <div
-                className="min-h-screen  min-w-full flex flex-col bg-gradient-to-t md:bg-gradient-to-r from-leadistroBlack via-leadistroBlack to-leadistroRed  md:flex-row  items-center justify-center md:justify-between">
-                <div className="container flex flex-col items-start justify-center max-w-2xl md:py-36">
-                    <Heading1 textChildren="Minimal Marketing App for Power Users" className="text-center md:text-left font-poppins drop-shadow-[0_5px_3px_rgba(0,0,0,0.4)] text-leadistroWhite max-w-xl mb-12" />
-                    <Heading3 textChildren="Brand And Market Your Product To Your Customers With The Help Of Artificial Intelligence." className="font-poppins drop-shadow-[0_5px_3px_rgba(0,0,0,0.4)] text-center md:text-left text-leadistroWhite max-w-2xl mb-12" />
+                className="min-h-screen  min-w-full flex flex-col relative bg-gradient-to-b md:bg-gradient-to-r from-leadistroBlack via-leadistroBlack to-leadistroRed  md:flex-row  items-center justify-center md:justify-between">
+                <div className="container flex flex-col gap-4 h-[50vh] items-center justify-center max-w-2xl">
+                    <div className="animate-blob animation-delay-6000 filter blur-md  bg-gradient-to-tr from-leadistroRed via-leadistroWhite to-leadistroRed absolute left-3 right-0 z-0 md:top-[250px] md:inline-flex  bg-leadistroRed overflow-hidden  opacity-5 w-96  h-96 rounded-full"></div>
+                    <Heading1 textChildren="Minimal Marketing App for Power Users" className="text-center md:text-left font-poppins drop-shadow-[0_5px_3px_rgba(0,0,0,0.4)] text-leadistroWhite max-w-xl mix-blend-difference" />
+                    <Paragraph textChildren="Brand And Market Your Product To Your Customers With The Help Of Artificial Intelligence." className="font-poppins drop-shadow-[0_5px_3px_rgba(0,0,0,0.4)] text-center md:text-left mix-blend-difference text-leadistroWhite max-w-2xl" />
                     <Btn variant={'outline'} className="border-2 border-leadistroRed text-leadistroWhite hover:bg-leadistroBlack/75 drop-shadow-[0_5px_3px_rgba(0,0,0,0.4)] hover:text-leadistroRed font-comfortaa md:place-self-start place-self-center">Download The Apk</Btn>
                 </div>
                 <div className='hidden absolute md:flex flex-row items-center justify-center top-24 left-0 right-0'><Button /></div>
-                <div className="container flex flex-col items-center justify-center md:py-36">
-                    <AspectRatio ratio={ratio} className={`p-5 md:p-0 transition-all duration-1000 ${imageLoaded ? 'opacity-100' : 'opacity-0 '}`}>
+                <div className="container flex h-auto flex-col items-center justify-center md:py-36">
+                    <AspectRatio ratio={ratio} className={` transition-all duration-1000 ${imageLoaded ? 'opacity-100' : 'opacity-0 '}`}>
                         <Image src={IMG} alt="MobileMockup" onLoad={handleImageLoaded} className='pointer-events-none object-center md:object-contain object-cover w-full h-full ' />
                     </AspectRatio>
                 </div>
