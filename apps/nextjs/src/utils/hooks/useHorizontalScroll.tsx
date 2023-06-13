@@ -1,11 +1,11 @@
 import { useRef, useEffect } from "react";
 
 export function useHorizontalScroll() {
-    const elRef = useRef<HTMLDivElement>();
+    const elRef = useRef<HTMLDivElement>(null);
     useEffect(() => {
         const el = elRef.current;
         if (el) {
-            const onWheel = (e) => {
+            const onWheel = (e: any) => {
                 if (e.deltaY === 0) return;
                 if (
                     !(el.scrollLeft === 0 && e.deltaY < 0) &&
