@@ -13,7 +13,7 @@ import { Separator } from './ui/seperator';
 const Navbar: React.FC = () => {
 
     return (
-        <nav className='w-full text-white mx-auto p-4 border-b-2 border-b-leadistroRed'>
+        <nav className='w-full bg-leadistroBlack text-leadistroRed mx-auto p-4 border-b-2 border-b-leadistroRed'>
             <ul className="flex flex-row justify-center items-center gap-10">
                 <li className='flex-1'>
                     <Heading3 textChildren='leadistro' className='font-comfortaa hover:cursor-pointer' />

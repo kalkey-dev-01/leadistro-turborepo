@@ -30,8 +30,8 @@ export default function HomeScreen() {
                     </AspectRatio>
                 </div>
             </div>
-            <div className="overflow-x-hidden overflow-y-hidden min-h-screen min-w-full flex flex-col items-center justify-start">
-                <div className='relative max-w-screen-md'>
+            <div className=" bg-leadistroBlack overflow-y-hidden overflow-x-hidden min-h-screen min-w-full flex flex-col items-center justify-start">
+                <div className='relative  max-w-screen-md'>
                     <BackgroundAnimation />
                 </div>
                 <div className='pt-20 flex flex-col items-center justify-start gap-8'>

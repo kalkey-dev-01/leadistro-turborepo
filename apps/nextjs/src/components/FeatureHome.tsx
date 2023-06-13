@@ -1,139 +1,111 @@
+import React from 'react'
 
-// import Image from 'next/image';
-import * as React from 'react';
+import { WorkBackground, WorkContainer, WorkLeft, WorkRight } from "./FComponents";
+import { Tile, TileBackground, TileContent, TitleWrapper } from "./features";
+import { Heading1, Heading4 } from './typography/Typography';
+
+const Works = () => (
+    <TitleWrapper numOfPages={5}>
+        <TileBackground>
+            <WorkBackground />
+        </TileBackground>
+        <TileContent>
+            <Tile page={0} renderContent={({ progress }) =>
+                <WorkContainer>
+                    <WorkLeft progress={progress}>
+                        <Heading1
+                            textChildren='Import Contacts'
+                            className='font-poppins text-center md:text-left text-leadistroRed'
+                        />
+                        <Heading4
+                            textChildren={`Easily import your marketing contacts into Leadistro. Whether it's a single contact or a list stored in a CSV or XLSX file, Leadistro allows you to seamlessly import and manage your audience data. Streamline the process of building your marketing database and ensure all your contacts are readily available for your campaigns.`}
+                            className={`font-poppins  text-leadistroRed`}
+                        />
+                    </WorkLeft>
+                    <WorkRight progress={progress}>
+                    </WorkRight>
+                </WorkContainer>
+            }></Tile>
+        </TileContent>
+        <TileContent>
+            <Tile page={1} renderContent={({ progress }) =>
+                <WorkContainer>
+                    <WorkLeft progress={progress}>
+                        <Heading1
+                            textChildren='Assign Contacts to Campaigns'
+                            className='font-poppins text-center md:text-left text-leadistroRed'
+                        />
+                        <Heading4
+                            textChildren={`Efficiently organize your contacts by assigning them to specific campaigns in Leadistro. Categorize your audience based on different criteria such as demographics, interests, or behavior. By associating contacts with relevant campaigns, you can ensure that your messaging aligns with their specific needs and interests.`}
+                            className={`font-poppins  text-leadistroRed`}
+                        />
+                    </WorkLeft>
+                    <WorkRight progress={progress}>
+                    </WorkRight>
+                </WorkContainer>
+            }></Tile>
+        </TileContent>
+        <TileContent>
+            <Tile page={2} renderContent={({ progress }) =>
+                <WorkContainer>
+                    <WorkLeft progress={progress}>
+                        <Heading1
+                            textChildren='Choose Email or Social Media Templates'
+                            className='font-poppins text-center md:text-left text-leadistroRed'
+                        />
+                        <Heading4
+                            textChildren={`Select from a wide range of professionally designed email and social media templates in Leadistro. Customize these templates to match your branding and campaign objectives. Whether you prefer to create your own templates or leverage the pre-designed options, Leadistro provides you with the flexibility to choose the perfect template for your campaign.`}
+                            className={`font-poppins   text-leadistroRed`}
+                        />
+                    </WorkLeft>
+                    <WorkRight progress={progress}>
+                    </WorkRight>
+                </WorkContainer>}></Tile>
+        </TileContent>
+        <TileContent>
+            <Tile page={3} renderContent={({ progress }) =>
+                <WorkContainer>
+                    <WorkLeft progress={progress}>
+                        <Heading1
+                            textChildren='Edit Templates or Leverage AI Assistance'
+                            className='font-poppins text-center md:text-left text-leadistroRed'
+                        />
+                        <Heading4
+                            textChildren={`Tailor your templates to align with your unique messaging by editing them within Leadistro's intuitive template editors. Make modifications to the layout, content, and visuals to create a personalized touch. Alternatively, utilize the AI-powered assistance in Leadistro to let the system suggest edits and improvements based on best practices and industry standards.`}
+                            className={'font-poppins text-center md:text-left text-leadistroRed'}
+                        />
+                    </WorkLeft>
+                    <WorkRight progress={progress}>
+                    </WorkRight>
+                </WorkContainer>}></Tile>
+        </TileContent>
+        <TileContent>
+            <Tile page={4} renderContent={({ progress }) =>
+                <WorkContainer>
+                    <WorkLeft progress={progress}>
+                        <Heading1
+                            textChildren='Confirm Sending and Success'
+                            className='font-poppins text-center md:text-left text-leadistroRed'
+                        />
+                        <Heading4
+                            textChildren={`Once you are satisfied with your campaign setup, review and confirm the details before sending it out to your audience. Leadistro provides you with a comprehensive overview of the campaign, including the target audience, selected template, and scheduled send time. After the campaign is sent, track its performance and analyze the results to measure success and optimize future campaigns.`}
+                            className={`font-poppins  text-center md:text-left text-leadistroRed`}
+                        />
+                    </WorkLeft>
+                    <WorkRight progress={progress}>
+                    </WorkRight>
+                </WorkContainer>}></Tile>
+        </TileContent>
+    </TitleWrapper>
+)
 
 
-// import btmsheet from '../../public/assets/images/btmsheet.png';
-// import distroGpt from '../../public/assets/images/distroGptMockup.png';
-import {
-    FBackground,
-    FContent,
-    TitleWrapper,
-} from '~/components/features'
-import { Heading1, Heading4, Paragraph } from './typography/Typography';
-import { FeaturesBackground, Feature, FeaturesContainer, FeaturesLeft, FeaturesRight } from './FComponents';
-
-// interface FeatureProps { }
-
-export const Features: React.FC = () => {
-    // const [scope, animate] = useAnimate<HTMLHeadingElement>();
-    // const [isPresent, safeToRemove] = usePresence();
-    // React.useEffect(() => {
-    //   if (isPresent) {
-    //     const enterAnimation = async () => {
-    //       await animate(scope.current, { x: 100 });
-    //     };
-    //     enterAnimation();
-    //   } else {
-    //     const exitAnimation = async () => {
-    //       await animate(scope.current, { x: 0 });
-    //       safeToRemove();
-    //     };
-    //     exitAnimation();
-    //   }
-    // }, [isPresent, safeToRemove]);
-    // console.log('Is the Element is in Present', isPresent);
-    // const { innerWidth } = React.useContext(SizeContext);
+const FeatureScreen: React.FC = ({ }) => {
     return (
-        <TitleWrapper numOfPages={5}>
-            <FBackground>
-                <FeaturesBackground />
-            </FBackground>
-            {/* Feature Section - 1 */}
-            <FContent>
-                <Feature
-                    page={0}
-                    renderContent={({ progress }) =>
-                        <FeaturesContainer>
-                            <FeaturesLeft progress={progress}>
-                                <Heading1 textChildren='Efficient Audience Organization' className='font-poppins text-center md:text-left text-leadistroRed ' />
-                                <Heading4 textChildren='Streamline your marketing audience management with Leadistro' className='font-poppins text-leadistroWhite text-center md:text-left' />
-                                <Paragraph className="text-leadistroWhite font-poppins" textChildren={`Easily save and organize your marketing audience within Leadistro. Whether it's adding contacts individually or importing them from spreadsheets like CSV and XLSX, Leadistro provides a seamless experience. Keep your audience data in one place, making it convenient for future campaigns and updates.`} />
-                            </FeaturesLeft>
-                            <FeaturesRight progress={progress}>
-                                <Heading1 textChildren='Minimal Marketing Tool with Generative AI' className='font-poppins text-center md:text-left text-leadistroRed ' />
-                                <Heading4 textChildren='Sign In To Access All Beta Features' className='font-poppins text-leadistroWhite text-center md:text-left' />
-                            </FeaturesRight>
-                        </FeaturesContainer>
-                    }
-                ></Feature>
-            </FContent>
-            {/* Feature Section - 2 */}
-            <FContent>
-                <Feature
-                    page={1}
-                    renderContent={({ progress }) =>
-                        <FeaturesContainer>
-                            <FeaturesLeft progress={progress}>
-                                <Heading1 textChildren='Engaging Campaigns, Simplified' className='font-poppins text-center md:text-left text-leadistroRed ' />
-                                <Heading4 textChildren='Create impactful email and social media campaigns with ease' className='font-poppins text-leadistroWhite text-center md:text-left' />
-                                <Paragraph className="text-leadistroWhite font-poppins" textChildren={`With Leadistro's intuitive interface, running campaigns has never been easier. Choose from a variety of email and social media templates provided by Leadistro, or unleash your creativity with the template editors. Customize templates to align with your brand and message, ensuring your campaigns leave a lasting impression.`} />
-                            </FeaturesLeft>
-                            <FeaturesRight progress={progress}>
-                                <Heading1 textChildren='Minimal Marketing Tool with Generative AI' className='font-poppins text-center md:text-left text-leadistroRed ' />
-                                <Heading4 textChildren='Sign In To Access All Beta Features' className='font-poppins text-leadistroWhite text-center md:text-left' />
-                            </FeaturesRight>
-                        </FeaturesContainer>
-                    }
-                ></Feature>
-            </FContent>
-            {/* Feature Section - 3 */}
-            <FContent>
-                <Feature
-                    page={2}
-                    renderContent={({ progress }) =>
-                        <FeaturesContainer>
-                            <FeaturesLeft progress={progress}>
-                                <Heading1 textChildren='AI-powered Marketing Enhancements' className='font-poppins text-center md:text-left text-leadistroRed ' />
-                                <Heading4 textChildren={`Leverage the power of Leadistro's AI capabilities for enhanced marketing`} className='font-poppins text-leadistroWhite text-center md:text-left' />
-                                <Paragraph className="text-leadistroWhite font-poppins" textChildren={`Take advantage of Leadistro's AI technology, powered by Vertex AI from Google Cloud. Boost your ecommerce efforts with AI-generated product descriptions that captivate your customers. Generate letters or emails effortlessly, saving you time and effort in your email marketing campaigns. Unlock the potential of AI with Leadistro's ad copy generation, providing you with suggestions to create different versions of ads for targeted audiences.`} />
-                            </FeaturesLeft>
-                            <FeaturesRight progress={progress}>
-                                <Heading1 textChildren='Minimal Marketing Tool with Generative AI' className='font-poppins text-center md:text-left text-leadistroRed ' />
-                                <Heading4 textChildren='Sign In To Access All Beta Features' className='font-poppins text-leadistroWhite text-center md:text-left' />
-                            </FeaturesRight>
-                        </FeaturesContainer>
-                    }
-                ></Feature>
-            </FContent>
-            {/* Feature Section - 4 */}
-            <FContent>
-                <Feature
-                    page={3}
-                    renderContent={({ progress }) =>
-                        <FeaturesContainer>
-                            <FeaturesLeft progress={progress}>
-                                <Heading1 textChildren='Targeted Personalization and Segmentation' className='font-poppins text-center md:text-left text-leadistroRed ' />
-                                <Heading4 textChildren='Reach the right audience with tailored messages' className='font-poppins text-leadistroWhite text-center md:text-left' />
-                                <Paragraph className="text-leadistroWhite font-poppins" textChildren='Leadistro empowers you to deliver personalized marketing campaigns. Segment your audience based on various criteria and create tailored messages to cater to specific groups. Unlock advanced personalization features to engage your audience on a deeper level. By delivering targeted messages, you increase the effectiveness of your campaigns and achieve better results.' />
-                            </FeaturesLeft>
-                            <FeaturesRight progress={progress}>
-                                <Heading1 textChildren='Minimal Marketing Tool with Generative AI' className='font-poppins text-center md:text-left text-leadistroRed ' />
-                                <Heading4 textChildren='Sign In To Access All Beta Features' className='font-poppins text-leadistroWhite text-center md:text-left' />
-                            </FeaturesRight>
-                        </FeaturesContainer>
-                    }
-                ></Feature>
-            </FContent>
-            {/* Feature Section - 5 */}
-            <FContent>
-                <Feature
-                    page={4}
-                    renderContent={({ progress }) =>
-                        <FeaturesContainer>
-                            <FeaturesLeft progress={progress}>
-                                <Heading1 textChildren='Copywriting Made Effortless' className='font-poppins text-center md:text-left text-leadistroRed ' />
-                                <Heading4 textChildren='Simplify your copywriting process with Leadistro' className='font-poppins text-leadistroWhite text-center md:text-left' />
-                                <Paragraph className="text-leadistroWhite font-poppins" textChildren={`With Leadistro, generating compelling copy is a breeze. Whether you need to create ad copies or write engaging descriptions, Leadistro's AI-powered capabilities provide valuable assistance. Utilize the description-based ad copy generation feature to effortlessly create ad copies based on product descriptions. Let Leadistro be your writing companion, helping you craft persuasive content that resonates with your audience.`} />
-                            </FeaturesLeft>
-                            <FeaturesRight progress={progress}>
-                                <Heading1 textChildren='Minimal Marketing Tool with Generative AI' className='font-poppins text-center md:text-left text-leadistroRed ' />
-                                <Heading4 textChildren='Sign In To Access All Beta Features' className='font-poppins text-leadistroWhite text-center md:text-left' />
-                            </FeaturesRight>
-                        </FeaturesContainer>
-                    }
-                ></Feature>
-            </FContent>
-        </TitleWrapper>
-    );
-};
+        <div className='min-h-screen min-w-full'>
+            <Works />
+        </div>
+    )
+}
+
+export default FeatureScreen
