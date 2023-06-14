@@ -17,7 +17,7 @@ export const Heading2: FC<{ textChildren: string, className?: string }> = ({ tex
 }
 export const Heading3: FC<{ textChildren: string, className?: string }> = ({ textChildren, className }) => {
     return (
-        <h3 className={`scroll-m-20 text-2xl font-semibold tracking-tight ${className}`}>
+        <h3 className={`scroll-m-20 text-2xl font-semibold tracking-wide ${className}`}>
             {textChildren}
         </h3>
     )

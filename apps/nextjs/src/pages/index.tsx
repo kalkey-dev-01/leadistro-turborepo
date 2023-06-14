@@ -7,6 +7,8 @@ import HomeScreen from "~/components/HomeScreen";
 import FeatureScreen from "~/components/FeatureHome";
 import { ScrollContext } from "~/utils/scroll-observer";
 import { useContext } from "react";
+import PricingScreen from "~/components/PricingScreen";
+import Horiz from "~/components/HorizontalPage";
 
 const Home: NextPage = () => {
   const { scrollY } = useContext(ScrollContext)
@@ -17,6 +19,10 @@ const Home: NextPage = () => {
     }>
       <HomeScreen />
       <FeatureScreen />
+      <PricingScreen />
+      <div className="min-h-screen min-w-full">
+        <Horiz />
+      </div>
     </Main>
   );
 };
