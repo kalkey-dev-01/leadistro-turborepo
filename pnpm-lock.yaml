@@ -112,6 +112,9 @@ importers:
       react-native-ios-context-menu:
         specifier: ^1.15.3
         version: 1.15.3(react-native@0.71.8)(react@18.2.0)
+      react-native-razorpay:
+        specifier: ^2.3.0
+        version: 2.3.0(react-native@0.71.8)(react@18.2.0)
       react-native-safe-area-context:
         specifier: 4.5.2
         version: 4.5.2(react-native@0.71.8)(react@18.2.0)
@@ -10251,6 +10254,16 @@ packages:
       react-native: '*'
     dependencies:
       prop-types: 15.8.1
+      react: 18.2.0
+      react-native: 0.71.8(@babel/core@7.21.8)(@babel/preset-env@7.21.5)(react@18.2.0)
+    dev: false
+
+  /react-native-razorpay@2.3.0(react-native@0.71.8)(react@18.2.0):
+    resolution: {integrity: sha512-xxiZCPuZmiRq5UHDr+D4OoyxEjMu0ujC+RaE+rYo938EK0Vc21dZRUVxMVP1L2WgzA8PYwmD5FWvdHNtWLQC4Q==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-native: '>=0.66.0'
+    dependencies:
       react: 18.2.0
       react-native: 0.71.8(@babel/core@7.21.8)(@babel/preset-env@7.21.5)(react@18.2.0)
     dev: false
