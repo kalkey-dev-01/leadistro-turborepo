@@ -81,8 +81,25 @@ model SingleContact {
 }
 
 model Lead {
-    id           String  @id @default(cuid())
-    emailAddress String  @unique
-    vip          Boolean @default(false)
-    subscribed   Boolean @default(false)
+    id           String    @id @default(cuid())
+    emailAddress String    @unique
+    vip          Boolean   @default(false)
+    subscribed   Boolean   @default(false)
+    Campaign     Campaign? @relation(fields: [campaignId], references: [id])
+    campaignId   String?
+    createdAt    DateTime  @default(now())
+    updatedAt    DateTime  @updatedAt
+}
+
+model Campaign {
+    id          String   @id @default(cuid())
+    name        String
+    url         String   @unique
+    subject     String
+    previewText String
+    senderName  String
+    senderEmail String
+    createdAt   DateTime @default(now())
+    updatedAt   DateTime @updatedAt
+    leads       Lead[]
 }
