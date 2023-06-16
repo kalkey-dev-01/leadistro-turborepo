@@ -9,11 +9,25 @@ import Image from 'next/image';
 import img from '../../public/logoBlack.png'
 import { comfortaa, poppins } from '~/templates/Main';
 import { Separator } from './ui/seperator';
+import { ScrollContext } from '~/utils/scroll-observer';
 // import { Comfortaa, Poppins } from 'next/font/google';
 const Navbar: React.FC = () => {
-
+    const [showNav, setShowNav] = React.useState(false)
+    const { scrollY } = React.useContext(ScrollContext)
+    const handleScroll = () => {
+        setShowNav(window.scrollY < scrollY);
+    };
+    React.useEffect(() => {
+        document.addEventListener('scroll', handleScroll, { passive: true });
+        return () => document.removeEventListener('scroll', handleScroll);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [scrollY]);
+    // {`fixed z-50  w-full border-b-[0.75px] border-b-leadistroWhite/25 px-8 backdrop-blur-[6px]  transition-all duration-300 ${
+    //     showNav ? 'top-0' : '-top-16'
+    //   }`}
     return (
-        <nav className='w-full bg-leadistroBlack text-leadistroRed mx-auto p-4 border-b-2 border-b-leadistroRed'>
+        <nav className={`fixed z-50 transition-all duration-300 ${showNav ? 'top-0' : '-top-16'
+            } w-full bg-leadistroBlack text-leadistroRed mx-auto p-4 border-b-2 border-b-leadistroRed`}>
             <ul className="flex flex-row justify-center items-center gap-10">
                 <li className='flex-1'>
                     <Heading3 textChildren='leadistro' className='font-comfortaa hover:cursor-pointer' />
