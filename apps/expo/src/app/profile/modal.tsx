@@ -96,7 +96,34 @@ const SubscriptionRadio = () => {
                                 </View>
                             </TouchableOpacity>
                         </View>
-                        <View className='flex my-2.5 bg-leadistroBrown rounded-xl flex-row py-3 px-4 items-center justify-between w-full'>
+                        {paymentData.map((value, key) => {
+                            return (
+                                <View className="w-full" key={value.optionName}>
+                                    {paymentOption == key ? (
+                                        <>
+                                            <TouchableOpacity className='flex my-2.5 bg-leadistroBrown rounded-xl flex-row py-3 px-4 items-center justify-between w-full'>
+                                                <FontAwesome5 name="google-pay" size={24} color="#fafafa" />
+                                                <View className="flex space-x-14 flex-row">
+                                                    <Text className='text-white text-lg'>{value.optionName}</Text>
+                                                    <Ionicons name='ios-radio-button-on-outline' size={24} color="#ff9580" />
+                                                </View>
+                                            </TouchableOpacity>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <TouchableOpacity onPress={() => setPaymentOption(key)} className='flex bg-leadistroBrown rounded-xl flex-row py-3 px-4 items-center justify-between w-full'>
+                                                <FontAwesome5 name="apple-pay" size={24} color="#fafafa" />
+                                                <View className="flex space-x-14 flex-row">
+                                                    <Text className='text-white text-lg'>{value.optionName}</Text>
+                                                    <Ionicons name='ios-radio-button-off-outline' size={24} color="#ff9580" />
+                                                </View>
+                                            </TouchableOpacity>
+                                        </>
+                                    )}
+                                </View>
+                            )
+                        })}
+                        {/* <View className='flex my-2.5 bg-leadistroBrown rounded-xl flex-row py-3 px-4 items-center justify-between w-full'>
                             <FontAwesome5 name="google-pay" size={24} color="#fafafa" />
                             <View className="flex space-x-14 flex-row">
                                 <Text className='text-white text-lg'>Google Pay</Text>
@@ -109,7 +136,7 @@ const SubscriptionRadio = () => {
                                 <Text className='text-white text-lg'>Apple Pay</Text>
                                 <Ionicons name='ios-radio-button-off-outline' size={24} color="#ff9580" />
                             </View>
-                        </View>
+                        </View> */}
                         <View className='flex flex-row items-center justify-evenly w-full mt-14 p-3 rounded-full bg-leadistroRed '>
                             <Text className='text-leadistroBlack text-xl font-extrabold'>
                                 Pay
@@ -117,8 +144,28 @@ const SubscriptionRadio = () => {
                         </View>
                     </View>
                     :
-                    <View className='w-full bg-leadistroWhite h-60 mt-8 rounded-3xl'>
-
+                    <View className='flex flex-col items-start justify-start p-5 w-full bg-leadistroBrown border-2 border-leadistroRed/50 h-60 mt-8 rounded-3xl'>
+                        <Text className='text-xl font-extrabold text-leadistroWhite tracking-wide'>
+                            leadistro Freemium Beta
+                        </Text>
+                        <Text className='text-lg font-semibold text-leadistroRed tracking-tight' >
+                            Features
+                        </Text>
+                        <Text className='text-base font-normal text-leadistroWhite tracking-wide' >
+                            -  Audience storage
+                        </Text>
+                        <Text className='text-base font-normal text-leadistroWhite tracking-wide' >
+                            -  Prebuilt email and social media templates
+                        </Text>
+                        <Text className='text-base font-normal text-leadistroWhite tracking-wide' >
+                            -  Basic campaign management tools
+                        </Text>
+                        <Text className='text-base font-normal text-leadistroWhite tracking-wide' >
+                            -  Basic AI Help.
+                        </Text>
+                        <Text className='text-sm py-2 px-4 font-extrabold text-leadistroWhite tracking-tighter'>
+                            Upgrade To Enjoy More Features.
+                        </Text>
                     </View>
             }
         </>

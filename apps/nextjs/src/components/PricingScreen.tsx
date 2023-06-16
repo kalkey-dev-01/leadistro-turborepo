@@ -1,6 +1,8 @@
 import React from 'react'
-import { Heading1, Heading3, Paragraph } from './typography/Typography'
+import { Heading1, Heading3 } from './typography/Typography'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card'
+import { Button } from './ui/button'
+import { motion } from 'framer-motion'
 
 const PricingScreen: React.FC = () => {
     return (
@@ -15,41 +17,76 @@ const PricingScreen: React.FC = () => {
                 <p className='font-poppins font-medium text-center text-leadistroWhite max-w-screen-md leading-relaxed [&:not(:first-child)]:mt-6'>
                     Leadistro offers flexible pricing plans to cater to businesses of all sizes. Whether you&apos;re a startup or an enterprise, we have the right plan to help you optimize your email marketing campaigns and achieve your marketing goals. Select the plan that suits your requirements and take your marketing efforts to the next level.
                 </p>
-                <div className="flex flex-col space-x-2 md:flex-row items-center bg-leadistroBrown p-3 justify-between max-w-screen-lg h-full">
-                    <Card className='text-leadistroWhite font-poppins w-[400px] bg-leadistroBlack border-leadistroWhite/70 border-2 h-[500px]'>
+                <div className="flex flex-col space-x-2 md:flex-row items-center mt-10 bg-leadistroBrown justify-between max-w-screen-lg h-full">
+                    <Card className='w-[400px] h-[500px] text-leadistroWhite font-poppins bg-leadistroBlack border-leadistroWhite/70 border-2 '>
                         <CardHeader>
-                            <CardTitle className='text-2xl' >Free</CardTitle>
-                            <CardDescription>Get Started for Free</CardDescription>
+                            <CardTitle className='text-2xl'>Free</CardTitle>
+                            <CardDescription className='text-xl'>Get Started for Free</CardDescription>
                         </CardHeader>
-                        <CardContent>
-                            <p></p>
+                        <CardContent className='md:text-left'>
+                            <p className='text-sm leading-relaxed [&:not(:first-child)]:mt-6' >
+                                Audience storage
+                            </p>
+                            <p className='text-sm leading-relaxed [&:not(:first-child)]:mt-6' >
+                                Basic campaign management tools
+                            </p>
+                            <p className='text-sm leading-relaxed [&:not(:first-child)]:mt-6' >
+                                Prebuilt email and social media templates
+                            </p>
                         </CardContent>
-                        <CardFooter>
-                            <p></p>
+                        <CardFooter className='flex items-center justify-center'>
+                            <Button variant={'ghost'}>Get Started</Button>
                         </CardFooter>
                     </Card>
-                    <Card className='text-leadistroWhite font-poppins w-[400px] bg-leadistroBlack border-leadistroRed border-2 h-[500px]'>
+                    <Card className='w-[450px] h-[550px] text-leadistroWhite font-poppins bg-leadistroBlack border-leadistroRed border-2'>
                         <CardHeader>
-                            <CardTitle className='text-2xl' >Card Title</CardTitle>
-                            <CardDescription>Card Description</CardDescription>
+                            <CardTitle className='text-2xl'>Standard Plan - $29/month</CardTitle>
+                            <CardDescription className='text-xl'>Unlock Enhanced Marketing Capabilities</CardDescription>
                         </CardHeader>
                         <CardContent>
-                            <p></p>
+                            <p className='text-sm leading-relaxed [&:not(:first-child)]:mt-6' >
+                                Expanded audience storage
+                            </p>
+                            <p className='text-sm leading-relaxed [&:not(:first-child)]:mt-6' >
+                                Prebuilt email and social media templates
+                            </p>
+                            <p className='text-sm leading-relaxed [&:not(:first-child)]:mt-6' >
+                                AI assistance for content optimization
+                            </p>
+                            <p className='text-sm leading-relaxed [&:not(:first-child)]:mt-6' >
+                                Advanced campaign management tools
+                            </p>
                         </CardContent>
-                        <CardFooter>
-                            <p></p>
+                        <CardFooter className='flex items-center justify-center'>
+                            <motion.div whileHover={{ scale: 1.1 }}>
+                                <Button variant={'outline'} className='bg-leadistroBlack border-2 border-leadistroRed'>Choose Standard Plan</Button>
+                            </motion.div>
                         </CardFooter>
                     </Card>
-                    <Card className='text-leadistroWhite font-poppins w-[400px] bg-leadistroBlack border-leadistroWhite/70 border-2 h-[500px]'>
+                    <Card className='w-[400px] h-[500px] text-leadistroWhite font-poppins bg-leadistroBlack border-leadistroWhite/70 border-2 '>
                         <CardHeader>
-                            <CardTitle className='text-2xl' >Card Title</CardTitle>
-                            <CardDescription>Card Description</CardDescription>
+                            <CardTitle className='text-2xl' >Pro Plan - $99/month</CardTitle>
+                            <CardDescription className='text-xl'>Unleash the Full Potential of Your Marketing</CardDescription>
                         </CardHeader>
-                        <CardContent>
-                            <p></p>
+                        <CardContent className='text-xl'>
+                            <p className='text-sm leading-relaxed [&:not(:first-child)]:mt-6' >
+                                Extended audience storage
+                            </p>
+                            <p className='text-sm leading-relaxed [&:not(:first-child)]:mt-6' >
+                                Prebuilt email and social media templates
+                            </p>
+                            <p className='text-sm leading-relaxed [&:not(:first-child)]:mt-6' >
+                                Advanced AI assistance for content creation and optimization
+                            </p>
+                            <p className='text-sm leading-relaxed [&:not(:first-child)]:mt-6' >
+                                Advanced campaign management tools
+                            </p>
+                            <p className='text-sm leading-relaxed [&:not(:first-child)]:mt-6' >
+                                Enhanced reporting and analytics
+                            </p>
                         </CardContent>
-                        <CardFooter>
-                            <p></p>
+                        <CardFooter className='flex items-center justify-center'>
+                            <Button variant={'ghost'}>Choose Pro Plan</Button>
                         </CardFooter>
                     </Card>
                 </div>
