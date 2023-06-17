@@ -1,7 +1,6 @@
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
 import React from 'react'
-import { Feather } from '@expo/vector-icons'
-
+import { Feather, Ionicons } from '@expo/vector-icons'
 
 const ActionBar: React.FC = () => {
     return (
@@ -37,19 +36,52 @@ const ActionBar: React.FC = () => {
 const TasksBar: React.FC = () => {
     return (
         <>
-            <View className='bg-leadistroBrown rounded-xl space-y-2 flex flex-col items-start p-4 justify-start w-full h-[80vh]'>
-                <Text className='font-bold tracking-wider text-leadistroRed'>
-                    Leads Growth
-                </Text>
-                <Text className='font-bold tracking-wider text-leadistroRed'>
-                    Engagement
-                </Text>
-                <Text className='font-bold tracking-wider text-leadistroRed'>
-                    Subscribers Today
-                </Text>
-                <Text className='font-bold tracking-wider text-leadistroRed'>
-                    Imported Leads History
-                </Text>
+            <View className='bg-leadistroBrown rounded-xl space-y-14 flex flex-col items-center p-4 justify-start w-full h-[200vh]'>
+                <View className='w-full rounded-3xl border-leadistroRed space-y-2 pt-1 border-2 flex flex-col items-start justify-center'>
+                    <>
+                        <View className="w-full flex flex-row items-center p-3 justify-between">
+                            <Text className='font-bold text-lg tracking-wider text-leadistroWhite'>
+                                Leads Growth
+                            </Text>
+                            <Ionicons name={`people-circle-outline`} size={20} color={'#fafafa'} />
+                        </View>
+                    </>
+                    <View className='rounded-b-3xl  w-full h-[20vh] bg-leadistroBrown/70' />
+                </View>
+                <View className='w-full rounded-3xl border-leadistroRed space-y-2 pt-1 border-2 flex flex-col items-start justify-center'>
+                    <>
+                        <View className="w-full flex flex-row items-center p-3 justify-between">
+                            <Text className='font-bold text-lg tracking-wider text-leadistroWhite'>
+                                Engagement
+                            </Text>
+                            <Ionicons name={`grid-outline`} size={20} color={'#fafafa'} />
+                        </View>
+                    </>
+                    <View className='rounded-b-3xl  w-full h-[20vh] bg-leadistroBrown/70' />
+                </View>
+                <View className='w-full rounded-3xl border-leadistroRed space-y-2 pt-1 border-2 flex flex-col items-start justify-center'>
+                    <>
+                        <View className="w-full flex flex-row items-center p-3 justify-between">
+                            <Text className='font-bold text-lg tracking-wider text-leadistroWhite'>
+                                Subscribers Today
+                            </Text>
+                            <Ionicons name={`alarm`} size={20} color={'#fafafa'} />
+                        </View>
+                    </>
+                    <View className='rounded-b-3xl  w-full h-[20vh] bg-leadistroBrown/70' />
+                </View>
+                <View className='w-full rounded-3xl border-leadistroRed space-y-2 pt-1 border-2 flex flex-col items-start justify-center'>
+                    <>
+                        <View className="w-full flex flex-row items-center p-3 justify-between">
+                            <Text className='font-bold text-lg tracking-wider text-leadistroWhite'>
+                                Imported Leads History
+                            </Text>
+                            <Ionicons name={`refresh`} size={20} color={'#fafafa'} />
+                        </View>
+                    </>
+                    <View className='rounded-b-3xl  w-full h-[20vh] bg-leadistroBrown/70' />
+                </View>
+
             </View>
         </>
     )

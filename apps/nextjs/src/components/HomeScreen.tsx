@@ -21,7 +21,7 @@ export default function HomeScreen() {
         <>
             <div
                 className="min-h-screen min-w-full flex flex-col bg-gradient-to-b md:bg-gradient-to-r from-leadistroBlack via-leadistroBlack to-leadistroRed  md:flex-row  items-center justify-center md:justify-between">
-                <div className="container flex flex-col gap-4 h-[50vh] items-center justify-center max-w-2xl">
+                <div className="container flex flex-col gap-4 h-auto items-center justify-center max-w-2xl">
                     <AnimatePresence>
                         <m.div
                             transition={{ ease: "linear", duration: 0.75, x: { duration: 0.751 }, opacity: { duration: 0.751 }, staggerChildren: 0.5 }}
@@ -49,7 +49,7 @@ export default function HomeScreen() {
                     </AnimatePresence>
                 </div>
                 <div
-                    className='hidden absolute md:flex flex-row items-center justify-center top-24 left-0 right-0'
+                    className='hidden absolute md:flex flex-row items-center justify-center top-16 z-40 left-0 right-0'
                 >
                     <AnimatePresence>
                         <m.div
