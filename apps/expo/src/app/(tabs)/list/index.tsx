@@ -81,7 +81,6 @@ const TasksBar: React.FC = () => {
                     </>
                     <View className='rounded-b-3xl  w-full h-[20vh] bg-leadistroBrown/70' />
                 </View>
-
             </View>
         </>
     )
