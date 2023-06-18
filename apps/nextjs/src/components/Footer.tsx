@@ -6,25 +6,25 @@ import { Button } from './ui/button';
 const Footer: React.FC = () => {
     return (
         <footer className='w-full flex flex-col items-center justify-center bg-leadistroBlack text-leadistroWhite'>
-            <div className="flex w-full p-4 items-center justify-between">
-                <div className='flex space-y-4 flex-col items-start justify-start font-poppins'>
+            <div className="flex md:flex-row flex-col w-full p-4 items-center justify-between">
+                <div className='flex space-y-4 py-4 md:py-0 flex-col justify-center items-start md:justify-start font-poppins'>
                     <Image src={`/logoWhite.png`} alt={'Logo'} loading='lazy' width={30} height={30} className='rounded-sm' />
                     <h3 className='scroll-m-20 text-xl font-semibold max-w-xs tracking-wide'>
                         Growing up your business and ours with leadistro.
                     </h3>
                     <p className='text-sm leading-relaxed'>leadistro, 2023.</p>
                 </div>
-                <div className='grid font-poppins text-xs place-items-start gap-4 p-4 grid-cols-1 md:grid-cols-3'>
+                <div className='grid font-poppins text-xs place-self-start place-items-center md:place-items-start gap-4 md:p-4 p-2  grid-cols-3'>
                     {/* Header {1} */}
-                    <p className='text-leadistroWhite/90 font-semibold pl-3'>Platform</p>
+                    <p className='text-leadistroWhite/90 font-semibold md:pl-3'>Platform</p>
                     {/* Header {2} */}
-                    <p className='text-leadistroWhite/90 font-semibold pl-3'>Company</p>
+                    <p className='text-leadistroWhite/90 font-semibold md:pl-3'>Company</p>
                     {/* Header {3} */}
                     <p className='text-leadistroWhite/90 font-semibold place-self-start text-sm'>Get The App</p>
                     <Button size={'sm'} variant={'ghost'} className='rounded-xl text-xs'>Dashboard</Button>
                     <Button size={'sm'} variant={'ghost'} className='rounded-xl text-xs'>Blog</Button>
                     <Button size={'sm'} variant={'outline'} className='flex rounded-full hover:bg-leadistroBrown hover:text-leadistroRed hover:border-leadistroRed items-center justify-center space-x-2'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className='text-leadistroRed' ><circle cx="12" cy="12" r="10" /><line x1="2" x2="22" y1="12" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className='text-leadistroRed' ><circle cx="12" cy="12" r="10" /><line x1="2" x2="22" y1="12" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
                         <p>
                             Web App
                         </p>

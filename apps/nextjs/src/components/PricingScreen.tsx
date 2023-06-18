@@ -7,18 +7,18 @@ import { motion } from 'framer-motion'
 const PricingScreen: React.FC = () => {
     return (
         <>
-            <div className="min-h-screen min-w-full flex flex-col items-center justify-start md:py-16 bg-leadistroBrown">
+            <div className="min-h-screen py-20 min-w-full flex font-poppins flex-col items-center justify-start  bg-leadistroBrown">
                 <Heading1
                     textChildren='Pricing'
-                    className='font-poppins text-leadistroWhite mb-5' />
+                    className='md:text-left text-center text-leadistroWhite mb-5' />
                 <Heading3
                     textChildren='Choose the Plan That Fits Your Needs'
-                    className='font-poppins text-leadistroRed' />
-                <p className='font-poppins font-medium text-center text-leadistroWhite max-w-screen-md leading-relaxed [&:not(:first-child)]:mt-6'>
+                    className='md:text-left text-center text-leadistroRed' />
+                <p className='font-medium text-center text-leadistroWhite max-w-screen-md leading-relaxed [&:not(:first-child)]:mt-6'>
                     Leadistro offers flexible pricing plans to cater to businesses of all sizes. Whether you&apos;re a startup or an enterprise, we have the right plan to help you optimize your email marketing campaigns and achieve your marketing goals. Select the plan that suits your requirements and take your marketing efforts to the next level.
                 </p>
-                <div className="flex flex-col space-x-2 md:flex-row items-center mt-10 bg-leadistroBrown justify-between max-w-screen-lg h-full">
-                    <Card className='w-[400px] h-[500px] text-leadistroWhite font-poppins bg-leadistroBlack border-leadistroWhite/70 border-2 '>
+                <div className="flex flex-col space-y-4 p-2 md:space-x-2 md:flex-row items-center mt-10 bg-leadistroBrown justify-between max-w-screen-lg h-full">
+                    <Card className='h-auto w-auto text-leadistroWhite bg-leadistroBlack border-leadistroWhite/70 border-2 '>
                         <CardHeader>
                             <CardTitle className='text-2xl'>Free</CardTitle>
                             <CardDescription className='text-xl'>Get Started for Free</CardDescription>
@@ -38,7 +38,7 @@ const PricingScreen: React.FC = () => {
                             <Button variant={'ghost'}>Get Started</Button>
                         </CardFooter>
                     </Card>
-                    <Card className='w-[450px] h-[550px] text-leadistroWhite font-poppins bg-leadistroBlack border-leadistroRed border-2'>
+                    <Card className='h-auto w-auto text-leadistroWhite bg-leadistroBlack border-leadistroRed border-2'>
                         <CardHeader>
                             <CardTitle className='text-2xl'>Standard Plan - $29/month</CardTitle>
                             <CardDescription className='text-xl'>Unlock Enhanced Marketing Capabilities</CardDescription>
@@ -63,7 +63,7 @@ const PricingScreen: React.FC = () => {
                             </motion.div>
                         </CardFooter>
                     </Card>
-                    <Card className='w-[400px] h-[500px] text-leadistroWhite font-poppins bg-leadistroBlack border-leadistroWhite/70 border-2 '>
+                    <Card className='h-auto w-auto text-leadistroWhite bg-leadistroBlack border-leadistroWhite/70 border-2 '>
                         <CardHeader>
                             <CardTitle className='text-2xl' >Pro Plan - $99/month</CardTitle>
                             <CardDescription className='text-xl'>Unleash the Full Potential of Your Marketing</CardDescription>
