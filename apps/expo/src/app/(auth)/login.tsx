@@ -20,7 +20,7 @@ GoogleSignin.configure({
 
 
 const Login: React.FC = () => {
-    const { mutateAsync } = api.mobileAuth.create.useMutation()
+    const { mutateAsync, mutate } = api.mobileAuth.create.useMutation()
     // const user = useAtomValue(FirebaseUserAtom);
     // const users = useAuth()
     // console.log('Whats the User In Login Screen', users);
@@ -36,7 +36,7 @@ const Login: React.FC = () => {
                 emailVerified: user.user.emailVerified,
                 userName: user.user.displayName as string,
                 providerId: user.user.providerId,
-                photoUrl: user.user.photoURL as string
+                photoUrl: user.user.photoURL as string,
             }).catch(e => console.log(e.message)).then(value => { console.log(value) })
             console.log(user, 'from Promise and the mutate ends')
         }).catch((error) => {

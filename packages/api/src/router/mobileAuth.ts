@@ -1,7 +1,7 @@
 // import { MobileUser } from './../../../../node_modules/.prisma/client/index.d';
 import { z } from "zod";
 
-import { createTRPCRouter, protectedProcedure, publicProcedure } from "../trpc";
+import { createTRPCRouter, publicProcedure } from "../trpc";
 
 export const MobileAuthRouter = createTRPCRouter({
   byId: publicProcedure

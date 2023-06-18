@@ -26,24 +26,27 @@ const Navbar: React.FC = () => {
     //     showNav ? 'top-0' : '-top-16'
     //   }`}
     return (
-        <nav className={`fixed z-50 transition-all duration-300 ${showNav ? 'top-0' : '-top-16'
-            } w-full bg-leadistroBlack text-leadistroRed mx-auto p-4 border-b-2 border-b-leadistroRed`}>
-            <ul className="flex flex-row justify-center items-center gap-10">
+        <nav className={`fixed z-50 transition-all duration-100 ${showNav ? 'top-0' : '-top-16'
+            } w-full bg-leadistroBlack text-leadistroWhite mx-auto p-4 border-b-2 border-b-leadistroRed`}>
+            <ul className="flex flex-row justify-center items-center space-x-3">
                 <li className='flex-1'>
                     <Heading3 textChildren='leadistro' className='font-comfortaa hover:cursor-pointer' />
                 </li>
-                <li>
-                    <Heading4 textChildren='Blog' className='hidden md:inline-flex font-poppins hover:text-leadistroRed hover:cursor-pointer' />
-                </li>
-                <li>
-                    <Heading4 textChildren='Features' className='hidden md:inline-flex font-poppins hover:text-leadistroRed hover:cursor-pointer' />
-                </li>
-                <li>
-                    <Heading4 textChildren='Pricing' className='hidden md:inline-flex font-poppins hover:text-leadistroRed hover:cursor-pointer' />
-                </li>
-                <li>
-                    <Heading4 textChildren='Download' className='hidden md:inline-flex font-poppins hover:text-leadistroRed hover:cursor-pointer' />
-                </li>
+                <Button variant={'ghost'} className='text-leadistroWhite'>
+                    <Heading4 textChildren='Blog' className='hidden md:inline-flex font-poppins' />
+                </Button>
+                <Button variant={'ghost'} className='text-leadistroWhite'>
+                    <Heading4 textChildren='Features' className='hidden md:inline-flex font-poppins' />
+                </Button>
+                <Button variant={'ghost'} className='text-leadistroWhite'>
+                    <Heading4 textChildren='Pricing' className='hidden md:inline-flex font-poppins' />
+                </Button>
+                <Button variant={'outline'} className='text-leadistroWhite hover:text-leadistroRed hover:bg-leadistroBrown hover:border-leadistroRed'>
+                    <Heading4 textChildren='Download' className='hidden md:inline-flex font-poppins' />
+                </Button>
+                <Button variant={'ghost'} className='text-leadistroWhite hover:text-leadistroRed hover:bg-leadistroBrown'>
+                    <Heading4 textChildren='Register' className='hidden md:inline-flex font-poppins' />
+                </Button>
                 <li>
                     <Sheet>
                         <SheetTrigger asChild>

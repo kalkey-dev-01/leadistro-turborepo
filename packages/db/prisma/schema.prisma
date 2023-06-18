@@ -48,13 +48,14 @@ model Session {
 }
 
 model User {
-    id            String    @id @default(cuid())
+    id            String      @id @default(cuid())
     name          String?
-    email         String?   @unique
+    email         String?     @unique
     emailVerified DateTime?
     image         String?
     accounts      Account[]
     sessions      Session[]
+    mobileAccount MobileUser? @relation(fields: [email], references: [email])
 }
 
 model VerificationToken {
@@ -68,11 +69,13 @@ model VerificationToken {
 model MobileUser {
     id            String   @id @unique
     userName      String
-    email         String
+    email         String   @unique
     emailVerified Boolean
     providerId    String
     photoUrl      String
     createdAt     DateTime @default(now())
+
+    User User?
 }
 
 model Lead {
