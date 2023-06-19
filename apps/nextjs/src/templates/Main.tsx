@@ -6,6 +6,7 @@ import Footer from '~/components/Footer';
 import Navbar from '~/components/Navbar';
 // import { useFollowPointer, useMousePosition } from '~/utils/use-follow-pointer';
 
+
 type Props = {
     meta: ReactNode;
     children: ReactNode;
@@ -79,5 +80,16 @@ const Main: FC<Props> = ({ meta, children }) => {
         </div>
     );
 }
+
+export const LoginMain: FC<Props> = ({ meta, children }) => {
+    return (
+        <div className={`flex min-h-screen min-w-full flex-col items-center justify-between ${poppins.variable} ${comfortaa.variable}`}>
+            {meta}
+            {children}
+        </div>
+    );
+}
+
+
 
 export default Main

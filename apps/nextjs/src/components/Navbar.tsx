@@ -10,8 +10,10 @@ import img from '../../public/logoBlack.png'
 import { comfortaa, poppins } from '~/templates/Main';
 import { Separator } from './ui/seperator';
 import { ScrollContext } from '~/utils/scroll-observer';
+import { useRouter } from 'next/router';
 // import { Comfortaa, Poppins } from 'next/font/google';
 const Navbar: React.FC = () => {
+    const navigation = useRouter()
     const [showNav, setShowNav] = React.useState(false)
     const { scrollY } = React.useContext(ScrollContext)
     const handleScroll = () => {
@@ -32,20 +34,20 @@ const Navbar: React.FC = () => {
                 <li className='flex-1'>
                     <Heading3 textChildren='leadistro' className='font-comfortaa hover:cursor-pointer' />
                 </li>
-                <Button variant={'ghost'} className='text-leadistroWhite'>
+                <Button variant={'ghost'} className='text-leadistroWhite/95 hover:text-leadistroWhite hover:bg-leadistroBrown/20'>
                     <Heading4 textChildren='Blog' className='hidden md:inline-flex font-poppins' />
                 </Button>
-                <Button variant={'ghost'} className='text-leadistroWhite'>
+                <Button variant={'ghost'} className='text-leadistroWhite/95 hover:text-leadistroWhite hover:bg-leadistroBrown/20'>
                     <Heading4 textChildren='Features' className='hidden md:inline-flex font-poppins' />
                 </Button>
-                <Button variant={'ghost'} className='text-leadistroWhite'>
+                <Button variant={'ghost'} className='text-leadistroWhite/95 hover:text-leadistroWhite hover:bg-leadistroBrown/20'>
                     <Heading4 textChildren='Pricing' className='hidden md:inline-flex font-poppins' />
                 </Button>
-                <Button variant={'outline'} className='text-leadistroWhite hover:text-leadistroRed hover:bg-leadistroBrown hover:border-leadistroRed'>
-                    <Heading4 textChildren='Download' className='hidden md:inline-flex font-poppins' />
-                </Button>
-                <Button variant={'ghost'} className='text-leadistroWhite hover:text-leadistroRed hover:bg-leadistroBrown'>
+                <Button onClick={() => void navigation.push('/login')} variant={'ghost'} className='text-leadistroWhite/95 hover:text-leadistroWhite hover:bg-leadistroBrown/60'>
                     <Heading4 textChildren='Register' className='hidden md:inline-flex font-poppins' />
+                </Button>
+                <Button variant={'ghost'} className='text-leadistroWhite/95 hover:text-leadistroWhite hover:bg-leadistroBrown/60'>
+                    <Heading4 textChildren='Download' className='hidden md:inline-flex font-poppins' />
                 </Button>
                 <li>
                     <Sheet>
