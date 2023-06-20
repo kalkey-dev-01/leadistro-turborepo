@@ -8,6 +8,7 @@ import FeatureScreen from "~/components/FeatureHome";
 import { ScrollContext } from "~/utils/scroll-observer";
 import { useContext } from "react";
 import PricingScreen from "~/components/PricingScreen";
+import { api } from "~/utils/api";
 // import Horiz from "~/components/HorizontalPage";
 
 const Home: NextPage = () => {

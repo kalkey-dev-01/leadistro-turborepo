@@ -40,13 +40,11 @@ model Account {
 }
 
 model Session {
-    id           String     @id @default(cuid())
-    sessionToken String     @unique
+    id           String   @id @default(cuid())
+    sessionToken String   @unique
     userId       String
     expires      DateTime
-    user         User       @relation(fields: [userId], references: [id], onDelete: Cascade)
-    mobileUser   MobileUser @relation(fields: [mobileUserId], references: [id])
-    mobileUserId String     @unique
+    user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model User {
@@ -68,14 +66,13 @@ model VerificationToken {
 }
 
 model MobileUser {
-    id            String    @id @unique
+    id            String   @id @unique
     userName      String
-    email         String    @unique
+    email         String   @unique
     emailVerified Boolean
     providerId    String
     photoUrl      String
-    createdAt     DateTime  @default(now())
-    Session       Session[]
+    createdAt     DateTime @default(now())
 }
 
 model Lead {

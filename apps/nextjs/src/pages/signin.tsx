@@ -1,36 +1,36 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+import { Command } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
+import React from 'react'
+import { Button, buttonVariants } from '~/components/ui/button'
+import { Meta } from '~/meta/meta'
+import { LoginMain } from '~/templates/Main'
 import { cn } from '~/utils/utils'
-import { buttonVariants } from "~/components/ui/button"
-import { UserAuthForm } from '~/components/user-auth-screen.tsx';
-import { Command } from 'lucide-react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { LoginMain } from '~/templates/Main';
-import { Meta } from '~/meta/meta';
 import img from '../../public/ChatUi.svg'
+import { Icons } from '~/components/icons'
+import { signIn } from 'next-auth/react'
+import { api } from '~/utils/api'
+import { useRouter } from 'next/router'
+import { Skeleton } from '~/components/ui/skeleton'
 
+const SignIn: React.FC = () => {
+    const { data: session, isLoading: isSessionLoading } = api.auth.getSession.useQuery()
+    // If Session Does not return null or undefined navigate user to dashboard or reload the sign in page
+    const router = useRouter()
+    if (session) {
+        void router.push('/')
+    }
+    // If Session is loading return Skeleton
+    if (isSessionLoading) {
+        return (
+            <>
+                <Skeleton />
+            </>
+        )
+    }
 
-export default function LoginScreen() {
     return (
-        <LoginMain meta={
-            <Meta title="Sign Up" description="Register Your Account to use leadistro" />
-        }>
-            {/* <div className="md:hidden">
-                <Image
-                    src={img}
-                    width={1280}
-                    height={843}
-                    alt="Authentication"
-                    className="block"
-                />
-                <Image
-                    src={img}
-                    width={1280}
-                    height={843}
-                    alt="Authentication"
-                    className="hidden"
-                />
-            </div> */}
+        <LoginMain meta={<Meta title='Sign In' description='Sign Into Leadistro' />}>
             <div className="container font-poppins relative h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
                 <Link
                     href={'#'}
@@ -39,7 +39,7 @@ export default function LoginScreen() {
                         "absolute right-4 top-4 md:right-8 md:top-8"
                     )}
                 >
-                    Register
+                    Sign In first to Go to dashboard
                 </Link>
                 <div className="relative hidden h-full flex-col bg-muted p-10 text-white lg:flex">
                     <div
@@ -73,10 +73,10 @@ export default function LoginScreen() {
                                 Create an account
                             </h1>
                             <p className="text-sm text-muted-foreground">
-                                Enter your email below to create your account
+                                Click Sign In With Google below to create your account
                             </p>
                         </div>
-                        <UserAuthForm />
+                        <Button onClick={() => void signIn('google')} variant={'outline'}><Icons.google className='mr-2 h-6 w-6' /> Sign In with Google</Button>
                         <p className="px-8 text-center text-sm text-muted-foreground">
                             By clicking continue, you agree to our{" "}
                             <Link
@@ -100,3 +100,5 @@ export default function LoginScreen() {
         </LoginMain>
     )
 }
+
+export default SignIn

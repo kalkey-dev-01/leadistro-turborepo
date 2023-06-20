@@ -11,8 +11,11 @@ import { comfortaa, poppins } from '~/templates/Main';
 import { Separator } from './ui/seperator';
 import { ScrollContext } from '~/utils/scroll-observer';
 import { useRouter } from 'next/router';
+import { signIn, signOut } from 'next-auth/react';
+import { api } from '~/utils/api';
 // import { Comfortaa, Poppins } from 'next/font/google';
 const Navbar: React.FC = () => {
+    const { data: session } = api.auth.getSession.useQuery()
     const navigation = useRouter()
     const [showNav, setShowNav] = React.useState(false)
     const { scrollY } = React.useContext(ScrollContext)
@@ -43,8 +46,11 @@ const Navbar: React.FC = () => {
                 <Button variant={'ghost'} className='text-leadistroWhite/95 hover:text-leadistroWhite hover:bg-leadistroBrown/20'>
                     <Heading4 textChildren='Pricing' className='hidden md:inline-flex font-poppins' />
                 </Button>
-                <Button onClick={() => void navigation.push('/login')} variant={'ghost'} className='text-leadistroWhite/95 hover:text-leadistroWhite hover:bg-leadistroBrown/60'>
-                    <Heading4 textChildren='Register' className='hidden md:inline-flex font-poppins' />
+                <Button
+                    onClick={session ? () => void signOut() : () => void signIn()}
+                    variant={'ghost'}
+                    className='text-leadistroWhite/95 hover:text-leadistroWhite hover:bg-leadistroBrown/60'>
+                    <Heading4 textChildren={session ? "Sign out" : "Sign in"} className='hidden md:inline-flex font-poppins' />
                 </Button>
                 <Button variant={'ghost'} className='text-leadistroWhite/95 hover:text-leadistroWhite hover:bg-leadistroBrown/60'>
                     <Heading4 textChildren='Download' className='hidden md:inline-flex font-poppins' />
