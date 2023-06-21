@@ -14,18 +14,22 @@ import { useRouter } from 'next/router'
 import { Skeleton } from '~/components/ui/skeleton'
 
 const SignIn: React.FC = () => {
-    const { data: session, isLoading: isSessionLoading } = api.auth.getSession.useQuery()
+    const { data: session, isLoading: isSessionLoading, error, isError } = api.auth.getSession.useQuery()
     // If Session Does not return null or undefined navigate user to dashboard or reload the sign in page
     const router = useRouter()
     if (session) {
         void router.push('/')
     }
+    // if session has error logging error and is error 
+    if (isError) {
+        console.log(error.message)
+    }
     // If Session is loading return Skeleton
     if (isSessionLoading) {
         return (
-            <>
-                <Skeleton />
-            </>
+            <div className='min-h-screen w-full flex items-center justify-center'>
+                <Skeleton className='w-full h-full' />
+            </div>
         )
     }
 
