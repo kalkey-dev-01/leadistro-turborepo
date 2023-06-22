@@ -8,6 +8,7 @@ import { api } from "~/utils/api";
 import { Comfortaa, Poppins } from 'next/font/google'
 import SizeObserver from "~/utils/size-observer";
 import ScrollObserver from "~/utils/scroll-observer";
+import MouseObserver from "~/utils/mouse-observer";
 const comfortaa = Comfortaa({
   subsets: ['latin'],
   variable: '--font-comfortaa',
@@ -24,13 +25,15 @@ const MyApp: AppType<{ session: Session | null }> = ({
 }) => {
   return (
     <SessionProvider session={session}>
-      <SizeObserver>
-        <ScrollObserver>
-          <main className={`${comfortaa.variable} ${poppins.variable}`}>
-            <Component {...pageProps} />
-          </main>
-        </ScrollObserver>
-      </SizeObserver>
+      <MouseObserver>
+        <SizeObserver>
+          <ScrollObserver>
+            <main className={`${comfortaa.variable} ${poppins.variable}`}>
+              <Component {...pageProps} />
+            </main>
+          </ScrollObserver>
+        </SizeObserver>
+      </MouseObserver>
     </SessionProvider>
   );
 };

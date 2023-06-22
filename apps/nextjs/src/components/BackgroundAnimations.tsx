@@ -1,8 +1,13 @@
+// import { useInView } from 'framer-motion'
 import React from 'react'
 
 const BackgroundAnimation: React.FC = () => {
+    // const ref = React.useRef<HTMLDivElement>(null)
+    // const inView = useInView(ref)
+    // console.log(inView, 'Element is in view');
+
     return (
-        <div className='absolute top-3 left-0 right-0'>
+        <div className={`absolute top-3 left-0 right-0`}>
             <div className="animate-blob animation-delay-6000 filter blur-xl  bg-gradient-to-tr from-leadistroRed via-leadistroWhite to-leadistroRed absolute top-0 hidden md:inline-flex md:-left-96   bg-leadistroRed  w-80  h-80 rounded-full"></div>
             <div className="animate-blob animation-delay-2000 filter blur-xl  bg-gradient-to-tr from-leadistroRed via-leadistroWhite to-leadistroRed absolute top-0 -left-4 md:-left-40   bg-leadistroRed  w-80  h-80 rounded-full"></div>
             <div className="animate-blob animation-delay-4000 filter blur-xl  bg-gradient-to-l from-leadistroRed via-leadistroRed to-slate-300 absolute top-0 -right-4 md:-right-80  bg-leadistroRed  w-80  h-80 rounded-full"></div>
