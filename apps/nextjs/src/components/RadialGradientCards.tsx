@@ -9,9 +9,10 @@ interface Props {
     cardDescription: string;
     contentPoints: string[];
     buttonText: string;
+    variant: "default" | "link" | "destructive" | "outline" | "secondary" | "ghost" | null | undefined
 }
 
-const RadialGradientCard: React.FC<Props> = ({ buttonText, cardDescription, contentPoints, cardTitle }) => {
+const RadialGradientCard: React.FC<Props> = ({ buttonText, cardDescription, contentPoints, cardTitle, variant }) => {
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
     console.log('render');
@@ -29,18 +30,18 @@ const RadialGradientCard: React.FC<Props> = ({ buttonText, cardDescription, cont
         mouseY.set(clientY - top);
     }
     return (
-        <div className='my-6'>
+        <div className='md:my-20 my-10'>
             <div
                 onMouseMove={handleMouseMove}
                 className="relative max-w-md overflow-hidden rounded-3xl border-2 border-leadistroRed/70 group"
             >
                 <motion.div className='absolute -inset-px rounded-3xl group-hover:opacity-100 opacity-0 transition duration-300 pointer-events-none'
                     style={{
-                        background: useMotionTemplate`radial-gradient(400px circle at ${mouseX}px ${mouseY}px,rgba(255, 149,  128, 0.3), transparent 70%)`
+                        background: useMotionTemplate`radial-gradient(400px circle at ${mouseX}px ${mouseY}px,rgba(255, 149,  128, 0.15), transparent 70%)`
                     }}
                 />
                 {/* This is the card down here Here border is set to transparent to avoid any other issues of the card */}
-                <Card className='w-[25vw]  text-leadistroWhite  bg-transparent font-poppins border-transparent'>
+                <Card className='md:w-[25vw] bg-leadistroBlack text-leadistroWhite  font-poppins border-transparent'>
                     <CardHeader>
                         <CardTitle className='text-2xl'>{cardTitle}</CardTitle>
                         <CardDescription className='text-xl'>{cardDescription}</CardDescription>
@@ -55,8 +56,8 @@ const RadialGradientCard: React.FC<Props> = ({ buttonText, cardDescription, cont
                             )
                         }
                     </CardContent>
-                    <CardFooter className='flex z-10 items-center justify-center'>
-                        <Button className='mix-blend-color-dodge' variant={'ghost'}>{buttonText}</Button>
+                    <CardFooter className='flex items-center justify-center'>
+                        <Button variant={variant}>{buttonText}</Button>
                     </CardFooter>
                 </Card>
             </div>

@@ -2,21 +2,19 @@ import React from 'react'
 import { Heading4, Heading3 } from './typography/Typography';
 import { MenuSquareIcon } from 'lucide-react';
 import { Sheet, SheetClose, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from './ui/sheet';
-import { Label } from './ui/label';
-import { Input } from './ui/input';
 import { Button } from './ui/button';
 import Image from 'next/image';
 import img from '../../public/logoBlack.png'
 import { comfortaa, poppins } from '~/templates/Main';
 import { Separator } from './ui/seperator';
 import { ScrollContext } from '~/utils/scroll-observer';
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 import { signIn, signOut } from 'next-auth/react';
 import { api } from '~/utils/api';
 // import { Comfortaa, Poppins } from 'next/font/google';
 const Navbar: React.FC = () => {
     const { data: session } = api.auth.getSession.useQuery()
-    const navigation = useRouter()
+    // const navigation = useRouter()
     const [showNav, setShowNav] = React.useState(false)
     const { scrollY } = React.useContext(ScrollContext)
     const handleScroll = () => {
@@ -31,8 +29,8 @@ const Navbar: React.FC = () => {
     //     showNav ? 'top-0' : '-top-16'
     //   }`}
     return (
-        <nav className={`fixed z-50 transition-all duration-100 ${showNav ? 'top-0' : '-top-16'
-            } w-full bg-leadistroBlack text-leadistroWhite mx-auto p-4 border-b-2 border-b-leadistroRed`}>
+        <nav className={`fixed z-50 transition-all duration-700 ${showNav ? 'top-0' : '-top-20'
+            } w-full bg-leadistroBlack/80 backdrop-blur-[6px] text-leadistroWhite mx-auto p-4 border-b-2 border-b-leadistroRed`}>
             <ul className="flex flex-row justify-center items-center space-x-3">
                 <li className='flex-1'>
                     <Heading3 textChildren='leadistro' className='font-comfortaa hover:cursor-pointer' />
@@ -89,3 +87,41 @@ const Navbar: React.FC = () => {
 }
 
 export default Navbar;
+
+// export const NavigationBar: React.FC = () => {
+//     const { data: session } = api.auth.getSession.useQuery()
+//     // const navigation = useRouter()
+//     const [showNav, setShowNav] = React.useState(false)
+//     const { scrollY } = React.useContext(ScrollContext)
+//     const handleScroll = () => {
+//         setShowNav(window.scrollY < scrollY);
+//     };
+//     React.useEffect(() => {
+//         document.addEventListener('scroll', handleScroll, { passive: true });
+//         return () => document.removeEventListener('scroll', handleScroll);
+//         // eslint-disable-next-line react-hooks/exhaustive-deps
+//     }, [scrollY]);
+//     // {`fixed z-50  w-full border-b-[0.75px] border-b-leadistroWhite/25 px-8 backdrop-blur-[6px]  transition-all duration-300 ${
+//     //     showNav ? 'top-0' : '-top-16'
+//     //   }`}
+//     return (
+//         <nav className={`fixed z-50 transition-all duration-100 ${showNav ? 'top-0' : '-top-16'
+//             } w-full font-poppins mx-auto p-4 max-w-screen-md`}>
+//             <div className="w-[173px] h-[53px] px-[35px] py-[13px] left-[0px] top-[0px] absolute bg-stone-800 rounded-[999px] justify-center items-center gap-[10px] inline-flex">
+//                 <div className="text-white text-[18px] font-semibold"></div>
+//             </div>
+//             <div className="w-[157px] h-[53px] px-[35px] py-[13px] left-[184px] top-[0px] absolute bg-stone-800 rounded-[999px] justify-center items-center gap-[10px] inline-flex">
+//                 <div className="text-white text-[18px] font-semibold"></div>
+//             </div>
+//             <div className="w-[168px] h-[53px] px-[35px] py-[13px] left-[353px] top-[0px] absolute bg-stone-800 rounded-[999px] justify-center items-center gap-[10px] inline-flex">
+//                 <div className="text-white text-[18px] font-semibold"></div>
+//             </div>
+//             <div className="w-[187px] h-[53px] px-[35px] py-[13px] left-[532px] top-[0px] absolute bg-stone-800 rounded-[999px] justify-center items-center gap-[10px] inline-flex">
+//                 <div className="text-white text-[18px] font-semibold"></div>
+//             </div>
+//             <div className="w-32 h-[53px] px-[35px] py-[13px] left-[728px] top-[0px] absolute bg-stone-800 rounded-[999px] justify-center items-center gap-[10px] inline-flex">
+//                 <div className="text-white text-[18px] font-semibold"></div>
+//             </div>
+//         </nav>
+//     )
+// }

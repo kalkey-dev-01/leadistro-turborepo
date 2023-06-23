@@ -76,7 +76,7 @@ export default function HomeScreen() {
                     <Heading4 textChildren='Sign In To Access All Beta Features' className='font-poppins text-leadistroBlack text-center md:text-left mix-blend-color-burn' />
                 </div>
                 <AspectRatio ratio={4 / 3} className={`transition-all duration-1000 ${imageLoaded ? 'opacity-100' : 'opacity-0 '}`}>
-                    <Image src={WebMockup} alt="WebMockup" className="pointer-events-none object-center md:object-contain object-cover w-full h-full" />
+                    <Image src={WebMockup} alt="WebMockup" className="pointer-events-none p-5 object-center md:object-contain object-cover w-full h-full" />
                 </AspectRatio>
             </div>
         </>

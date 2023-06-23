@@ -19,8 +19,9 @@ const PricingScreen: React.FC = () => {
                 <p className='font-medium text-center text-leadistroWhite max-w-screen-md leading-relaxed [&:not(:first-child)]:mt-6'>
                     Leadistro offers flexible pricing plans to cater to businesses of all sizes. Whether you&apos;re a startup or an enterprise, we have the right plan to help you optimize your email marketing campaigns and achieve your marketing goals. Select the plan that suits your requirements and take your marketing efforts to the next level.
                 </p>
-                <div className='flex md:flex-row space-x-4 flex-col items-center justify-center w-full'>
+                <div className='flex md:flex-row space-x-4 flex-col items-start justify-center w-full'>
                     <RadialGradientCard
+                        variant={'ghost'}
                         buttonText='Get Started'
                         cardDescription='Get Started for Free'
                         cardTitle='Free'
@@ -31,6 +32,7 @@ const PricingScreen: React.FC = () => {
                         ]}
                     />
                     <RadialGradientCard
+                        variant={'outline'}
                         buttonText='Choose Standard Plan'
                         cardDescription='Unlock Enhanced Marketing Capabilities'
                         cardTitle='Standard Plan - $29/month'
@@ -42,6 +44,7 @@ const PricingScreen: React.FC = () => {
                         ]}
                     />
                     <RadialGradientCard
+                        variant={'ghost'}
                         buttonText='Premium Plan'
                         cardDescription='Premium Plan for everything'
                         cardTitle='Premium Plan - $49/month'
