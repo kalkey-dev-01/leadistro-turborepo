@@ -1,14 +1,15 @@
 import React from 'react'
-import { Heading1, Heading4, Paragraph } from './typography/Typography'
+import { Heading1, Heading2, Heading4, Paragraph } from './typography/Typography'
 import { AspectRatio } from '@radix-ui/react-aspect-ratio'
 import { Button as Btn } from './ui/button'
 import Image from 'next/image'
 import Button from './ui/GradientBackgroundButton'
 import IMG from '../../public/OutlineMockup.png';
-import WebMockup from '../../public/DistroGPTWebMockup.png'
+// import WebMockup from '../../public/DistroGPTWebMockup.png'
 import BackgroundAnimation from './BackgroundAnimations'
 import { SizeContext } from '~/utils/size-observer'
 import { AnimatePresence, motion as m } from 'framer-motion'
+// import { RGradientCard } from './RadialGradientCards'
 
 export default function HomeScreen() {
     const [imageLoaded, setImageLoaded] = React.useState(false);
@@ -76,21 +77,23 @@ export default function HomeScreen() {
                     <Heading4 textChildren='Sign In To Access All Beta Features' className='font-poppins text-leadistroBlack text-center md:text-left mix-blend-color-burn' />
                 </div>
                 {/* Initiate bento grids design here use tailwind css container queries  */}
-                <div className="grid min-h-screen max-w-screen-lg z-0 w-full @container grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 ">
-                    <div className="bg-leadistroWhite ">
+                <div className="grid min-h-screen max-w-screen-lg md:max-w-screen-xl w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4 py-5 px-4 md:py-10 md:px-16">
+                    <div className="bg-leadistroBlack/80 border-2 flex flex-col items-center justify-center border-leadistroWhite/60 backdrop-blur-sm rounded-3xl @container ">
+                        <Heading2 textChildren="Minimal Marketing Tool" className="font-poppins text-leadistroWhite" />
 
                     </div>
-                    <div className="bg-leadistroWhite ">
+                    <div className="bg-gradient-to-b border-2 border-leadistroWhite/50 from-leadistroBlack/70 to-leadistroBrown/70 backdrop-blur-sm  rounded-3xl @container ">
 
                     </div>
-                    <div className="bg-leadistroWhite ">
+                    <div className="bg-leadistroBrown md:row-span-2 rounded-3xl @container ">
 
                     </div>
-                    <div className="bg-leadistroWhite ">
+
+                    <div className="bg-leadistroBrown/40 backdrop-blur-sm md:col-span-2 rounded-3xl @container ">
 
                     </div>
                 </div>
-            </div>
+            </div >
         </>
     )
 }

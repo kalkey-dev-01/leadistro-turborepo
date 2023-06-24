@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 // import { MouseContext } from '~/utils/mouse-observer'
 import { useMotionTemplate, useMotionValue, motion } from 'framer-motion'
 import { Button } from './ui/button';
-
+// import { cn } from '~/utils/utils'
 interface Props {
     cardTitle: string;
     cardDescription: string;
@@ -30,7 +30,7 @@ const RadialGradientCard: React.FC<Props> = ({ buttonText, cardDescription, cont
         mouseY.set(clientY - top);
     }
     return (
-        <div className='md:my-20 my-10'>
+        <div className=''>
             <div
                 onMouseMove={handleMouseMove}
                 className="relative max-w-md overflow-hidden rounded-3xl group"
@@ -67,3 +67,42 @@ const RadialGradientCard: React.FC<Props> = ({ buttonText, cardDescription, cont
 
 export default RadialGradientCard
 
+
+
+// export type RGradientCardProps = React.HTMLAttributes<HTMLDivElement>
+
+
+
+// const RGradientCard = React.forwardRef<HTMLDivElement, RGradientCardProps>(
+//     ({ className, ...props }, ref) => {
+//         const mouseX = useMotionValue(0);
+//         const mouseY = useMotionValue(0);
+//         console.log('render');
+
+//         function handleMouseMove({ clientX, clientY, currentTarget }: React.MouseEvent) {
+//             const { top, left } = currentTarget.getBoundingClientRect();
+//             mouseX.set(clientX - left);
+//             mouseY.set(clientY - top);
+//         }
+//         return (
+//             <div className=''>
+//                 <div
+//                     onMouseMove={handleMouseMove}
+//                     className="relative max-w-md overflow-hidden rounded-3xl group"
+//                 >
+//                     <motion.div className='absolute -inset-px rounded-3xl group-hover:opacity-100 opacity-0 transition duration-300 pointer-events-none'
+//                         style={{
+//                             background: useMotionTemplate`radial-gradient(400px circle at ${mouseX}px ${mouseY}px,rgba(255, 149,  128, 0.125), transparent 70%)`
+//                         }}
+//                     />
+//                     {/* This is the card down here Here border is set to transparent to avoid any other issues of the card */}
+//                     <div className={cn(" font-poppins border-transparent", className)} ref={ref} {...props} />
+//                 </div>
+//             </div>
+//         )
+//     }
+// )
+
+
+// RGradientCard.displayName = 'RGradientCard'
+// export { RGradientCard }
