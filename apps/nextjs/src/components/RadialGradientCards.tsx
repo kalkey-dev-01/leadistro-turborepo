@@ -33,18 +33,18 @@ const RadialGradientCard: React.FC<Props> = ({ buttonText, cardDescription, cont
         <div className='md:my-20 my-10'>
             <div
                 onMouseMove={handleMouseMove}
-                className="relative max-w-md overflow-hidden rounded-3xl border-2 border-leadistroRed/70 group"
+                className="relative max-w-md overflow-hidden rounded-3xl group"
             >
                 <motion.div className='absolute -inset-px rounded-3xl group-hover:opacity-100 opacity-0 transition duration-300 pointer-events-none'
                     style={{
-                        background: useMotionTemplate`radial-gradient(400px circle at ${mouseX}px ${mouseY}px,rgba(255, 149,  128, 0.15), transparent 70%)`
+                        background: useMotionTemplate`radial-gradient(400px circle at ${mouseX}px ${mouseY}px,rgba(255, 149,  128, 0.125), transparent 70%)`
                     }}
                 />
                 {/* This is the card down here Here border is set to transparent to avoid any other issues of the card */}
                 <Card className='md:w-[25vw] bg-leadistroBlack text-leadistroWhite  font-poppins border-transparent'>
                     <CardHeader>
                         <CardTitle className='text-2xl'>{cardTitle}</CardTitle>
-                        <CardDescription className='text-xl'>{cardDescription}</CardDescription>
+                        <CardDescription className='text-xl text-leadistroRed/80 '>{cardDescription}</CardDescription>
                     </CardHeader>
                     <CardContent className='md:text-left'>
                         {

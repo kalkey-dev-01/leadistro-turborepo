@@ -58,7 +58,7 @@ const Navbar: React.FC = () => {
                         <SheetTrigger asChild>
                             <MenuSquareIcon className='md:hidden inline-flex text-leadistroWhite h-8 w-8 hover:text-leadistroRed' />
                         </SheetTrigger>
-                        <SheetContent className='flex flex-col font-poppins items-center justify-start bg-gradient-to-b bg-leadistroBlack' position={'right'} size={'xl'}>
+                        <SheetContent className='flex flex-col font-poppins items-center justify-start bg-gradient-to-b bg-leadistroBlack' side={'right'}>
                             <SheetHeader>
                                 <SheetTitle className='w-fit h-fit rounded-[23px] from-border border-4 border-leadistroRed/75 bg-leadistroBlack'>
                                     {/* <AspectRatio ratio={1 / 1}>

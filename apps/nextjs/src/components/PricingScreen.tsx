@@ -1,8 +1,5 @@
 import React from 'react'
 import { Heading1, Heading3 } from './typography/Typography'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card'
-import { Button } from './ui/button'
-import { motion } from 'framer-motion'
 import RadialGradientCard from './RadialGradientCards'
 
 const PricingScreen: React.FC = () => {
@@ -19,7 +16,7 @@ const PricingScreen: React.FC = () => {
                 <p className='font-medium text-center text-leadistroWhite max-w-screen-md leading-relaxed [&:not(:first-child)]:mt-6'>
                     Leadistro offers flexible pricing plans to cater to businesses of all sizes. Whether you&apos;re a startup or an enterprise, we have the right plan to help you optimize your email marketing campaigns and achieve your marketing goals. Select the plan that suits your requirements and take your marketing efforts to the next level.
                 </p>
-                <div className='flex md:flex-row space-x-4 flex-col items-start justify-center w-full'>
+                <div className='flex md:flex-row space-x-6 flex-col items-start justify-center w-full'>
                     <RadialGradientCard
                         variant={'ghost'}
                         buttonText='Get Started'

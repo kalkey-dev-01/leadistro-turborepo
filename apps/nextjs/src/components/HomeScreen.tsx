@@ -75,12 +75,27 @@ export default function HomeScreen() {
                     <Heading1 textChildren='Minimal Marketing Tool with Generative AI' className='font-poppins text-center md:text-left text-leadistroRed mix-blend-difference' />
                     <Heading4 textChildren='Sign In To Access All Beta Features' className='font-poppins text-leadistroBlack text-center md:text-left mix-blend-color-burn' />
                 </div>
-                <AspectRatio ratio={4 / 3} className={`transition-all duration-1000 ${imageLoaded ? 'opacity-100' : 'opacity-0 '}`}>
-                    <Image src={WebMockup} alt="WebMockup" className="pointer-events-none p-5 object-center md:object-contain object-cover w-full h-full" />
-                </AspectRatio>
+                {/* Initiate bento grids design here use tailwind css container queries  */}
+                <div className="grid min-h-screen max-w-screen-lg z-0 w-full @container grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 ">
+                    <div className="bg-leadistroWhite ">
+
+                    </div>
+                    <div className="bg-leadistroWhite ">
+
+                    </div>
+                    <div className="bg-leadistroWhite ">
+
+                    </div>
+                    <div className="bg-leadistroWhite ">
+
+                    </div>
+                </div>
             </div>
         </>
     )
 }
 
+// <AspectRatio ratio={4 / 3} className={`transition-all duration-1000 ${imageLoaded ? 'opacity-100' : 'opacity-0 '}`}>
+//                     <Image src={WebMockup} alt="WebMockup" className="pointer-events-none p-5 object-center md:object-contain object-cover w-full h-full" />
+//                 </AspectRatio>
 
