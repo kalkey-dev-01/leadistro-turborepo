@@ -19,7 +19,7 @@ export const TileContext = React.createContext<TileContextValue>({
 export const TitleWrapper: React.FC<WrapperProps> = ({ numOfPages, children }) => {
     const { scrollY } = useContext(ScrollContext)
     const refContainer = useRef<HTMLDivElement>(null)
-    console.log(scrollY)
+    // console.log(scrollY)
     let currentPage = 0
     const { current: elContainer } = refContainer
     if (elContainer) {
