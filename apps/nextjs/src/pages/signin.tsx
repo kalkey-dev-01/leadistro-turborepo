@@ -64,7 +64,9 @@ const SignIn: React.FC = () => {
                     <div className="relative z-20 mt-auto">
                         <blockquote className="space-y-2">
                             <p className="text-base">
-                                &ldquo;This App is if not one of the best generative Ai tools Out There Try it Yourself to see what i am talking about!&rdquo;
+                                &ldquo;
+                                Leadistro has revolutionized my email marketing with its intuitive interface, AI-powered insights, and seamless contact management. Highly recommended!
+                                &rdquo;
                             </p>
                             <footer className="text-xs">Raman Halder - Leadistro</footer>
                         </blockquote>

@@ -26,7 +26,7 @@ export default function HomeScreen() {
     return (
         <>
             {/* HomeScreen */}
-            <div
+            <div id="id"
                 className="min-h-screen w-full min-w-full flex flex-col bg-gradient-to-b md:bg-gradient-to-r from-leadistroBlack via-leadistroBlack to-leadistroRed  md:flex-row  items-center justify-center md:justify-between">
                 {/* Typography */}
                 <div className="mt-20 container flex flex-col space-y-5 h-auto items-center justify-center max-w-2xl">
@@ -130,6 +130,11 @@ export default function HomeScreen() {
                         </div>
                     </div>
                     <div className="bg-leadistroBlack/80 border-2 row-span-4 flex flex-col items-center justify-center border-leadistroWhite/60 backdrop-blur-sm rounded-3xl @container">
+                        <div className="flex flex-row">
+                            <Heading4 textChildren='Sign In To Access All Free Beta Features' className='font-poppins text-leadistroBlack text-center md:text-left mix-blend-color-burn' />
+                            <Paragraph textChildren='Sign In To Access Sign In To Access Sign In To Access Sign In To Access Sign In To Access' className='text-leadistroWhite  text-center md:text-left text-xs md:text-sm lg:text-base xl:text-lg font-poppins font-bold ml-4' />
+                        </div>
+                        <Image src={IMG} alt="MobileMockup" onLoad={handleImageLoaded} height={25} width={25} className='pointer-events-none object-right object-contain w-full h-full ' />
                     </div>
                     <div className="bg-gradient-to-b border-2 row-span-4  border-leadistroWhite/50 from-leadistroBlack/70 to-leadistroBrown/70 backdrop-blur-sm  rounded-3xl @container">
                     </div>

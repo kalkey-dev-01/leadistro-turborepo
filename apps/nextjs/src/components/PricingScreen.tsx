@@ -3,7 +3,6 @@ import { Heading1, Heading3 } from './typography/Typography'
 import RadialGradientCard from './RadialGradientCards'
 
 const PricingScreen: React.FC = () => {
-
     return (
         <>
             <div className="min-h-screen min-w-full py-10 md:py-20 px-6 md:px-10 flex font-poppins flex-col items-center justify-center  bg-leadistroBlack">
