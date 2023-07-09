@@ -4,15 +4,10 @@ import { View, Text, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import { Stack } from 'expo-router'
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
-
 import { AntDesign } from '@expo/vector-icons';
-// import { useAtomValue } from 'jotai';
-// import { FirebaseUserAtom } from '~/utils/atoms';
-// import { useAuth } from '~/utils/context/authContext';
-
-
 import auth from '@react-native-firebase/auth'
 import { api } from '~/utils/api';
+
 GoogleSignin.configure({
     webClientId: '976545594978-a1ul5imti6ruqb1qlb7ipta7kk6q5elh.apps.googleusercontent.com',
     iosClientId: '976545594978-oasuhjp8th16td7op8jc9immp14l22vq.apps.googleusercontent.com'
@@ -20,10 +15,7 @@ GoogleSignin.configure({
 
 
 const Login: React.FC = () => {
-    const { mutateAsync, mutate } = api.mobileAuth.create.useMutation()
-    // const user = useAtomValue(FirebaseUserAtom);
-    // const users = useAuth()
-    // console.log('Whats the User In Login Screen', users);
+    const { mutateAsync, error, isError } = api.mobileAuth.create.useMutation()
     async function GoogleAuthSignIn() {
         await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true })
         const { idToken } = await GoogleSignin.signIn();
@@ -37,14 +29,12 @@ const Login: React.FC = () => {
                 userName: user.user.displayName as string,
                 providerId: user.user.providerId,
                 photoUrl: user.user.photoURL as string,
-            }).catch(e => console.log(e.message)).then(value => { console.log(value) })
+            })
             console.log(user, 'from Promise and the mutate ends')
-        }).catch((error) => {
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-            console.log(error.message, error)
-        }).finally(() => {
-            console.log('GoogleAuthSignIn Completed')
         })
+    }
+    if (isError) {
+        console.log(error?.message, error?.data)
     }
     return (
         <View className='w-full bg-leadistroBlack h-full justify-center flex flex-col items-center'>

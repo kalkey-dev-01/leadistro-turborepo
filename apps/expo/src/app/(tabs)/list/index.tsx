@@ -1,30 +1,55 @@
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { Feather, Ionicons } from '@expo/vector-icons'
+import { useRouter } from 'expo-router'
+
+const ListNavigationState = {
+    AddContacts: 'list/add',
+    Inbox: 'list/inbox',
+    Subs: 'list/subs',
+    Vips: 'list/vips'
+}
 
 const ActionBar: React.FC = () => {
+    const router = useRouter();
     return (
         <View className='my-5 flex flex-row items-center w-full justify-between'>
             <View className='flex flex-col items-center justify-center'>
-                <TouchableOpacity className='px-4 py-4 mb-2 rounded-xl border-2 border-leadistroRed'>
+                <TouchableOpacity onPress={
+                    () => {
+                        void router.push(ListNavigationState.AddContacts)
+                    }
+                } className='px-4 py-4 mb-2 rounded-xl border-2 border-leadistroRed'>
                     <Feather name="user-plus" color={'#ff9580'} size={25} />
                 </TouchableOpacity>
                 <Text className='text-sm font-semibold text-center leading-6 text-leadistroWhite'>Add Contacts</Text>
             </View>
             <View className='flex flex-col items-center justify-center'>
-                <TouchableOpacity className='px-4 py-4 mb-2 rounded-xl border-2 border-leadistroRed'>
+                <TouchableOpacity onPress={
+                    () => {
+                        void router.push(ListNavigationState.Inbox)
+                    }
+                } className='px-4 py-4 mb-2 rounded-xl border-2 border-leadistroRed'>
                     <Feather name="box" color={'#ff9580'} size={25} />
                 </TouchableOpacity>
                 <Text className='text-sm font-semibold text-center leading-6 text-leadistroWhite'>Inbox</Text>
             </View>
             <View className='flex flex-col items-center justify-center'>
-                <TouchableOpacity className='px-4 py-4 mb-2 rounded-xl border-2 border-leadistroRed'>
+                <TouchableOpacity onPress={
+                    () => {
+                        void router.push(ListNavigationState.Subs)
+                    }
+                } className='px-4 py-4 mb-2 rounded-xl border-2 border-leadistroRed'>
                     <Feather name="bell" color={'#ff9580'} size={25} />
                 </TouchableOpacity>
                 <Text className='text-sm font-semibold text-center leading-6 text-leadistroWhite'>Subscribed</Text>
             </View>
             <View className='flex flex-col items-center justify-center'>
-                <TouchableOpacity className='px-4 py-4 mb-2 rounded-xl border-2 border-leadistroRed'>
+                <TouchableOpacity onPress={
+                    () => {
+                        void router.push(ListNavigationState.Vips)
+                    }
+                } className='px-4 py-4 mb-2 rounded-xl border-2 border-leadistroRed'>
                     <Feather name="user-check" color={'#ff9580'} size={25} />
                 </TouchableOpacity>
                 <Text className='text-sm font-semibold text-center leading-6 text-leadistroWhite'>VIPs</Text>

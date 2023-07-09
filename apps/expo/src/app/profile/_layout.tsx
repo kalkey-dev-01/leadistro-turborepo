@@ -4,12 +4,13 @@ import { Feather } from '@expo/vector-icons'
 
 const ProfileLayout = () => {
     return (
-        <Stack initialRouteName='index'>
+        <Stack initialRouteName='index' >
             <Stack.Screen name='index' options={{ headerShown: false }} />
             <Stack.Screen name='modal'
                 options={{
                     presentation: 'modal',
-                    headerShown: false
+                    headerShown: false,
+                    animation: 'fade_from_bottom'
                     // headerTitleAlign: 'center',
                     // headerTitle: 'Choose Your Plan',
                     // headerStyle: { backgroundColor: '#101010' },

@@ -26,7 +26,8 @@ const RootLayout = () => {
               headerStyle: {
                 backgroundColor: "#101010",
               },
-              headerShown: false
+              headerShown: false,
+              animation: 'slide_from_bottom'
             }}
           />
           <StatusBar />

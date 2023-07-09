@@ -12,6 +12,7 @@ const TabLayout = () => {
         <Tabs
             initialRouteName='home'
             screenOptions={{
+                tabBarVisibilityAnimationConfig: { show: { animation: 'spring' } },
                 tabBarStyle: { backgroundColor: '#101010', elevation: 0 },
                 tabBarIconStyle: { color: '#fbfbfb' },
                 tabBarActiveBackgroundColor: '#141414',
