@@ -8,11 +8,15 @@ import img from '../../public/logoBlack.png'
 import { comfortaa, poppins } from '~/templates/Main';
 import { Separator } from './ui/seperator';
 import { ScrollContext } from '~/utils/scroll-observer';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { signIn, signOut } from 'next-auth/react';
 import { api } from '~/utils/api';
+import { LayoutGroup, motion } from 'framer-motion';
+import clsx from 'clsx';
+import Link from 'next/link';
 // import { Comfortaa, Poppins } from 'next/font/google';
-const Navbar: React.FC = () => {
+export const Navbar: React.FC = () => {
+    const pathname = usePathname() || '/';
     const { data: session } = api.auth.getSession.useQuery()
     const navigation = useRouter()
     const [showNav, setShowNav] = React.useState(false)
@@ -20,6 +24,7 @@ const Navbar: React.FC = () => {
     const handleScroll = () => {
         setShowNav(window.scrollY < scrollY);
     };
+    console.log(pathname)
     React.useEffect(() => {
         document.addEventListener('scroll', handleScroll, { passive: true });
         return () => document.removeEventListener('scroll', handleScroll);
@@ -29,13 +34,15 @@ const Navbar: React.FC = () => {
     //     showNav ? 'top-0' : '-top-16'
     //   }`}
     return (
-        <nav className={`fixed z-50 transition-all duration-700 ${showNav ? 'top-0' : '-top-20'
-            } w-full bg-leadistroBlack/80 backdrop-blur-[6px] text-leadistroWhite mx-auto p-4 border-b-2 border-b-leadistroRed`}>
+        <nav className={`fixed z-50 transition-all duration-700 ${showNav ? 'top-2' : '-top-20'
+            } max-w-screen-lg rounded-full w-full bg-leadistroBlack/80 backdrop-blur-[6px] text-leadistroWhite mx-auto p-4 border-b-2 border-b-leadistroRed`}>
             <ul className="flex flex-row justify-center items-center space-x-3">
                 <li className='flex-1'>
-                    <Heading3 textChildren='leadistro' className='font-comfortaa hover:cursor-pointer' />
+                    <Button className='rounded-full' onClick={() => void navigation.push('/')} variant={'ghost'}>
+                        <Heading3 textChildren='leadistro' className='font-comfortaa hover:cursor-pointer' />
+                    </Button>
                 </li>
-                <Button variant={'ghost'} onClick={() => navigation.push('#id')} className='text-leadistroWhite/95 hover:text-leadistroWhite hover:bg-leadistroBrown/20'>
+                <Button variant={'ghost'} onClick={() => { }} className='text-leadistroWhite/95 hover:text-leadistroWhite hover:bg-leadistroBrown/20'>
                     <Heading4 textChildren='Features' className='hidden md:inline-flex font-poppins' />
                 </Button>
                 <Button variant={'ghost'} className='text-leadistroWhite/95 hover:text-leadistroWhite hover:bg-leadistroBrown/20'>
@@ -50,7 +57,7 @@ const Navbar: React.FC = () => {
                     className='text-leadistroWhite/95 hover:text-leadistroWhite hover:bg-leadistroBrown/60'>
                     <Heading4 textChildren={session ? "Sign out" : "Sign in"} className='hidden md:inline-flex font-poppins' />
                 </Button>
-                <Button variant={'ghost'} className='text-leadistroWhite/95 hover:text-leadistroWhite hover:bg-leadistroBrown/60'>
+                <Button variant={'ghost'} onClick={() => void navigation.push('/download')} className='text-leadistroWhite/95 hover:text-leadistroWhite hover:bg-leadistroBrown/60'>
                     <Heading4 textChildren='Download' className='hidden md:inline-flex font-poppins' />
                 </Button>
                 <li>
@@ -86,7 +93,58 @@ const Navbar: React.FC = () => {
     );
 }
 
-export default Navbar;
+const NavigationBar: React.FC = () => {
+    const ref = React.useRef<HTMLElement>(null);
+    const [isIntersecting, setIsIntersecting] = React.useState<boolean | undefined>(false);
+    React.useEffect(() => {
+        if (!ref.current) return;
+        const observer = new IntersectionObserver(([entry]) => {
+            setIsIntersecting(entry?.isIntersecting)
+        });
+        observer.observe(ref.current);
+        return () => observer.disconnect();
+    }, [])
+    return (
+        <header className='font-poppins' ref={ref}>
+            <div
+                className={`fixed inset-x-0 top-0 z-50 backdrop-blur duration-200 border-b ${isIntersecting
+                    ? "bg-leadistroBlack/60 border-transparent"
+                    : "bg-leadistroBlack/30 border-leadistroRed/80"
+                    }`}
+            >
+                <LayoutGroup>
+                    <nav id='nav' className='container relative flex flex-row items-center justify-between p-6 md:px-16 mx-auto'>
+                        <Link href={'/'}>
+                            <Button className='text-leadistroRed text-3xl'>
+                                leadistro
+                            </Button>
+                        </Link>
+                        <Link href={'/features'}>
+                            <Button className='text-leadistroRed text-2xl'>
+                                Features
+                            </Button>
+                        </Link>
+                        <Link href={'/pricing'}>
+                            <Button className='text-leadistroRed text-2xl'>
+                                Pricing
+                            </Button>
+                        </Link>
+                        <Link href={'/download'}>
+                            <Button className='text-leadistroRed text-2xl'>
+                                Download
+                            </Button>
+                        </Link>
+                    </nav>
+                </LayoutGroup>
+            </div>
+        </header>
+    )
+}
+
+export default NavigationBar
+
+
+
 
 // export const NavigationBar: React.FC = () => {
 //     const { data: session } = api.auth.getSession.useQuery()

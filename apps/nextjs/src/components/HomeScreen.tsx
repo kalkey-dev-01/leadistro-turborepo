@@ -86,60 +86,8 @@ export default function HomeScreen() {
                     <Heading4 textChildren='Sign In To Access All Free Beta Features' className='font-poppins text-leadistroBlack text-center md:text-left mix-blend-color-burn' />
                 </div>
                 {/* Initiate bento grids design here use tailwind css container queries  */}
-                <div className="grid min-h-screen max-w-screen-lg md:max-w-screen-xl font-poppins w-full grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 py-5 px-4 md:py-10 md:px-16">
-                    <div className="bg-leadistroBlack/80 border-2 border-leadistroWhite/70 flex flex-col items-start justify-center w-auto h-auto backdrop-blur-sm md:col-span-2 rounded-3xl @container ">
-                        <h1 className='mx-5 font-poppins max-w-lg mb-4 text-leadistroWhite text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold md:font-extrabold text-center md:text-left'>
-                            Create Your Own
-                            Custom Campaign
-                        </h1>
-                        <Separator className='w-full bg-leadistroWhite' />
-                        <div className='mx-5 mt-8 flex items-start justify-between w-full h-auto  font-poppins text-leadistroWhite text-center md:text-left text-xs md:text-sm lg:text-base xl:text-lg'>
-                            <p>Integrate Generative Ai Creatively With The Help Of Leadistro</p>
-                            <ArrowRightCircleIcon className='text-leadistroRed md:w-7 md:h-7 w-5 h-5 mr-10 cursor-pointer' />
-                        </div>
-                    </div>
-                    <div className="flex relative flex-col items-center justify-between h-full w-auto bg-gradient-to-b from-leadistroBlack/80 via-leadistroBrown/60 to-leadistroBlack/60 md:row-span-5 rounded-3xl @container">
-                        <div className='w-full h-[15%] p-6 bg-leadistroBlack rounded-t-3xl'>
-                            <p className='text-leadistroWhite text-center md:text-left text-xs md:text-sm lg:text-base xl:text-lg font-poppins font-bold'>How Can This Help You?</p>
-                            <p className='text-leadistroWhite text-center md:text-left text-[10px] md:text-xs font-comfortaa font-bold'>The Product is Still In Beta. Help Us Improve it.</p>
-                        </div>
-                        <div className=' absolute left-10 top-[5rem] p-3 m-2 right-0 bg-leadistroBlack rounded-2xl flex'>
-                            <p className='text-leadistroWhite max-w-xs text-center md:text-left text-[10px] md:text-xs lg:text-sm font-poppins leading-relaxed [&:not(:first-child)]:mt-6'>
-                                Hi, I need help with my email marketing campaign.
-                            </p>
-                        </div>
-                        <div className=' absolute left-0 top-[10rem] p-3 m-2 right-10 bg-leadistroBrown rounded-2xl flex'>
-                            <p className='text-leadistroWhite max-w-xs text-center md:text-left text-[10px] md:text-xs lg:text-sm font-poppins leading-relaxed [&:not(:first-child)]:mt-6'>
-                                Hello! I&apos;m DistroGPT, your dedicated marketing assistant. I&apos;m here to assist you with all types of marketing needs. How can I help you today?
-                            </p>
-                        </div>
-                        <div className=' absolute left-10 top-[17rem] p-3 m-2 right-0 bg-leadistroBlack rounded-2xl flex'>
-                            <p className='text-leadistroWhite max-w-xs text-center md:text-left text-[10px] md:text-xs lg:text-sm font-poppins leading-relaxed [&:not(:first-child)]:mt-6'>
-                                I&apos;m looking to create a compelling email campaign for my new product launch. Can you provide some guidance?
-                            </p>
-                        </div>
-                        <div className=' absolute left-0 top-[23rem] p-2.5 m-2 right-10 bg-leadistroBrown rounded-2xl flex'>
-                            <p className='text-leadistroWhite max-w-xs text-center md:text-left text-[10px] md:text-xs lg:text-sm font-poppins leading-relaxed [&:not(:first-child)]:mt-6'>
-                                Absolutely! I can assist you in crafting an engaging email campaign. First, let&apos;s start by understanding your target audience. Could you please provide some details about your target customers?
-                            </p>
-                        </div>
-                        <div className="flex items-center justify-between w-full pr-4">
-                            <Input placeholder="Ask Me Anything."
-                                className='w-full  text-xs md:text-sm text-leadistroWhite rounded-3xl' />
-                            <SearchIcon onClick={() => void signIn()} className="w-7 h-7 m-2 rounded-full cursor-pointer text-leadistroWhite" />
-                        </div>
-                    </div>
-                    <div className="bg-leadistroBlack/80 border-2 row-span-4 flex flex-col items-center justify-center border-leadistroWhite/60 backdrop-blur-sm rounded-3xl @container">
-                        <div className="flex flex-row">
-                            <Heading4 textChildren='Sign In To Access All Free Beta Features' className='font-poppins text-leadistroBlack text-center md:text-left mix-blend-color-burn' />
-                            <Paragraph textChildren='Sign In To Access Sign In To Access Sign In To Access Sign In To Access Sign In To Access' className='text-leadistroWhite  text-center md:text-left text-xs md:text-sm lg:text-base xl:text-lg font-poppins font-bold ml-4' />
-                        </div>
-                        <Image src={IMG} alt="MobileMockup" onLoad={handleImageLoaded} height={25} width={25} className='pointer-events-none object-right object-contain w-full h-full ' />
-                    </div>
-                    <div className="bg-gradient-to-b border-2 row-span-4  border-leadistroWhite/50 from-leadistroBlack/70 to-leadistroBrown/70 backdrop-blur-sm  rounded-3xl @container">
-                    </div>
-                </div>
-            </div >
+
+            </div>
         </>
     )
 }

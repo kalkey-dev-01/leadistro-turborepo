@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, TouchableOpacity } from 'react-native'
+import { Text, View, TouchableOpacity, TextInput } from 'react-native'
 import { useNavigation } from 'expo-router'
 import { Ionicons } from '@expo/vector-icons'
 import { api } from '~/utils/api'
@@ -16,8 +16,8 @@ const Add: React.FC = () => {
             <Text className='text-4xl underline underline-offset-4 px-2 self-start text-leadistroWhite'>
                 Add Your Leads
             </Text>
-            <View>
-
+            <View className="flex flex-col items-center justify-start py-6 h-full w-full bg-leadistroRed/40 rounded-xl">
+                <TextInput className='bg-black text-white w-[80%] h-auto' />
             </View>
         </View>
     )
