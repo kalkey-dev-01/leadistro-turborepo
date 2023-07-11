@@ -94,15 +94,16 @@ export const Navbar: React.FC = () => {
 }
 
 const NavigationBarItems = {
-    '/features': {
-        name: 'Features'
-    },
     '/pricing': {
         name: 'Pricing'
     },
+    '/signin': {
+        name: 'Sign In'
+    },
     '/download': {
         name: 'Download'
-    }
+    },
+
 }
 
 const NavigationBar: React.FC = () => {
@@ -126,7 +127,7 @@ const NavigationBar: React.FC = () => {
                     }`}
             >
                 <nav className='container relative flex flex-row items-center justify-between md:py-4 md:px-16 mx-auto'>
-                    <Link className='flex-1' href={'/'}>
+                    <Link className='flex-1' href="/">
                         <Button className='hover:text-leadistroRed text-leadistroWhite bg-leadistroBrown/20 font-comfortaa hover:bg-leadistroBlack font-bold text-2xl'>
                             leadistro
                         </Button>
@@ -145,7 +146,7 @@ const NavigationBar: React.FC = () => {
                                         }
                                     )}
                                 >
-                                    <span className='relative py-1 px-2'>
+                                    <Button className='relative bg-transparent hover:bg-transparent py-1 px-2'>
                                         {name}
                                         {path === pathname ? (
                                             <motion.div
@@ -158,7 +159,7 @@ const NavigationBar: React.FC = () => {
                                                 }}
                                             />
                                         ) : null}
-                                    </span>
+                                    </Button>
                                 </Link>
                             )
                         })}

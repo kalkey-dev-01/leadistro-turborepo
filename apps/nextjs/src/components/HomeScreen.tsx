@@ -1,18 +1,18 @@
 import React from 'react'
-import { Heading1, Heading2, Heading4, Paragraph } from './typography/Typography'
+import { Heading1, Paragraph } from './typography/Typography'
 import { AspectRatio } from '~/components/ui/aspect-ratio'
 import { Button as Btn } from './ui/button'
 import Image from 'next/image'
 import Button from './ui/GradientBackgroundButton'
 import IMG from '../../public/OutlineMockup.png';
 // import WebMockup from '../../public/DistroGPTWebMockup.png'
-import BackgroundAnimation from './BackgroundAnimations'
+// import BackgroundAnimation from './BackgroundAnimations'
 import { SizeContext } from '~/utils/size-observer'
 import { AnimatePresence, motion as m } from 'framer-motion'
-import { Separator } from './ui/seperator'
-import { ArrowRightCircleIcon, SearchIcon } from 'lucide-react'
-import { Input } from './ui/input'
-import { signIn } from 'next-auth/react'
+// import { Separator } from './ui/seperator'
+// import { ArrowRightCircleIcon, SearchIcon } from 'lucide-react'
+// import { Input } from './ui/input'
+// import { signIn } from 'next-auth/react'
 // import { RGradientCard } from './RadialGradientCards'
 
 export default function HomeScreen() {
@@ -21,13 +21,11 @@ export default function HomeScreen() {
         setImageLoaded(true);
     }, [])
     const { innerWidth } = React.useContext(SizeContext);
-    const ratio = innerWidth < 640 ? (1 / 2) : (1 / 1.25);
-
+    const ratio = innerWidth < 640 ? (1 / 2) : (1 / 1);
     return (
         <>
             {/* HomeScreen */}
-            <div id="id"
-                className="min-h-screen w-full min-w-full flex flex-col bg-gradient-to-b md:bg-gradient-to-r from-leadistroBlack via-leadistroBlack to-leadistroRed  md:flex-row  items-center justify-center md:justify-between">
+            <div className="min-h-screen md:px-6 w-full min-w-full flex flex-col bg-gradient-to-b md:bg-gradient-to-r from-leadistroBlack via-leadistroBlack to-leadistroBrown  md:flex-row  items-center justify-center md:justify-between">
                 {/* Typography */}
                 <div className="mt-20 container flex flex-col space-y-5 h-auto items-center justify-center max-w-2xl">
                     <AnimatePresence>
@@ -76,17 +74,6 @@ export default function HomeScreen() {
                         <Image src={IMG} alt="MobileMockup" onLoad={handleImageLoaded} className='pointer-events-none object-center md:object-contain object-cover w-full h-full ' />
                     </AspectRatio>
                 </div>
-            </div>
-            <div className=" bg-leadistroBlack overflow-y-hidden overflow-x-hidden min-h-screen min-w-full flex flex-col items-center justify-start">
-                <div className='relative max-w-screen-md'>
-                    <BackgroundAnimation />
-                </div>
-                <div className='pt-20 flex flex-col items-center justify-start gap-8'>
-                    <Heading1 textChildren='Minimal Marketing Tool with Generative AI' className='font-poppins text-center md:text-left text-leadistroRed mix-blend-difference' />
-                    <Heading4 textChildren='Sign In To Access All Free Beta Features' className='font-poppins text-leadistroBlack text-center md:text-left mix-blend-color-burn' />
-                </div>
-                {/* Initiate bento grids design here use tailwind css container queries  */}
-
             </div>
         </>
     )
