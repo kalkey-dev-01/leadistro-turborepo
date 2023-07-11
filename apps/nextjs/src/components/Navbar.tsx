@@ -93,7 +93,20 @@ export const Navbar: React.FC = () => {
     );
 }
 
+const NavigationBarItems = {
+    '/features': {
+        name: 'Features'
+    },
+    '/pricing': {
+        name: 'Pricing'
+    },
+    '/download': {
+        name: 'Download'
+    }
+}
+
 const NavigationBar: React.FC = () => {
+    const pathname = usePathname()
     const ref = React.useRef<HTMLElement>(null);
     const [isIntersecting, setIsIntersecting] = React.useState<boolean | undefined>(false);
     React.useEffect(() => {
@@ -112,30 +125,45 @@ const NavigationBar: React.FC = () => {
                     : "bg-leadistroBlack/30 border-leadistroRed/80"
                     }`}
             >
-                <LayoutGroup>
-                    <nav id='nav' className='container relative flex flex-row items-center justify-between p-6 md:px-16 mx-auto'>
-                        <Link href={'/'}>
-                            <Button className='text-leadistroRed text-3xl'>
-                                leadistro
-                            </Button>
-                        </Link>
-                        <Link href={'/features'}>
-                            <Button className='text-leadistroRed text-2xl'>
-                                Features
-                            </Button>
-                        </Link>
-                        <Link href={'/pricing'}>
-                            <Button className='text-leadistroRed text-2xl'>
-                                Pricing
-                            </Button>
-                        </Link>
-                        <Link href={'/download'}>
-                            <Button className='text-leadistroRed text-2xl'>
-                                Download
-                            </Button>
-                        </Link>
-                    </nav>
-                </LayoutGroup>
+                <nav className='container relative flex flex-row items-center justify-between md:py-4 md:px-16 mx-auto'>
+                    <Link className='flex-1' href={'/'}>
+                        <Button className='hover:text-leadistroRed text-leadistroWhite bg-leadistroBrown/20 font-comfortaa hover:bg-leadistroBlack font-bold text-2xl'>
+                            leadistro
+                        </Button>
+                    </Link>
+                    <div id='nav' className='flex items-center justify-center space-x-3'>
+                        {Object.entries(NavigationBarItems).map(([path, { name }]) => {
+                            const isActive = path === pathname;
+                            return (
+                                <Link
+                                    key={path}
+                                    href={path}
+                                    className={clsx(
+                                        "transition-all text-leadistroWhite hover:text-leadistroRed",
+                                        {
+                                            'text-leadistroRed': !isActive
+                                        }
+                                    )}
+                                >
+                                    <span className='relative py-1 px-2'>
+                                        {name}
+                                        {path === pathname ? (
+                                            <motion.div
+                                                className='absolute h-[2px] w-[90%] top-7 mx-2 bg-white'
+                                                layoutId='bar'
+                                                transition={{
+                                                    type: 'spring',
+                                                    stiffness: 350,
+                                                    damping: 30,
+                                                }}
+                                            />
+                                        ) : null}
+                                    </span>
+                                </Link>
+                            )
+                        })}
+                    </div>
+                </nav>
             </div>
         </header>
     )
@@ -143,6 +171,22 @@ const NavigationBar: React.FC = () => {
 
 export default NavigationBar
 
+
+//                            <Link href={'/features'}>
+//                                <Button variant="ghost" className='text-leadistroWhite text-2xl'>
+//                                    Features
+//                                </Button>
+//                            </Link>
+//                            <Link href={'/pricing'}>
+//                                <Button variant="ghost" className='text-leadistroWhite text-2xl'>
+//                                    Pricing
+//                                </Button>
+//                            </Link>
+//                            <Link href={'/download'}>
+//                                <Button variant="ghost" className='text-leadistroWhite text-2xl'>
+//                                    Download
+//                                </Button>
+//                            </Link>
 
 
 
@@ -183,3 +227,5 @@ export default NavigationBar
 //         </nav>
 //     )
 // }
+
+
