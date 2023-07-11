@@ -35,16 +35,7 @@ const SignIn: React.FC = () => {
 
     return (
         <LoginMain meta={<Meta title='Sign In' description='Sign Into Leadistro' />}>
-            <div className="container font-poppins relative h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
-                <Link
-                    href={'#'}
-                    className={cn(
-                        buttonVariants({ variant: "ghost", size: "sm" }),
-                        "absolute right-4 top-4 md:right-8 md:top-8"
-                    )}
-                >
-                    Sign In first to Go to dashboard
-                </Link>
+            <div className="container font-poppins relative h-screen flex-col bg-leadistroBrown items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
                 <div className="relative hidden h-full flex-col bg-muted p-10 text-white lg:flex">
                     <div
                         className="absolute flex flex-col items-center justify-center inset-0 bg-gradient-to-tl from-leadistroBlack via-leadistroBrown to-leadistroBlack bg-contain"
@@ -58,9 +49,7 @@ const SignIn: React.FC = () => {
                             <Image src={img} alt='chat' className='w-full h-full bg-cover' />
                         </div>
                     </div>
-                    <div className="relative z-20 flex items-center text-lg font-medium">
-                        <Command className="mr-2 h-6 w-6" /> leadistro
-                    </div>
+
                     <div className="relative z-20 mt-auto">
                         <blockquote className="space-y-2">
                             <p className="text-base">
@@ -75,26 +64,26 @@ const SignIn: React.FC = () => {
                 <div className="lg:p-8">
                     <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
                         <div className="flex flex-col space-y-2 text-center">
-                            <h1 className="text-2xl font-semibold tracking-tight">
-                                Create an account
+                            <h1 className="text-2xl font-semibold text-leadistroWhite tracking-tight">
+                                Create an <span className='text-leadistroRed'>account</span>
                             </h1>
-                            <p className="text-sm text-muted-foreground">
-                                Click Sign In With Google below to create your account
+                            <p className="text-sm text-leadistroWhite/90">
+                                Click <span className='text-leadistroRed'>Sign In With Google</span> below to create your account
                             </p>
                         </div>
-                        <Button onClick={() => void signIn('google')} variant={'outline'}><Icons.google className='mr-2 h-6 w-6' /> Sign In with Google</Button>
-                        <p className="px-8 text-center text-sm text-muted-foreground">
+                        <Button className="text-leadistroWhite" onClick={() => void signIn('google')} variant={'outline'}><Icons.google className='mr-2 h-6 w-6' /> Sign In with Google</Button>
+                        <p className="px-8 text-center text-sm text-leadistroWhite">
                             By clicking continue, you agree to our{" "}
                             <Link
                                 href="#"
-                                className="underline underline-offset-4 hover:text-primary"
+                                className="underline underline-offset-4 hover:text-leadistroRed"
                             >
                                 Terms of Service
                             </Link>{" "}
                             and{" "}
                             <Link
                                 href="#"
-                                className="underline underline-offset-4 hover:text-primary"
+                                className="underline underline-offset-4 hover:text-leadistroRed"
                             >
                                 Privacy Policy
                             </Link>

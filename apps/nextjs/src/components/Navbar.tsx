@@ -128,42 +128,44 @@ const NavigationBar: React.FC = () => {
             >
                 <nav className='container relative flex flex-row items-center justify-between md:py-4 md:px-16 mx-auto'>
                     <Link className='flex-1' href="/">
-                        <Button className='hover:text-leadistroRed text-leadistroWhite bg-leadistroBrown/20 font-comfortaa hover:bg-leadistroBlack font-bold text-2xl'>
+                        <Button className='hover:text-leadistroRed text-leadistroWhite bg-transparent border-transparent hover:border hover:border-leadistroWhite/5 font-comfortaa hover:bg-transparent font-bold text-xl'>
                             leadistro
                         </Button>
                     </Link>
-                    <div id='nav' className='flex items-center justify-center space-x-3'>
-                        {Object.entries(NavigationBarItems).map(([path, { name }]) => {
-                            const isActive = path === pathname;
-                            return (
-                                <Link
-                                    key={path}
-                                    href={path}
-                                    className={clsx(
-                                        "transition-all text-leadistroWhite hover:text-leadistroRed",
-                                        {
-                                            'text-leadistroRed': !isActive
-                                        }
-                                    )}
-                                >
-                                    <Button className='relative bg-transparent hover:bg-transparent py-1 px-2'>
-                                        {name}
-                                        {path === pathname ? (
-                                            <motion.div
-                                                className='absolute h-[2px] w-[90%] top-7 mx-2 bg-white'
-                                                layoutId='bar'
-                                                transition={{
-                                                    type: 'spring',
-                                                    stiffness: 350,
-                                                    damping: 30,
-                                                }}
-                                            />
-                                        ) : null}
-                                    </Button>
-                                </Link>
-                            )
-                        })}
-                    </div>
+                    <LayoutGroup>
+                        <div id='nav' className='flex items-center justify-center space-x-3'>
+                            {Object.entries(NavigationBarItems).map(([path, { name }]) => {
+                                const isActive = path === pathname;
+                                return (
+                                    <Link
+                                        key={path}
+                                        href={path}
+                                        className={clsx(
+                                            "transition-all text-leadistroWhite hover:text-leadistroRed",
+                                            {
+                                                'text-leadistroRed': !isActive
+                                            }
+                                        )}
+                                    >
+                                        <Button className='relative bg-transparent hover:bg-transparent py-1 px-2'>
+                                            {name}
+                                            {path === pathname ? (
+                                                <motion.div
+                                                    className='absolute h-[2px] w-[70%] top-8 mx-2 bg-leadistroRed'
+                                                    layoutId='bar'
+                                                    transition={{
+                                                        type: 'spring',
+                                                        stiffness: 350,
+                                                        damping: 30,
+                                                    }}
+                                                />
+                                            ) : null}
+                                        </Button>
+                                    </Link>
+                                )
+                            })}
+                        </div>
+                    </LayoutGroup>
                 </nav>
             </div>
         </header>

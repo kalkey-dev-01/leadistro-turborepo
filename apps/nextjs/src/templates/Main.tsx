@@ -85,7 +85,9 @@ export const LoginMain: FC<Props> = ({ meta, children }) => {
     return (
         <div className={`flex min-h-screen min-w-full flex-col items-center justify-between ${poppins.variable} ${comfortaa.variable}`}>
             {meta}
+            <NavigationBar />
             {children}
+            <Footer />
         </div>
     );
 }
