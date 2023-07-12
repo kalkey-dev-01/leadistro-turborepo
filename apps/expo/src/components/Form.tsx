@@ -3,7 +3,7 @@ import { View, TextInput, Switch, Text, TouchableOpacity } from 'react-native'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Controller, type SubmitHandler, useForm } from 'react-hook-form'
-
+import { clsx } from 'clsx'
 
 const formSchema = z.object({
     name: z.string().min(1).max(70),
@@ -30,9 +30,10 @@ export const AddContactsForm: React.FC<{}> = () => {
         console.log('emailAddress is', data.emailAddress)
         console.log('subscribed is', data.subscribed)
         console.log('vip is', data.vip)
+        reset()
     }
     console.log(isSubmitting)
-    console.log(errors)
+    console.log(errors.emailAddress?.message, errors.name?.message)
     return (
         <View className="flex flex-col items-center justify-start space-y-8 my-7 py-6 h-full w-full bg-leadistroBrown/40 rounded-xl">
             <View className="h-auto w-full px-8 ">
@@ -40,7 +41,12 @@ export const AddContactsForm: React.FC<{}> = () => {
                     <TextInput
                         placeholder='Contact Name'
                         placeholderTextColor={'#ff958090'}
-                        className='bg-leadistroBlack shadow-xl px-3 shadow-leadistroRed/70  border-leadistroRed border rounded-xl text-white max-w-md w-full text-xl h-14'
+                        className={clsx(
+                            `bg-leadistroBlack px-3 shadow  border rounded-xl text-white max-w-md w-full text-xl h-14`,
+                            errors.name?.message
+                                ? 'border-leadistroRed shadow-xl shadow-leadistroRed/70'
+                                : 'border-leadistroWhite shadow-xl shadow-leadistroWhite/70',
+                        )}
                         value={value}
                         onBlur={onBlur}
                         onChangeText={e => onChange(e)}
@@ -56,7 +62,12 @@ export const AddContactsForm: React.FC<{}> = () => {
                     <TextInput
                         placeholder='Contact&apos;s Email Address'
                         placeholderTextColor={'#ff958090'}
-                        className='bg-leadistroBlack shadow-xl px-3 shadow-leadistroRed/70  border-leadistroRed border rounded-xl text-white max-w-md w-full text-xl h-14'
+                        className={clsx(
+                            `bg-leadistroBlack px-3 shadow  border rounded-xl text-white max-w-md w-full text-xl h-14`,
+                            errors.emailAddress?.message
+                                ? 'border-leadistroRed shadow-xl shadow-leadistroRed/70'
+                                : 'border-leadistroWhite shadow-xl shadow-leadistroWhite/70',
+                        )}
                         value={value}
                         onBlur={onBlur}
                         onChangeText={e => onChange(e)}
@@ -69,11 +80,12 @@ export const AddContactsForm: React.FC<{}> = () => {
             </View>
             <View className="h-auto w-full px-10 flex self-center flex-row items-center justify-start ">
                 <View className='flex flex-row items-center px-2 justify-between w-auto'>
-                    <Text className='text-leadistroWhite pb-1' >
+                    <Text className='text-leadistroWhite pb-1 pr-2' >
                         V.I.P
                     </Text>
                     <Controller control={control} name={'vip'} render={({ field: { onChange, value } }) => (
                         <Switch
+                            className='scale-110'
                             trackColor={{
                                 true: '#ff958080',
                                 false: '#fafafa50'
@@ -85,11 +97,12 @@ export const AddContactsForm: React.FC<{}> = () => {
                     )} />
                 </View>
                 <View className='flex flex-row items-center px-14 justify-between w-auto'>
-                    <Text className='text-leadistroWhite pb-1' >
+                    <Text className='text-leadistroWhite pb-1 pr-2' >
                         Subscribed
                     </Text>
                     <Controller control={control} name={'subscribed'} render={({ field: { onChange, value } }) => (
                         <Switch
+                            className='scale-110'
                             trackColor={{
                                 true: '#ff958080',
                                 false: '#fafafa50'
