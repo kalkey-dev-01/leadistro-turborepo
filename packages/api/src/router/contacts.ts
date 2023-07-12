@@ -15,6 +15,7 @@ export const LeadsContactRouter = createTRPCRouter({
     .input(
       z.object({
         id: z.string(),
+        name: z.string().min(1),
         emailAddress: z.string().email(),
         vip: z.boolean(),
         subscribed: z.boolean(),

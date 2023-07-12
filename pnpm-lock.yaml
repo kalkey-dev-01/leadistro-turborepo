@@ -40,6 +40,9 @@ importers:
       '@expo/vector-icons':
         specifier: ^13.0.0
         version: 13.0.0
+      '@hookform/resolvers':
+        specifier: ^3.1.0
+        version: 3.1.0(react-hook-form@7.44.2)
       '@react-native-firebase/app':
         specifier: ^17.5.0
         version: 17.5.0(expo@48.0.17)(react-native@0.71.8)(react@18.2.0)
@@ -109,6 +112,9 @@ importers:
       react-dom:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
+      react-hook-form:
+        specifier: ^7.44.2
+        version: 7.44.2(react@18.2.0)
       react-native:
         specifier: 0.71.8
         version: 0.71.8(@babel/core@7.21.8)(@babel/preset-env@7.21.5)(react@18.2.0)

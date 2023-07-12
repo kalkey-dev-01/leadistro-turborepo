@@ -3,6 +3,7 @@ import { Text, View, TouchableOpacity, TextInput } from 'react-native'
 import { useNavigation } from 'expo-router'
 import { Ionicons } from '@expo/vector-icons'
 import { api } from '~/utils/api'
+import { AddContactsForm } from '~/components/Form'
 
 const Add: React.FC = () => {
     const { } = api
@@ -16,11 +17,20 @@ const Add: React.FC = () => {
             <Text className='text-4xl underline underline-offset-4 px-2 self-start text-leadistroWhite'>
                 Add Your Leads
             </Text>
-            <View className="flex flex-col items-center justify-start py-6 h-full w-full bg-leadistroRed/40 rounded-xl">
-                <TextInput className='bg-black text-white w-[80%] h-auto' />
-            </View>
+            <AddContactsForm />
         </View>
     )
 }
 
 export default Add
+
+// z.object({
+//     id: z.string(),
+//     emailAddress: z.string().email(),
+//     vip: z.boolean(),
+//     subscribed: z.boolean(),
+//     Campaign: z.any().optional(),
+//     campaignId: z.string().optional(),
+//     createdAt: z.date(),
+//     updatedAt: z.date(),
+//   }),
