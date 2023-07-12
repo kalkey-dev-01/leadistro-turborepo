@@ -85,12 +85,12 @@ export const AddContactsForm: React.FC<{}> = () => {
                     </Text>
                     <Controller control={control} name={'vip'} render={({ field: { onChange, value } }) => (
                         <Switch
-                            className='scale-110'
+                            className='scale-105'
                             trackColor={{
                                 true: '#ff958080',
                                 false: '#fafafa50'
                             }}
-                            thumbColor={'#ff9580'}
+                            thumbColor={value ? '#ff9580' : '#fafafa'}
                             value={value}
                             onValueChange={e => onChange(e)}
                         />
@@ -102,12 +102,12 @@ export const AddContactsForm: React.FC<{}> = () => {
                     </Text>
                     <Controller control={control} name={'subscribed'} render={({ field: { onChange, value } }) => (
                         <Switch
-                            className='scale-110'
+                            className='scale-105'
                             trackColor={{
                                 true: '#ff958080',
                                 false: '#fafafa50'
                             }}
-                            thumbColor={'#ff9580'}
+                            thumbColor={value ? '#ff9580' : '#fafafa'}
                             value={value}
                             onValueChange={e => onChange(e)}
                         />
