@@ -5,6 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { Controller, type SubmitHandler, useForm } from 'react-hook-form'
 import { clsx } from 'clsx'
 import { api } from '~/utils/api'
+import { useRouter } from 'expo-router'
 
 const formSchema = z.object({
     name: z.string().min(1).max(70),
@@ -17,8 +18,9 @@ type formSchemaType = z.infer<typeof formSchema>
 
 
 
-export const AddContactsForm: React.FC<{}> = () => {
-    const { mutate, isSuccess } = api.leadRouter.create.useMutation()
+export const AddContactsForm: React.FC = () => {
+    const router = useRouter()
+    const { mutate } = api.leadRouter.create.useMutation()
     const {
         control,
         handleSubmit,
@@ -28,19 +30,19 @@ export const AddContactsForm: React.FC<{}> = () => {
         resolver: zodResolver(formSchema)
     });
     const onSubmit: SubmitHandler<formSchemaType> = (data) => {
-        console.log('Name is', data.name)
-        console.log('emailAddress is', data.emailAddress)
-        console.log('subscribed is', data.subscribed)
-        console.log('vip is', data.vip)
+        // console.log('Name is', data.name)
+        // console.log('emailAddress is', data.emailAddress)
+        // console.log('subscribed is', data.subscribed)
+        // console.log('vip is', data.vip)
         mutate({
             contactName: data.name,
             emailAddress: data.emailAddress,
             vip: data.vip,
             subscribed: data.subscribed,
         })
-        if (isSuccess) {
-            console.log('Successfull', isSuccess)
-        }
+        // if (isSuccess) {
+        //     console.log('Successfull', isSuccess)
+        // }
         reset()
     }
     console.log(isSubmitting)
@@ -130,6 +132,13 @@ export const AddContactsForm: React.FC<{}> = () => {
                     <Text className='text-xl text-leadistroBlack font-extrabold'>
                         Save This Contact.
                     </Text>
+                </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => {
+                router.push('/chat')
+            }} >
+                <View className='flex bg-leadistroBrown rounded-md py-3 flex-row items-center justify-between px-4'>
+                    <Text className='text-leadistroWhite'>Use distroGpt To Import CSV or XLSX Files and upload them to your Distro.</Text>
                 </View>
             </TouchableOpacity>
         </View>

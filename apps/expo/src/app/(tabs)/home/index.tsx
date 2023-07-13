@@ -3,7 +3,6 @@ import React from 'react'
 // import { useAuth } from '~/utils/context/authContext'
 // import auth from '@react-native-firebase/auth'
 
-
 const Home = () => {
     //     const user = useAuth()
     // <Button color={'#ff9580'} onPress={() => void auth().signOut()} title='SignOut' />
