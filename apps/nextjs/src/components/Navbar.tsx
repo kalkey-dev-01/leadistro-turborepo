@@ -127,11 +127,13 @@ const NavigationBar: React.FC = () => {
                     }`}
             >
                 <nav className='container relative flex flex-row items-center justify-between md:py-4 md:px-16 mx-auto'>
-                    <Link className='flex-1' href="/">
-                        <Button className='hover:text-leadistroRed text-leadistroWhite bg-transparent border-transparent hover:border hover:border-leadistroWhite/5 font-comfortaa hover:bg-transparent font-bold text-xl'>
-                            leadistro
-                        </Button>
-                    </Link>
+                    <li className="flex-1">
+                        <Link href="/">
+                            <Button className='hover:text-leadistroRed text-leadistroWhite bg-transparent border-transparent hover:border hover:border-leadistroWhite/5 font-comfortaa hover:bg-transparent font-bold text-xl'>
+                                leadistro
+                            </Button>
+                        </Link>
+                    </li>
                     <LayoutGroup>
                         <div id='nav' className='flex items-center justify-center space-x-3'>
                             {Object.entries(NavigationBarItems).map(([path, { name }]) => {
@@ -141,13 +143,13 @@ const NavigationBar: React.FC = () => {
                                         key={path}
                                         href={path}
                                         className={clsx(
-                                            "transition-all text-leadistroWhite hover:text-leadistroRed",
+                                            "transition-all hidden md:inline-flex text-leadistroWhite hover:text-leadistroRed",
                                             {
                                                 'text-leadistroRed': !isActive
                                             }
                                         )}
                                     >
-                                        <Button className='relative bg-transparent hover:bg-transparent py-1 px-2'>
+                                        <Button className='relative hidden md:inline-flex bg-transparent hover:bg-transparent py-1 px-2'>
                                             {name}
                                             {path === pathname ? (
                                                 <motion.div
@@ -166,6 +168,34 @@ const NavigationBar: React.FC = () => {
                             })}
                         </div>
                     </LayoutGroup>
+                    <li className='inline-flex md:hidden'>
+                        <Sheet>
+                            <SheetTrigger asChild>
+                                <MenuSquareIcon className='md:hidden inline-flex text-leadistroWhite h-8 w-8 hover:text-leadistroRed' />
+                            </SheetTrigger>
+                            <SheetContent className='flex flex-col font-poppins items-center justify-start bg-gradient-to-b bg-leadistroBlack' side={'right'}>
+                                <SheetHeader>
+                                    <SheetTitle className='w-fit h-fit rounded-[23px] from-border border-4 border-leadistroRed/75 bg-leadistroBlack'>
+                                        {/* <AspectRatio ratio={1 / 1}>
+                                        </AspectRatio> */}
+                                        <Image src={img} width={100} height={100} className='rounded-[20px] bg-leadistroRed' alt="logo" />
+                                    </SheetTitle>
+                                </SheetHeader>
+                                <Separator className='bg-white my-8' />
+                                <div className='flex flex-col items-center justify-between flex-1'>
+                                    <Button variant={'outline'} className={`text-leadistroWhite border-2 rounded-2xl border-leadistroRed font-medium text-lg px-8 py-6 ${poppins.className}`}>Blog</Button>
+                                    <Button variant={'outline'} className={`text-leadistroWhite border-2 rounded-2xl border-leadistroRed font-medium text-lg px-8 py-6 ${poppins.className}`}>Features</Button>
+                                    <Button variant={'outline'} className={`text-leadistroWhite border-2 rounded-2xl border-leadistroRed font-medium text-lg px-8 py-6 ${poppins.className}`}>Pricing</Button>
+                                    <Button variant={'outline'} className={`text-leadistroWhite border-2 rounded-2xl border-leadistroRed font-bold text-lg px-8 py-6 ${poppins.className}`}>Download Apk</Button>
+                                </div>
+                                <SheetFooter>
+                                    <SheetClose asChild>
+                                        <Button variant={'outline'} className={`text-leadistroBlack border-2 rounded-2xl border-leadistroWhite/70 bg-leadistroRed font-black text-xl px-8 py-6 mt-8 ${comfortaa.className}`}>Register</Button>
+                                    </SheetClose>
+                                </SheetFooter>
+                            </SheetContent>
+                        </Sheet>
+                    </li>
                 </nav>
             </div>
         </header>
