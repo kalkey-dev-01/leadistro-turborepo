@@ -14,15 +14,15 @@ export const LeadsContactRouter = createTRPCRouter({
   create: publicProcedure
     .input(
       z.object({
-        id: z.string(),
-        name: z.string().min(1),
+        id: z.string().optional(),
+        contactName: z.string().min(1),
         emailAddress: z.string().email(),
         vip: z.boolean(),
         subscribed: z.boolean(),
         Campaign: z.any().optional(),
         campaignId: z.string().optional(),
-        createdAt: z.date(),
-        updatedAt: z.date(),
+        createdAt: z.date().optional(),
+        updatedAt: z.date().optional(),
       }),
     )
     .mutation(({ ctx, input }) => {

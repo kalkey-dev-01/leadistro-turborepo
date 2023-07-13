@@ -79,6 +79,7 @@ model MobileUser {
 
 model Lead {
     id           String    @id @default(cuid())
+    contactName  String
     emailAddress String    @unique
     vip          Boolean   @default(false)
     subscribed   Boolean   @default(false)

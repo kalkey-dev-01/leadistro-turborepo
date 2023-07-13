@@ -4,6 +4,7 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Controller, type SubmitHandler, useForm } from 'react-hook-form'
 import { clsx } from 'clsx'
+import { api } from '~/utils/api'
 
 const formSchema = z.object({
     name: z.string().min(1).max(70),
@@ -17,6 +18,7 @@ type formSchemaType = z.infer<typeof formSchema>
 
 
 export const AddContactsForm: React.FC<{}> = () => {
+    const { mutate, isSuccess } = api.leadRouter.create.useMutation()
     const {
         control,
         handleSubmit,
@@ -30,6 +32,15 @@ export const AddContactsForm: React.FC<{}> = () => {
         console.log('emailAddress is', data.emailAddress)
         console.log('subscribed is', data.subscribed)
         console.log('vip is', data.vip)
+        mutate({
+            contactName: data.name,
+            emailAddress: data.emailAddress,
+            vip: data.vip,
+            subscribed: data.subscribed,
+        })
+        if (isSuccess) {
+            console.log('Successfull', isSuccess)
+        }
         reset()
     }
     console.log(isSubmitting)
@@ -40,7 +51,7 @@ export const AddContactsForm: React.FC<{}> = () => {
                 <Controller control={control} name={'name'} render={({ field: { onChange, value, onBlur } }) => (
                     <TextInput
                         placeholder='Contact Name'
-                        placeholderTextColor={'#ff958090'}
+                        placeholderTextColor={value === undefined ? '#fafafa' : '#ff958090'}
                         className={clsx(
                             `bg-leadistroBlack px-3 shadow  border rounded-xl text-white max-w-md w-full text-xl h-14`,
                             errors.name?.message
@@ -61,9 +72,9 @@ export const AddContactsForm: React.FC<{}> = () => {
                 <Controller control={control} name={'emailAddress'} render={({ field: { onChange, value, onBlur } }) => (
                     <TextInput
                         placeholder='Contact&apos;s Email Address'
-                        placeholderTextColor={'#ff958090'}
+                        placeholderTextColor={value === undefined ? '#fafafa' : '#ff958090'}
                         className={clsx(
-                            `bg-leadistroBlack px-3 shadow  border rounded-xl text-white max-w-md w-full text-xl h-14`,
+                            `bg-leadistroBlack px-3 shadow border rounded-xl text-white max-w-md w-full text-xl h-14`,
                             errors.emailAddress?.message
                                 ? 'border-leadistroRed shadow-xl shadow-leadistroRed/70'
                                 : 'border-leadistroWhite shadow-xl shadow-leadistroWhite/70',
@@ -79,7 +90,7 @@ export const AddContactsForm: React.FC<{}> = () => {
                 )} />
             </View>
             <View className="h-auto w-full px-10 flex self-center flex-row items-center justify-start ">
-                <View className='flex flex-row items-center px-2 justify-between w-auto'>
+                <View className=' py-1  flex flex-row items-center px-2 justify-between w-auto'>
                     <Text className='text-leadistroWhite pb-1 pr-2' >
                         V.I.P
                     </Text>
