@@ -25,7 +25,7 @@ export default function HomeScreen() {
     return (
         <>
             {/* HomeScreen */}
-            <div className="min-h-screen md:px-6 w-full min-w-full flex flex-col bg-gradient-to-b md:bg-gradient-to-r from-leadistroBlack via-leadistroBlack to-leadistroBrown  md:flex-row  items-center justify-center md:justify-between">
+            <div className="min-h-screen px-6 py-10 w-full min-w-full flex flex-col bg-gradient-to-b md:bg-gradient-to-r from-leadistroBlack via-leadistroBlack to-leadistroBrown  md:flex-row  items-center justify-center md:justify-between">
                 {/* Typography */}
                 <div className="mt-20 container flex flex-col space-y-5 h-auto items-center justify-center max-w-2xl">
                     <AnimatePresence>

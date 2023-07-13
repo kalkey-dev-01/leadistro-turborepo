@@ -126,7 +126,7 @@ const NavigationBar: React.FC = () => {
                     : "bg-leadistroBlack/30 border-leadistroRed/80"
                     }`}
             >
-                <nav className='container relative flex flex-row items-center justify-between md:py-4 md:px-16 mx-auto'>
+                <nav className='container relative flex flex-row items-center justify-between p-6 md:py-4 md:px-16 mx-auto'>
                     <li className="flex-1">
                         <Link href="/">
                             <Button className='hover:text-leadistroRed text-leadistroWhite bg-transparent border-transparent hover:border hover:border-leadistroWhite/5 font-comfortaa hover:bg-transparent font-bold text-xl'>
