@@ -85,9 +85,15 @@ importers:
       expo-dev-client:
         specifier: ~2.2.1
         version: 2.2.1(expo@48.0.17)
+      expo-document-picker:
+        specifier: ~11.2.2
+        version: 11.2.2(expo@48.0.17)
       expo-linking:
         specifier: ~4.0.1
         version: 4.0.1(expo@48.0.17)
+      expo-mail-composer:
+        specifier: ~12.1.1
+        version: 12.1.1(expo@48.0.17)
       expo-router:
         specifier: ^1.5.3
         version: 1.5.3(@types/react@18.2.6)(expo-constants@14.2.1)(expo-linking@4.0.1)(expo-modules-autolinking@1.2.0)(expo-status-bar@1.4.4)(expo@48.0.17)(metro@0.76.3)(react-dom@18.2.0)(react-native-gesture-handler@2.9.0)(react-native-reanimated@2.14.4)(react-native-safe-area-context@4.5.2)(react-native-screens@3.20.0)(react-native@0.71.8)(react@18.2.0)
@@ -6676,6 +6682,14 @@ packages:
       semver: 7.5.0
     dev: false
 
+  /expo-document-picker@11.2.2(expo@48.0.17):
+    resolution: {integrity: sha512-EeonRKxkK9E20LEAh93IvlwFjNkUCJKnhBEama9PmIDYWW7RyANZ8eP9C2PupThTDbivzRDNp7Ec7dIeyDAWjw==}
+    peerDependencies:
+      expo: '*'
+    dependencies:
+      expo: 48.0.17(@babel/core@7.21.8)
+    dev: false
+
   /expo-file-system@15.2.2(expo@48.0.17):
     resolution: {integrity: sha512-LFkOLcWwlmnjkURxZ3/0ukS35OswX8iuQknLHRHeyk8mUA8fpRPPelD/a1lS+yclqfqavMJmTXVKM1Nsq5XVMA==}
     peerDependencies:
@@ -6717,6 +6731,15 @@ packages:
     transitivePeerDependencies:
       - expo
       - supports-color
+    dev: false
+
+  /expo-mail-composer@12.1.1(expo@48.0.17):
+    resolution: {integrity: sha512-DJZpxdc6huwg8M9STfzL415xHGEaEXOseK2VyPAKKllWYR6m2gE18sXND9Ak8rcynZGTwyuaHrqJLBXd3I/LcQ==}
+    peerDependencies:
+      expo: '*'
+    dependencies:
+      expo: 48.0.17(@babel/core@7.21.8)
+      query-string: 6.14.1
     dev: false
 
   /expo-manifests@0.5.2:
@@ -10410,6 +10433,16 @@ packages:
     engines: {node: '>=0.6'}
     dependencies:
       side-channel: 1.0.4
+    dev: false
+
+  /query-string@6.14.1:
+    resolution: {integrity: sha512-XDxAeVmpfu1/6IjyT/gXHOl+S0vQ9owggJ30hhWKdHAsNPOcasn5o9BW0eejZqL2e4vMjhAxoW3jVHcD6mbcYw==}
+    engines: {node: '>=6'}
+    dependencies:
+      decode-uri-component: 0.2.2
+      filter-obj: 1.1.0
+      split-on-first: 1.1.0
+      strict-uri-encode: 2.0.0
     dev: false
 
   /query-string@7.1.3:
