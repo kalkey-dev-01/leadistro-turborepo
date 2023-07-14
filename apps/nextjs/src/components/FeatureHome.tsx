@@ -9,7 +9,7 @@ import Image from 'next/image';
 import { AspectRatio } from './ui/aspect-ratio';
 import { SizeContext } from '~/utils/size-observer';
 
-const Works = () => {
+const Features = () => {
     const [imageLoaded, setImageLoaded] = React.useState(false);
     const handleImageLoaded = React.useCallback(() => {
         setImageLoaded(true);
@@ -136,7 +136,7 @@ const Works = () => {
 const FeatureScreen: React.FC = ({ }) => {
     return (
         <div className='min-h-screen min-w-full'>
-            <Works />
+            <Features />
         </div>
     )
 }
