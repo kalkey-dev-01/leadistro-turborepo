@@ -15,7 +15,7 @@ const PricingScreen: React.FC = () => {
                 />
             }
         >
-            <div className="min-h-screen min-w-full py-10 md:py-20 px-6 md:px-10 flex font-poppins flex-col items-center justify-center  bg-leadistroBlack">
+            <div className="min-h-screen min-w-full py-28 px-6 md:px-10 flex font-poppins flex-col items-center justify-center  bg-leadistroBlack">
                 <Heading1
                     textChildren='Pricing'
                     className='md:text-left text-center text-leadistroWhite mb-5' />

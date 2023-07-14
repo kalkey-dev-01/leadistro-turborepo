@@ -5,15 +5,8 @@ import { Button as Btn } from './ui/button'
 import Image from 'next/image'
 import Button from './ui/GradientBackgroundButton'
 import IMG from '../../public/OutlineMockup.png';
-// import WebMockup from '../../public/DistroGPTWebMockup.png'
-// import BackgroundAnimation from './BackgroundAnimations'
 import { SizeContext } from '~/utils/size-observer'
 import { AnimatePresence, motion as m } from 'framer-motion'
-// import { Separator } from './ui/seperator'
-// import { ArrowRightCircleIcon, SearchIcon } from 'lucide-react'
-// import { Input } from './ui/input'
-// import { signIn } from 'next-auth/react'
-// import { RGradientCard } from './RadialGradientCards'
 
 export default function HomeScreen() {
     const [imageLoaded, setImageLoaded] = React.useState(false);
@@ -35,8 +28,14 @@ export default function HomeScreen() {
                             animate={{ x: 0, opacity: 1 }}
                             exit={{ x: -100, opacity: 0 }}
                         >
-                            <Heading1 textChildren="Minimal Marketing App for Power Users" className="text-center md:text-left font-poppins drop-shadow-[0_5px_3px_rgba(0,0,0,0.4)] text-leadistroWhite max-w-xl mix-blend-difference" />
-                            <Paragraph textChildren="Brand And Market Your Product To Your Customers With The Help Of Artificial Intelligence." className="font-poppins drop-shadow-[0_5px_3px_rgba(0,0,0,0.4)] text-center md:text-left mix-blend-difference text-leadistroWhite max-w-2xl" />
+                            <Heading1
+                                textChildren="Minimal Marketing App for Power Users"
+                                className="text-center md:text-left font-poppins drop-shadow-[0_5px_3px_rgba(0,0,0,0.4)] text-leadistroWhite max-w-xl mix-blend-difference"
+                            />
+                            <Paragraph
+                                textChildren="Brand And Market Your Product To Your Customers With The Help Of Artificial Intelligence."
+                                className="font-poppins drop-shadow-[0_5px_3px_rgba(0,0,0,0.4)] text-center md:text-left mix-blend-difference text-leadistroWhite max-w-2xl"
+                            />
                         </m.div>
                     </AnimatePresence>
                     <AnimatePresence>

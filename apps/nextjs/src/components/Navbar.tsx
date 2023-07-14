@@ -182,12 +182,41 @@ const NavigationBar: React.FC = () => {
                                     </SheetTitle>
                                 </SheetHeader>
                                 <Separator className='bg-white my-8' />
-                                <div className='flex flex-col items-center justify-between flex-1'>
-                                    <Button variant={'outline'} className={`text-leadistroWhite border-2 rounded-2xl border-leadistroRed font-medium text-lg px-8 py-6 ${poppins.className}`}>Blog</Button>
-                                    <Button variant={'outline'} className={`text-leadistroWhite border-2 rounded-2xl border-leadistroRed font-medium text-lg px-8 py-6 ${poppins.className}`}>Features</Button>
-                                    <Button variant={'outline'} className={`text-leadistroWhite border-2 rounded-2xl border-leadistroRed font-medium text-lg px-8 py-6 ${poppins.className}`}>Pricing</Button>
-                                    <Button variant={'outline'} className={`text-leadistroWhite border-2 rounded-2xl border-leadistroRed font-bold text-lg px-8 py-6 ${poppins.className}`}>Download Apk</Button>
-                                </div>
+                                <LayoutGroup>
+                                    <div id="drawer" className='flex flex-col items-center justify-center space-y-20 flex-1'>
+                                        {Object.entries(NavigationBarItems).map(([path, { name }]) => {
+                                            const isActive = path === pathname;
+                                            return (
+                                                <Link
+                                                    key={path}
+                                                    href={path}
+                                                    className={clsx(
+                                                        "transition-all  inline-flex text-leadistroWhite hover:text-leadistroRed",
+                                                        {
+                                                            'text-leadistroRed': !isActive
+                                                        },
+                                                        comfortaa.className
+                                                    )}
+                                                >
+                                                    <Button className='relative text-2xl font-poppins inline-flex bg-transparent hover:bg-transparent py-1 px-2'>
+                                                        {name}
+                                                        {path === pathname ? (
+                                                            <motion.div
+                                                                className='absolute h-[2px] w-[70%] top-8 mx-2 bg-leadistroRed'
+                                                                layoutId='bar'
+                                                                transition={{
+                                                                    type: 'spring',
+                                                                    stiffness: 350,
+                                                                    damping: 30,
+                                                                }}
+                                                            />
+                                                        ) : null}
+                                                    </Button>
+                                                </Link>
+                                            )
+                                        })}
+                                    </div>
+                                </LayoutGroup>
                                 <SheetFooter>
                                     <SheetClose asChild>
                                         <Button variant={'outline'} className={`text-leadistroBlack border-2 rounded-2xl border-leadistroWhite/70 bg-leadistroRed font-black text-xl px-8 py-6 mt-8 ${comfortaa.className}`}>Register</Button>
