@@ -2,6 +2,7 @@ import { View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { useNavigation } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
+import type { LeadOutput } from '@acme/api';
 
 const Inbox: React.FC = () => {
     const router = useNavigation();

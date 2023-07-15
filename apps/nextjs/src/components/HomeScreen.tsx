@@ -69,7 +69,7 @@ export default function HomeScreen() {
                 </div>
                 {/* Mobile mockup */}
                 <div className="container flex h-auto flex-col items-center justify-center md:py-36">
-                    <AspectRatio ratio={ratio} className={` transition-all duration-1000 ${imageLoaded ? 'opacity-100 scale-[0.96]' : 'opacity-0 '}`}>
+                    <AspectRatio ratio={ratio} className={`transition-all duration-1000 ${imageLoaded ? 'opacity-100 scale-[0.96]' : 'opacity-0 '}`}>
                         <Image src={IMG} alt="MobileMockup" onLoad={handleImageLoaded} className='pointer-events-none object-center md:object-contain object-cover w-full h-full ' />
                     </AspectRatio>
                 </div>

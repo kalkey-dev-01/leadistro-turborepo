@@ -48,7 +48,7 @@ export const AddContactsForm: React.FC = () => {
     console.log(isSubmitting)
     console.log(errors.emailAddress?.message, errors.name?.message)
     return (
-        <View className="flex flex-col items-center justify-start space-y-8 my-7 py-6 h-full w-full bg-leadistroBrown/40 rounded-xl">
+        <View className="flex flex-col items-center justify-start space-y-7 my-7 py-6 h-full w-full bg-leadistroBrown/40 rounded-xl">
             <View className="h-auto w-full px-8 ">
                 <Controller control={control} name={'name'} render={({ field: { onChange, value, onBlur } }) => (
                     <TextInput
@@ -70,6 +70,7 @@ export const AddContactsForm: React.FC = () => {
                     />
                 )} />
             </View>
+
             <View className="h-auto w-full px-8 ">
                 <Controller control={control} name={'emailAddress'} render={({ field: { onChange, value, onBlur } }) => (
                     <TextInput
@@ -91,8 +92,18 @@ export const AddContactsForm: React.FC = () => {
                     />
                 )} />
             </View>
+            {
+                errors.name?.message && <Text className='text-leadistroWhite self-start px-10 '>
+                    {errors.name.message}
+                </Text>
+            }
+            {
+                errors.emailAddress?.message && <Text className='text-leadistroWhite self-start px-10  '>
+                    {errors.emailAddress.message}
+                </Text>
+            }
             <View className="h-auto w-full px-10 flex self-center flex-row items-center justify-start ">
-                <View className=' py-1  flex flex-row items-center px-2 justify-between w-auto'>
+                <View className='py-1 flex flex-row items-center px-2 justify-between w-auto'>
                     <Text className='text-leadistroWhite pb-1 pr-2' >
                         V.I.P
                     </Text>
@@ -137,8 +148,8 @@ export const AddContactsForm: React.FC = () => {
             <TouchableOpacity onPress={() => {
                 router.push('/chat')
             }} >
-                <View className='flex bg-leadistroBrown rounded-md py-3 flex-row items-center justify-between px-4'>
-                    <Text className='text-leadistroWhite'>Use distroGpt To Import CSV or XLSX Files and upload them to your Distro.</Text>
+                <View className='flex bg-leadistroBrown self-start rounded-full py-4 flex-row items-center justify-between px-7'>
+                    <Text className='text-leadistroWhite font-medium max-w-xs text-center'>Use distroGpt To Import CSV or XLSX Files and upload them to your Distro.</Text>
                 </View>
             </TouchableOpacity>
         </View>
