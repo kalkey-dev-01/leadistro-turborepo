@@ -42,7 +42,7 @@ const Login: React.FC = () => {
             <View className='flex-1 flex items-center justify-center gap-4'>
                 <Text className='text-4xl text-white'>leadistro<Text className="text-leadistroRed">Native</Text></Text>
                 <Text className='text-leadistroRed text-xl mb-5 text-center max-w-sm'>Amplify <Text className="text-leadistroWhite">your Marketing</Text> Strategy with<Text className='text-white font-bold'> leadistro</Text> - <Text className="text-white">The Ai Powered</Text> App for Marketing <Text className="text-white">Campaigns</Text>.</Text>
-                <Image className='max-h-28 max-w-[112px] rounded-2xl ' source={require('../../../assets/icon.png')} alt='Logo' />
+                <Image className='h-48 w-48' style={{ borderColor: '#ff9580', borderWidth: 2, borderRadius: 999 }} source={require('../../../assets/icon.png')} alt='Logo' />
             </View>
             <View className='flex justify-center gap-4 my-8 items-center'>
                 <Text className='text-white text-xs'>By signing in you acknowledge and agree to our privacy policies</Text>

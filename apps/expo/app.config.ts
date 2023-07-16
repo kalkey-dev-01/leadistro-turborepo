@@ -9,7 +9,7 @@ const defineConfig = (): ExpoConfig => ({
   icon: "./assets/icon.png",
   userInterfaceStyle: "dark",
   splash: {
-    image: "./assets/icon.png",
+    image: "./assets/splash.png",
     resizeMode: "contain",
     backgroundColor: "#101010",
   },
@@ -25,7 +25,7 @@ const defineConfig = (): ExpoConfig => ({
   android: {
     googleServicesFile: "./google-services.json",
     adaptiveIcon: {
-      foregroundImage: "./assets/icon.png",
+      foregroundImage: "./assets/adaptive-icon.png",
       backgroundColor: "#101010",
     },
     package: "com.leadistronative",
