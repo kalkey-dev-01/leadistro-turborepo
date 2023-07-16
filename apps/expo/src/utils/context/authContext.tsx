@@ -14,14 +14,14 @@ function useProtectedRoute(user: FirebaseAuthTypes.User | null) {
     const segments = useSegments();
     const router = useRouter();
     React.useEffect(() => {
-        const inAuthGroup = segments[0] === "(auth)";
+        const inAuthGroup = segments[0] === "(welcome)";
         if (
             // If the user is not signed in and the initial segment is not anything in the auth group.
             !user &&
             !inAuthGroup
         ) {
             // Redirect to the sign-in page.
-            router.replace("/login");
+            router.replace("/onboard");
         } else if (user && inAuthGroup) {
             // Redirect away from the sign-in page.
             router.replace("/");

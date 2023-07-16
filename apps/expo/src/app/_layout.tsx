@@ -2,13 +2,10 @@ import React from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import { Feather } from '@expo/vector-icons';
 import { TRPCProvider } from "~/utils/api";
 import { AuthProvider } from "~/utils/context/authContext";
-import { View } from "react-native";
-// import { useAuth } from "~/utils/context/authContext";
-// This is the main layout of the app
-// It wraps your pages with the providers they need
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
+
 const RootLayout = () => {
   return (
     <TRPCProvider>

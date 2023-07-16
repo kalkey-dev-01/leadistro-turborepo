@@ -31,12 +31,12 @@ const Dot: React.FC<DotProps> = ({ index, activeDotIndex }) => {
     const reanimatedDotStyle = useAnimatedStyle(() => {
         const isActive = activeDotIndex?.value === index;
         return {
-            backgroundColor: withTiming(isActive ? '#fafafa' : '#161616', {
+            backgroundColor: withTiming(isActive ? '#fafafa' : '#ff958020', {
                 duration: 150,
             }),
         }
     })
-    return <Animated.View className='w-5 h-5 mx-2 rounded-lg' style={reanimatedDotStyle} />
+    return <Animated.View className='w-5 h-5 mx-2 rounded-full' style={reanimatedDotStyle} />
 }
 
 
@@ -59,7 +59,7 @@ const Onboard: React.FC = () => {
         scrollRef.current?.scrollTo({ x: PageWidth * (activeIndex.value + 1) });
     }, []);
     return (
-        <View className='bg-leadistroBlack flex items-center justify-center'>
+        <View className='bg-leadistroBlack flex items-center flex-col w-full h-full justify-center'>
             <Animated.ScrollView
                 pagingEnabled={true}
                 showsHorizontalScrollIndicator={false}

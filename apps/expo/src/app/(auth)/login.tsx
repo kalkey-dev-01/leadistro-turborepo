@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import { View, Text, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
-import { Stack } from 'expo-router'
+import { Stack, useRouter } from 'expo-router'
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import { AntDesign } from '@expo/vector-icons';
 import auth from '@react-native-firebase/auth'
@@ -36,6 +36,7 @@ const Login: React.FC = () => {
     if (isError) {
         console.log(error?.message, error?.data)
     }
+    const router = useRouter()
     return (
         <View className='w-full bg-leadistroBlack h-full justify-center flex flex-col items-center'>
             <Stack.Screen options={{ headerShown: false }} />
@@ -44,6 +45,7 @@ const Login: React.FC = () => {
                 <Text className='text-leadistroRed text-xl mb-5 text-center max-w-sm'>Amplify <Text className="text-leadistroWhite">your Marketing</Text> Strategy with<Text className='text-white font-bold'> leadistro</Text> - <Text className="text-white">The Ai Powered</Text> App for Marketing <Text className="text-white">Campaigns</Text>.</Text>
                 <Image className='h-48 w-48' style={{ borderColor: '#ff9580', borderWidth: 2, borderRadius: 999 }} source={require('../../../assets/icon.png')} alt='Logo' />
             </View>
+
             <View className='flex justify-center gap-4 my-8 items-center'>
                 <Text className='text-white text-xs'>By signing in you acknowledge and agree to our privacy policies</Text>
                 <TouchableOpacity onPress={GoogleAuthSignIn}>

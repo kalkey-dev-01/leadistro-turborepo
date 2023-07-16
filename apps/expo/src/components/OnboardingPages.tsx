@@ -90,10 +90,10 @@ const Page: React.FC<Props> = ({ page, translateX, index }) => {
                 />
             </View>
             <Animated.View style={reanimatedTextStyle}>
-                <Text className="text-center mb-3 font-bold text-3xl">
+                <Text className="text-center mb-3 text-leadistroWhite font-bold text-3xl">
                     {page.title}
                 </Text>
-                <Text className="text-center mb-3 font-bold text-base">
+                <Text className="text-center mb-3 text-leadistroWhite font-bold text-base">
                     {page.description}
                 </Text>
             </Animated.View>
