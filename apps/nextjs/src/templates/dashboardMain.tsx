@@ -40,9 +40,8 @@ const DashboardMain: React.FC<Props> = ({ meta, children }) => {
     // }
 
     return (
-        <div className={`${comfortaa.variable} ${poppins.variable} min-h-screen flex flex-col z-0 items-end justify-start bg-leadistroBrown w-full`}>
+        <div className={`${comfortaa.variable} ${poppins.variable} min-h-screen flex flex-col items-center justify-center  w-full`}>
             {meta}
-            <DashboardNavTest />
             {children}
         </div>
     )
