@@ -13,7 +13,7 @@ import Page from '~/components/OnboardingPages';
 import { Feather } from '@expo/vector-icons';
 import { useRouter } from 'expo-router'
 import { useAtom } from 'jotai';
-import { seenOnboarding } from '~/utils/atoms';
+import { seenOnboarding, seenOnboardingStoredAtom } from '~/utils/atoms';
 
 const { width: PageWidth } = Dimensions.get('window');
 
@@ -43,7 +43,7 @@ const Dot: React.FC<DotProps> = ({ index, activeDotIndex }) => {
 
 
 const Onboard: React.FC = () => {
-    const [seen, setSeen] = useAtom(seenOnboarding);
+    const [seen, setSeen] = useAtom(seenOnboardingStoredAtom);
     const router = useRouter()
     const translateX = useSharedValue(0)
     const scrollHandler = useAnimatedScrollHandler({

@@ -2,7 +2,7 @@ import type { FirebaseAuthTypes } from '@react-native-firebase/auth'
 import { useRouter, useSegments } from 'expo-router'
 import { useAtom, useAtomValue } from 'jotai'
 import React from 'react'
-import { FirebaseUserAtom, seenOnboarding } from '../atoms'
+import { FirebaseUserAtom, seenOnboardingStoredAtom } from '../atoms'
 import auth from '@react-native-firebase/auth'
 const AuthContext = React.createContext<FirebaseAuthTypes.User | null>(null)
 
@@ -12,7 +12,7 @@ export function useAuth() {
 
 function useProtectedRoute(user: FirebaseAuthTypes.User | null) {
     // Importing the boolean state of the onboarding screens
-    const seen = useAtomValue(seenOnboarding);
+    const seen = useAtomValue(seenOnboardingStoredAtom);
     const segments = useSegments();
     const router = useRouter();
     React.useEffect(() => {
