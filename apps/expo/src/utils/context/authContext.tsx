@@ -1,8 +1,8 @@
 import type { FirebaseAuthTypes } from '@react-native-firebase/auth'
 import { useRouter, useSegments } from 'expo-router'
-import { useAtom } from 'jotai'
+import { useAtom, useAtomValue } from 'jotai'
 import React from 'react'
-import { FirebaseUserAtom } from '../atoms'
+import { FirebaseUserAtom, seenOnboarding } from '../atoms'
 import auth from '@react-native-firebase/auth'
 const AuthContext = React.createContext<FirebaseAuthTypes.User | null>(null)
 
@@ -11,22 +11,26 @@ export function useAuth() {
 }
 
 function useProtectedRoute(user: FirebaseAuthTypes.User | null) {
+    // Importing the boolean state of the onboarding screens
+    const seen = useAtomValue(seenOnboarding);
     const segments = useSegments();
     const router = useRouter();
     React.useEffect(() => {
-        const inAuthGroup = segments[0] === "(welcome)";
+        // Checking InAuthGroup Always Returns A Boolean therefore string interpolation for the change of segments
+        const inAuthGroup = segments[0] === `${seen ? "(auth)" : "(welcome)"}`;
         if (
             // If the user is not signed in and the initial segment is not anything in the auth group.
             !user &&
             !inAuthGroup
         ) {
             // Redirect to the sign-in page.
-            router.replace("/onboard");
+            // Change of segments on the state of seen requires it to be Added in the logic
+            router.replace(seen ? '/login' : '/onboard');
         } else if (user && inAuthGroup) {
             // Redirect away from the sign-in page.
             router.replace("/");
         }
-    }, [user, router, segments]);
+    }, [user, router, segments, seen]);
 }
 
 export function AuthProvider(props: { children: React.ReactNode }) {

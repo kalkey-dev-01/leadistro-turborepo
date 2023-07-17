@@ -11,7 +11,9 @@ import Animated, {
 import { OnboardingPagesData } from '~/utils/onboardingData';
 import Page from '~/components/OnboardingPages';
 import { Feather } from '@expo/vector-icons';
-
+import { useRouter } from 'expo-router'
+import { useAtom } from 'jotai';
+import { seenOnboarding } from '~/utils/atoms';
 
 const { width: PageWidth } = Dimensions.get('window');
 
@@ -41,6 +43,8 @@ const Dot: React.FC<DotProps> = ({ index, activeDotIndex }) => {
 
 
 const Onboard: React.FC = () => {
+    const [seen, setSeen] = useAtom(seenOnboarding);
+    const router = useRouter()
     const translateX = useSharedValue(0)
     const scrollHandler = useAnimatedScrollHandler({
         onScroll: (e) => {
@@ -55,9 +59,11 @@ const Onboard: React.FC = () => {
 
         if (activeIndex.value === OnboardingPagesData.length - 1) {
             console.log('Completed');
+            setSeen(true);
+            console.log(seen);
         }
         scrollRef.current?.scrollTo({ x: PageWidth * (activeIndex.value + 1) });
-    }, []);
+    }, [activeIndex.value, scrollRef, router]);
     return (
         <View className='bg-leadistroBlack flex items-center flex-col w-full h-full justify-center'>
             <Animated.ScrollView
