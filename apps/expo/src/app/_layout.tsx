@@ -4,7 +4,6 @@ import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { TRPCProvider } from "~/utils/api";
 import { AuthProvider } from "~/utils/context/authContext";
-import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
 const RootLayout = () => {
   return (

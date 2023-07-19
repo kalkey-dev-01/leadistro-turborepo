@@ -3,7 +3,7 @@ import { Comfortaa, Poppins } from 'next/font/google';
 import { type ReactNode, type FC } from 'react';
 import React from 'react'
 import Footer from '~/components/Footer';
-import NavigationBar, { Navbar } from '~/components/Navbar';
+import NavigationBar from '~/components/Navbar';
 // import { useFollowPointer, useMousePosition } from '~/utils/use-follow-pointer';
 
 

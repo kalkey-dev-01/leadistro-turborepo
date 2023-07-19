@@ -1,4 +1,8 @@
-import { createTRPCRouter, publicProcedure } from "../trpc";
+import { createTRPCRouter, publicProcedure, protectedProcedure } from "../trpc";
+
+
+
+
 
 export const ChatRouter = createTRPCRouter({
 

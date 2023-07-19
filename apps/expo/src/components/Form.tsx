@@ -1,11 +1,12 @@
-/* eslint-disable @typescript-eslint/no-misused-promises */
+
 import { View, TextInput, Switch, Text, TouchableOpacity } from 'react-native'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Controller, type SubmitHandler, useForm } from 'react-hook-form'
+import { Controller, useForm } from 'react-hook-form'
+import type { SubmitHandler } from 'react-hook-form';
 import { clsx } from 'clsx'
-import { api } from '~/utils/api'
 import { useRouter } from 'expo-router'
+import { api } from '~/utils/api'
 
 const formSchema = z.object({
     name: z.string().min(1).max(70),

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-misused-promises */
+
 import { View, Text, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import { Stack, useRouter } from 'expo-router'
@@ -23,12 +23,12 @@ const Login: React.FC = () => {
         return auth().signInWithCredential(credential).then(async (user) => {
             console.log('Mutate Starts')
             await mutateAsync({
-                email: user.user.email as string,
+                email: user.user.email!,
                 id: user.user.uid,
                 emailVerified: user.user.emailVerified,
-                userName: user.user.displayName as string,
+                userName: user.user.displayName!,
                 providerId: user.user.providerId,
-                photoUrl: user.user.photoURL as string,
+                photoUrl: user.user.photoURL!,
             })
             console.log(user, 'from Promise and the mutate ends')
         })

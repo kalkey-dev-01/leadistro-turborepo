@@ -2,11 +2,9 @@ import React from 'react'
 import { Text, View, TouchableOpacity, TextInput } from 'react-native'
 import { useNavigation } from 'expo-router'
 import { Ionicons } from '@expo/vector-icons'
-import { api } from '~/utils/api'
 import { AddContactsForm } from '~/components/Form'
 
 const Add: React.FC = () => {
-    const { } = api
     const router = useNavigation();
     return (
         <View className='h-full bg-leadistroBlack flex flex-col items-center justify-start space-y-4 py-4 px-2.5 w-full'>

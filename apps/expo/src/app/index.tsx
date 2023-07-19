@@ -1,10 +1,9 @@
 import React from "react";
 import { Redirect } from "expo-router";
-// import { FlashList } from "@shopify/flash-list";
 
 
-const Index = () => {
+export default function Index() {
   return <Redirect href={'/home'} />
 };
 
-export default Index;
+

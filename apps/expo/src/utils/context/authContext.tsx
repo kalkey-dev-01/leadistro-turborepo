@@ -1,5 +1,5 @@
 import type { FirebaseAuthTypes } from '@react-native-firebase/auth'
-import { useRouter, useSegments } from 'expo-router'
+import { useRootNavigationState, useRouter, useSegments } from 'expo-router'
 import { useAtom, useAtomValue } from 'jotai'
 import React from 'react'
 import { FirebaseUserAtom, seenOnboardingStoredAtom } from '../atoms'
@@ -15,8 +15,14 @@ function useProtectedRoute(user: FirebaseAuthTypes.User | null) {
     const seen = useAtomValue(seenOnboardingStoredAtom);
     const segments = useSegments();
     const router = useRouter();
+    const rootNavigationState = useRootNavigationState();
     React.useEffect(() => {
         // Checking InAuthGroup Always Returns A Boolean therefore string interpolation for the change of segments
+        // Expo Router 2 not neccessarily a good fix for state
+        // Dont remove the if statement below right now its neccessary for router to init state
+        if (!rootNavigationState?.key) {
+            return;
+        }
         const inAuthGroup = segments[0] === `${seen ? "(auth)" : "(welcome)"}`;
         if (
             // If the user is not signed in and the initial segment is not anything in the auth group.
@@ -30,7 +36,7 @@ function useProtectedRoute(user: FirebaseAuthTypes.User | null) {
             // Redirect away from the sign-in page.
             router.replace("/");
         }
-    }, [user, router, segments, seen]);
+    }, [user, router, segments, seen, rootNavigationState?.key]);
 }
 
 export function AuthProvider(props: { children: React.ReactNode }) {

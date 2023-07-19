@@ -1,30 +1,40 @@
 {
+  "cli": {
+    "version": ">= 3.3.0"
+  },
   "build": {
-    "development": {
-      "developmentClient": true,
-      "distribution": "internal",
-      "android": {
-        "buildType": "apk"
-      },
-      "ios": {
-        "simulator": true,
-        "image": "latest"
-      },
-      "env": {
-        "TAMAGUI_TARGET": "native"
-      }
-    },
-    "preview": {
-      "distribution": "internal"
-    },
-    "production": {
+    "base": {
       "distribution": "store",
       "android": {
         "buildType": "app-bundle"
       },
-      "env": {
-        "TAMAGUI_TARGET": "native"
+      "node": "18.16.1",
+      "ios": {
+        "simulator": true,
+        "image": "latest",
+        "resourceClass": "m-medium"
       }
+    },
+    "development": {
+      "extends": "base",
+      "developmentClient": true,
+      "android": {
+        "buildType": "apk"
+      },
+      "distribution": "internal"
+    },
+    "preview": {
+      "extends": "base",
+      "distribution": "internal",
+      "ios": {
+        "simulator": true
+      }
+    },
+    "production": {
+      "extends": "base"
     }
+  },
+  "submit": {
+    "production": {}
   }
 }

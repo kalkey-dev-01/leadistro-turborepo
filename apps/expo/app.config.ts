@@ -35,6 +35,9 @@ const defineConfig = (): ExpoConfig => ({
       projectId: "5e66edb7-fc5b-4305-aaf9-396d4ecf65db",
     },
   },
+  experiments: {
+    tsconfigPaths: true,
+  },
   plugins: [
     "./expo-plugins/with-modify-gradle.js",
     "@react-native-google-signin/google-signin",
