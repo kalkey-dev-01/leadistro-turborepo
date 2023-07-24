@@ -6,7 +6,8 @@ import auth from '@react-native-firebase/auth'
 import * as Menu from 'zeego/dropdown-menu'
 import { View } from 'react-native';
 import { useRouter } from 'expo-router'
-const TabLayout = () => {
+
+export default function TabLayout() {
     const router = useRouter()
     return (
         <Tabs
@@ -52,4 +53,3 @@ const TabLayout = () => {
     )
 }
 
-export default TabLayout
