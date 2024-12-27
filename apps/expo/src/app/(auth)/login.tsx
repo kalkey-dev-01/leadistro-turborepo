@@ -8,10 +8,7 @@ import { AntDesign } from '@expo/vector-icons';
 import auth from '@react-native-firebase/auth'
 import { api } from '~/utils/api';
 
-GoogleSignin.configure({
-    webClientId: '976545594978-a1ul5imti6ruqb1qlb7ipta7kk6q5elh.apps.googleusercontent.com',
-    iosClientId: '976545594978-oasuhjp8th16td7op8jc9immp14l22vq.apps.googleusercontent.com'
-});
+
 
 
 const Login: React.FC = () => {
